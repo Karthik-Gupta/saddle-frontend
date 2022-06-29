@@ -185,6 +185,10 @@ export default function StakeDialog({
                 ),
               )}
             </Box>
+            <Box>
+              <Typography>My Boost</Typography>
+              {userGauge.boost ? formatBNToString(userGauge.boost, 18, 2) : "-"}
+            </Box>
             <Button
               variant="outlined"
               size="large"
