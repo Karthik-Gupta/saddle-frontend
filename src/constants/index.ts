@@ -16,6 +16,44 @@ import walletconnectIcon from "../assets/icons/walletconnect.svg"
 
 export const NetworkContextName = "NETWORK"
 
+export const BTC_POOL_NAME = "BTC"
+export const BTC_POOL_V2_NAME = "BTC V2"
+export const EVMOS_BTC_POOL_NAME = "Evmos BTC"
+export const STABLECOIN_POOL_NAME = "USD"
+export const STABLECOIN_POOL_V2_NAME = "USDv2"
+export const VETH2_POOL_NAME = "vETH2"
+export const ALETH_POOL_NAME = "alETH"
+export const D4_POOL_NAME = "D4"
+export const SUSD_METAPOOL_NAME = "sUSD Meta"
+export const SUSD_METAPOOL_V2_NAME = "sUSD Meta V2"
+export const TBTC_METAPOOL_NAME = "tBTC Meta"
+export const TBTC_METAPOOL_V2_NAME = "tBTC Meta V2"
+export const WCUSD_METAPOOL_NAME = "wCUSD Meta"
+export const WCUSD_METAPOOL_V2_NAME = "wCUSD Meta V2"
+export const ARB_USD_POOL_NAME = "arbUSD"
+export const USDS_ARB_USD_METAPOOL_NAME = "usds-arbUSDV2 Meta"
+export const OPT_USD_POOL_NAME = "optUSD"
+export const FRAX_OPT_USD_METAPOOL_NAME = "frax-optUSD"
+export const FRAX_ARB_USD_POOL_V2_NAME = "arbUSDV2"
+export const FTM_USD_POOL_NAME = "ftmUSD"
+export const EVMOS_TESTNET_POOL_NAME = "evmosTestnetUSD"
+export const EVMOS_POOL_NAME = "evmosUSD"
+export const KAVA_TESTNET_USD_POOL_NAME = "kavaTestnetUSD"
+export const TBTC_EVMOS_BTC_METAPOOL_NAME = "tbtc-evmosBTC Meta"
+export const EVMOS_4_POOL_NAME = "Evmos 4Pool"
+export const EVMOS_FRAX_3_POOL_NAME = "Evmos Frax 3Pool"
+export const FRAX_3_POOL_NAME = "Frax 3Pool"
+export const TBTC_METAPOOL_V2_BTCV2_V3_NAME = "tBTCv2-BTCv2_v3"
+export const WCUSD_METAPOOL_V2_USDV2_V3_NAME = "wcUSD-USDv2_v3"
+export const SUSD_METAPOOL_V2_USDV2_V3_NAME = "sUSD-USDv2_v3"
+export const FRAX_USDC_POOL_NAME = "FRAX-USDC-BP"
+export const FRAX_USDT_METAPOOL_NAME = "FRAXBP-USDT"
+export const FRAX_SUSD_METAPOOL_NAME = "FRAXBP-SUSD"
+export const FRAX_ALUSD_METAPOOL_NAME = "FRAXBP-alUSD"
+export const ARB_FRAX_USDS_METAPOOL_NAME = "arbFRAXBP-SUSD"
+export const FTM_FRAX_USDT_METAPOOL_NAME = "ftmFRAXBP-USDT"
+export const FTM_FRAX_ALUSD_METAPOOL_NAME = "ftmFRAXBP-alUSD"
+
 //Pulsechain base and meta pools
 export const USD_POOL_NAME = "turingUSD"
 export const FOUR_POOL_NAME = "turingD4"
@@ -35,6 +73,43 @@ export const TBTC_META_POOL_NAME = "turingTBTC-BTC"
 export const BUSD_META_POOL_NAME = "turingBUSD-USD"
 
 export type PoolName =
+  | typeof BTC_POOL_NAME
+  | typeof BTC_POOL_V2_NAME
+  | typeof STABLECOIN_POOL_NAME
+  | typeof STABLECOIN_POOL_V2_NAME
+  | typeof VETH2_POOL_NAME
+  | typeof ALETH_POOL_NAME
+  | typeof D4_POOL_NAME
+  | typeof SUSD_METAPOOL_NAME
+  | typeof SUSD_METAPOOL_V2_NAME
+  | typeof TBTC_METAPOOL_NAME
+  | typeof TBTC_METAPOOL_V2_NAME
+  | typeof WCUSD_METAPOOL_NAME
+  | typeof WCUSD_METAPOOL_V2_NAME
+  | typeof ARB_USD_POOL_NAME
+  | typeof OPT_USD_POOL_NAME
+  | typeof FRAX_OPT_USD_METAPOOL_NAME
+  | typeof FRAX_ARB_USD_POOL_V2_NAME
+  | typeof FTM_USD_POOL_NAME
+  | typeof USDS_ARB_USD_METAPOOL_NAME
+  | typeof EVMOS_TESTNET_POOL_NAME
+  | typeof EVMOS_POOL_NAME
+  | typeof KAVA_TESTNET_USD_POOL_NAME
+  | typeof TBTC_EVMOS_BTC_METAPOOL_NAME
+  | typeof EVMOS_BTC_POOL_NAME
+  | typeof EVMOS_4_POOL_NAME
+  | typeof EVMOS_FRAX_3_POOL_NAME
+  | typeof FRAX_3_POOL_NAME
+  | typeof TBTC_METAPOOL_V2_BTCV2_V3_NAME
+  | typeof WCUSD_METAPOOL_V2_USDV2_V3_NAME
+  | typeof SUSD_METAPOOL_V2_USDV2_V3_NAME
+  | typeof FRAX_USDC_POOL_NAME
+  | typeof FRAX_USDT_METAPOOL_NAME
+  | typeof FRAX_SUSD_METAPOOL_NAME
+  | typeof FRAX_ALUSD_METAPOOL_NAME
+  | typeof ARB_FRAX_USDS_METAPOOL_NAME
+  | typeof FTM_FRAX_USDT_METAPOOL_NAME
+  | typeof FTM_FRAX_ALUSD_METAPOOL_NAME
   | typeof USD_POOL_NAME
   | typeof FOUR_POOL_NAME
   | typeof WRS_BTC_POOL_NAME
@@ -1386,7 +1461,7 @@ export const WCUSD = new Token(
 const SUSD_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
   [ChainId.HARDHAT]: "0x0E801D84Fa97b50751Dbf25036d067dCf18858bF",
-  [ChainId.OPTIMISM]: "0x8c6f28f2F1A3C87F0f938b96d27520d9751ec8d9",
+  [ChainId.FANTOM]: "0x8c6f28f2F1A3C87F0f938b96d27520d9751ec8d9",
 })
 export const SUSD = new Token(
   SUSD_CONTRACT_ADDRESSES,
@@ -1540,8 +1615,23 @@ export const USDS = new Token(
   "USDs",
 )
 
+const UST_CONTRACT_ADDRESSES = buildAddresses({
+  [ChainId.EVMOS_TESTNET]: "0xB3d39E511b33154A023a67a5C916FfBA0346Cdab",
+})
+
+export const UST = new Token(
+  UST_CONTRACT_ADDRESSES,
+  18,
+  "UST",
+  "terrausd",
+  "TerraUSD",
+)
+
 const ALUSD_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0xBC6DA0FE9aD5f3b0d58160288917AA56653660E9",
+  [ChainId.ROPSTEN]: "0x8b7a92FdbC77c6d8c61644D118c37D813B2069C4",
+  [ChainId.HARDHAT]: "0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB",
+  [ChainId.FANTOM]: "0xB67FA6deFCe4042070Eb1ae1511Dcd6dcc6a532E",
 })
 export const ALUSD = new Token(
   ALUSD_CONTRACT_ADDRESSES,
@@ -1639,10 +1729,44 @@ export const EUROC = new Token(
   "euroc",
   "Euro Coin",
 )
+export const FRAX_ARB_USD_POOL_V2_TOKENS = [FRAX, USDC, USDT]
+export const STABLECOIN_POOL_TOKENS = [DAI, USDC, USDT]
+export const SUSD_POOL_TOKENS = [SUSD, ...STABLECOIN_POOL_TOKENS]
+export const SUSD_UNDERLYING_POOL_TOKENS = [SUSD, STABLECOIN_SWAP_V2_TOKEN]
+export const ARB_USD_POOL_TOKENS = [NUSD, MIM, USDC, USDT]
+export const USDS_ARB_USD_POOL_TOKENS = [USDS, ...FRAX_ARB_USD_POOL_V2_TOKENS]
+export const OPT_USD_POOL_TOKENS = [DAI, USDC, USDT]
+export const FRAX_OPT_USD_POOL_TOKENS = [FRAX, ...OPT_USD_POOL_TOKENS]
+export const FRAX_OPT_USD_UNDERLYING_POOL_TOKENS = [FRAX, OPT_USD_SWAP_TOKEN]
+export const USDS_ARB_USD_UNDERLYING_POOL_TOKENS = [
+  USDS,
+  FRAX_ARB_USD_SWAP_V2_TOKEN,
+]
+export const FTM_USD_POOL_TOKENS = [FRAX, USDC]
+export const EVMOS_TESTNET_POOL_TOKENS = [DAI, USDC, USDT, UST]
+export const EVMOS_POOL_TOKENS = [DAI, USDC, USDT]
+export const KAVA_TESTNET_USD_POOL_TOKENS = [USDC, USDT]
+
+export const FRAX_USDC_POOL_TOKENS = [USDC, FRAX]
+export const FRAX_USDT_UNDERLYING_POOL_TOKENS = [USDT, FRAX_USDC_SWAP_TOKEN]
+export const FRAX_USDT_POOL_TOKENS = [USDT, ...FRAX_USDC_POOL_TOKENS]
+export const FRAX_SUSD_UNDERLYING_POOL_TOKENS = [SUSD, FRAX_USDC_SWAP_TOKEN]
+export const FRAX_SUSD_POOL_TOKENS = [SUSD, ...FRAX_USDC_POOL_TOKENS]
+export const FRAX_ALUSD_UNDERLYING_POOL_TOKENS = [ALUSD, FRAX_USDC_SWAP_TOKEN]
+export const FRAX_ALUSD_POOL_TOKENS = [ALUSD, ...FRAX_USDC_POOL_TOKENS]
+
+export const FTM_FRAX_USDT_UNDERLYING_POOL_TOKENS = [USDT, FTM_USD_SWAP_TOKEN]
+export const FTM_FRAX_USDT_POOL_TOKENS = [USDT, ...FTM_USD_POOL_TOKENS]
+export const FTM_FRAX_ALUSD_UNDERLYING_POOL_TOKENS = [ALUSD, FTM_USD_SWAP_TOKEN]
+export const FTM_FRAX_ALUSD_POOL_TOKENS = [ALUSD, ...FTM_USD_POOL_TOKENS]
+
+export const ARB_FRAX_USDS_UNDERLYING_POOL_TOKENS = [USDS, FRAX_USDC_SWAP_TOKEN]
+export const ARB_FRAX_USDS_POOL_TOKENS = [USDS, ...FRAX_USDC_POOL_TOKENS]
 
 // Tokenized BTC
 const TBTC_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x8daebade922df735c38c80c7ebd708af50815faa",
+  [ChainId.ROPSTEN]: "0x9F6aA48f852Dd928F53A7dd3dcd2AC96a76c8727",
   [ChainId.HARDHAT]: "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
 })
 export const TBTC = new Token(
@@ -1651,6 +1775,19 @@ export const TBTC = new Token(
   "TBTC",
   "tbtc",
   "tBTC",
+)
+
+const TBTC_V2_CONTRACT_ADDRESSES = buildAddresses({
+  [ChainId.MAINNET]: "0x18084fba666a33d37592fa2633fd49a74dd93a88",
+  [ChainId.HARDHAT]: "0x82e01223d51Eb87e16A03E24687EDF0F294da6f1",
+  [ChainId.EVMOS]: "0x8d395AfFC1767141387ffF45aF88a074614E7Ccf",
+})
+export const TBTC_V2 = new Token(
+  TBTC_V2_CONTRACT_ADDRESSES,
+  18,
+  "tBTC",
+  "tbtc",
+  "tBTCv2",
 )
 
 const WBTC_CONTRACT_ADDRESSES = buildAddresses({
@@ -1695,6 +1832,19 @@ export const SBTC = new Token(
   true,
 )
 
+export const BTC_POOL_TOKENS = [TBTC, WBTC, RENBTC, SBTC]
+export const BTC_POOL_V2_TOKENS = [WBTC, RENBTC, SBTC]
+
+export const TBTC_POOL_TOKENS = [TBTC_V2, ...BTC_POOL_V2_TOKENS]
+export const TBTC_UNDERLYING_POOL_TOKENS = [TBTC_V2, BTC_SWAP_V2_TOKEN]
+
+export const EVMOS_BTC_POOL_TOKENS = [WBTC, RENBTC]
+export const FRAX_3_POOL_TOKENS = [USDC, USDT, FRAX]
+export const EVMOS_4_POOL_TOKENS = [MAD_DAI, MAD_USDC, MAD_USDT, FRAX]
+export const EVMOS_FRAX_3_POOL_TOKENS = [MAD_USDC, MAD_USDT, FRAX]
+export const TBTC_EVMOS_POOL_TOKENS = [TBTC_V2, ...EVMOS_BTC_POOL_TOKENS]
+export const TBTC_EVMOS_UNDERLYING_POOL_TOKENS = [TBTC_V2, EVMOS_BTC_SWAP_TOKEN]
+
 const WETH_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
   [ChainId.ROPSTEN]: "0x0B68F3b6c7fc0b6dD4D9a2399C4AE35be060ba42",
@@ -1708,8 +1858,24 @@ export const WETH = new Token(
   "WETH",
 )
 
+const VETH2_CONTRACT_ADDRESSES = buildAddresses({
+  [ChainId.MAINNET]: "0x898BAD2774EB97cF6b94605677F43b41871410B1",
+  [ChainId.ROPSTEN]: "0xd46Ea72ABf55699b17eAF529c6533e5c13F5E687",
+  [ChainId.HARDHAT]: "0x59b670e9fA9D0A427751Af201D676719a970857b",
+})
+export const VETH2 = new Token(
+  VETH2_CONTRACT_ADDRESSES,
+  18,
+  "VETH2",
+  "ethereum",
+  "vETH2",
+)
+
+export const VETH2_POOL_TOKENS = [WETH, VETH2]
+
 const ALETH_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x0100546F2cD4C9D97f798fFC9755E47865FF7Ee6",
+  [ChainId.ROPSTEN]: "0xaA91d3f2C53BDBEdd45FaB0308d0b51315Dc32E7",
   [ChainId.HARDHAT]: "0x09635F643e140090A9A8Dcd712eD6285858ceBef",
 })
 export const ALETH = new Token(
@@ -1733,6 +1899,8 @@ export const SETH = new Token(
   "Synth sETH",
   true,
 )
+
+export const ALETH_POOL_TOKENS = [WETH, ALETH, SETH]
 
 const FEI_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
@@ -1759,6 +1927,11 @@ export const LUSD = new Token(
   "liquity-usd",
   "Liquity USD",
 )
+
+export const D4_POOL_TOKENS = [ALUSD, FEI, FRAX, LUSD]
+
+export const WCUSD_POOL_TOKENS = [WCUSD, ...STABLECOIN_POOL_TOKENS]
+export const WCUSD_UNDERLYING_POOL_TOKENS = [WCUSD, STABLECOIN_SWAP_V2_TOKEN]
 
 // pulsechain
 export const USD_POOL_TOKENS = [DAI, USDC, USDT]
