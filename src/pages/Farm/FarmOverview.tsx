@@ -1,4 +1,12 @@
-import { Box, Button, Grid, Typography, styled } from "@mui/material"
+import {
+  Button,
+  Grid,
+  Typography,
+  styled,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material"
+import { formatBNToShortString, getTokenByAddress } from "../../utils"
 
 import { BigNumber } from "@ethersproject/bignumber"
 import { GaugeApr } from "../../providers/AprsProvider"
@@ -6,14 +14,13 @@ import GaugeRewardsDisplay from "../../components/GaugeRewardsDisplay"
 import React from "react"
 import TokenIcon from "../../components/TokenIcon"
 import { Zero } from "@ethersproject/constants"
-import { formatBNToShortString } from "../../utils"
-import usePoolData from "../../hooks/usePoolData"
+import { useActiveWeb3React } from "../../hooks"
 import { useTranslation } from "react-i18next"
 
 interface FarmOverviewProps {
   farmName: string
-  poolName: string | null
   aprs?: GaugeApr[]
+  poolTokens?: string[]
   tvl?: BigNumber
   myStake: BigNumber
   onClickStake: () => void
@@ -29,16 +36,19 @@ const TokenGroup = styled("div")(() => ({
 
 export default function FarmOverview({
   farmName,
-  poolName,
+  poolTokens,
   aprs,
   tvl,
   myStake,
   onClickStake,
 }: // onClickClaim,
-FarmOverviewProps): JSX.Element {
+FarmOverviewProps): JSX.Element | null {
   const { t } = useTranslation()
-  const [farmData] = usePoolData(poolName || "")
-  const farmTokens = farmData.tokens
+  const { chainId } = useActiveWeb3React()
+  const theme = useTheme()
+  const isLgDown = useMediaQuery(theme.breakpoints.down("lg"))
+
+  if (!chainId) return null
 
   return (
     <Grid
@@ -52,7 +62,7 @@ FarmOverviewProps): JSX.Element {
         px: 3,
       }}
     >
-      <Grid item xs={3.5}>
+      <Grid item container xs={7} lg={3.5} flexDirection="column" gap={1}>
         <Typography variant="h2">{farmName}</Typography>
         <TokenGroup>
           {farmName === "SDL/WETH SLP" ? (
@@ -61,42 +71,63 @@ FarmOverviewProps): JSX.Element {
               <TokenIcon symbol="WETH" alt="weth" />
             </>
           ) : (
-            farmTokens.map((token) => (
-              <TokenIcon
-                key={token.symbol}
-                symbol={token.symbol}
-                alt={token.symbol}
-              />
-            ))
+            poolTokens?.map((tokenAddress) => {
+              const token = getTokenByAddress(tokenAddress, chainId)
+              if (!token) return <div></div>
+              return (
+                <TokenIcon
+                  key={token.name}
+                  symbol={token.symbol}
+                  alt={token.symbol}
+                />
+              )
+            })
           )}
         </TokenGroup>
+
+        {isLgDown && (
+          <React.Fragment>
+            <Typography variant="subtitle1">
+              TVL: {tvl ? `${formatBNToShortString(tvl, 18)}` : "_"}
+            </Typography>
+            <Typography variant="subtitle1">
+              {t("myStaked")}:{" "}
+              {myStake?.gt(Zero) ? formatBNToShortString(myStake, 18) : "_"}
+            </Typography>
+          </React.Fragment>
+        )}
       </Grid>
       <Grid item xs={3}>
         <GaugeRewardsDisplay aprs={aprs} />
       </Grid>
-      <Grid item xs={1.5}>
-        <Typography variant="subtitle1">
-          {tvl ? `$${formatBNToShortString(tvl, 18)}` : "_"}
-        </Typography>
-      </Grid>
-      <Grid item xs={1.5}>
-        <Typography variant="subtitle1">
-          {myStake?.gt(Zero) ? formatBNToShortString(myStake, 18) : "_"}
-        </Typography>
-      </Grid>
-      <Box mr={0} ml="auto">
+      {!isLgDown && (
+        <React.Fragment>
+          <Grid item xs={0} lg={1.5}>
+            <Typography variant="subtitle1">
+              {tvl ? `$${formatBNToShortString(tvl, 18)}` : "_"}
+            </Typography>
+          </Grid>
+          <Grid item xs={1.5}>
+            <Typography variant="subtitle1">
+              {myStake?.gt(Zero) ? formatBNToShortString(myStake, 18) : "_"}
+            </Typography>
+          </Grid>
+        </React.Fragment>
+      )}
+      <Grid item xs={12} lg="auto" justifyContent="center">
         {/* <Button variant="outlined" size="large">
           {t("claimRewards")}
         </Button> */}
         <Button
           variant="contained"
           size="large"
-          sx={{ ml: 2 }}
           onClick={onClickStake}
+          fullWidth
+          sx={{ mt: 2 }}
         >
           {t("stakeOrUnstake")}
         </Button>
-      </Box>
+      </Grid>
     </Grid>
   )
 }

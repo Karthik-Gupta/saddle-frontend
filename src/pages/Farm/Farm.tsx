@@ -1,22 +1,25 @@
-import { Container, Grid, Typography } from "@mui/material"
-import React, { useCallback, useContext, useState } from "react"
+import {
+  Box,
+  Container,
+  Grid,
+  Paper,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material"
+import React, { useContext, useState } from "react"
 
-import { AppState } from "../../state"
 import { AprsContext } from "../../providers/AprsProvider"
-import { BN_1E18 } from "../../constants"
 import { BasicPoolsContext } from "../../providers/BasicPoolsProvider"
-import { BigNumber } from "ethers"
 import ClaimRewardsDlg from "./ClaimRewardsDlg"
 import FarmOverview from "./FarmOverview"
 import { GaugeContext } from "../../providers/GaugeProvider"
 import StakeDialog from "./StakeDialog"
-import { TokensContext } from "../../providers/TokensProvider"
 import { UserStateContext } from "../../providers/UserStateProvider"
 import VeSDLWrongNetworkModal from "../VeSDL/VeSDLWrongNetworkModal"
 import { Zero } from "@ethersproject/constants"
-import { getPriceDataForPool } from "../../utils"
-import { parseUnits } from "@ethersproject/units"
-import { useSelector } from "react-redux"
+import { useActiveWeb3React } from "../../hooks"
+import useGaugeTVL from "../../hooks/useGaugeTVL"
 import { useTranslation } from "react-i18next"
 
 type ActiveGauge = {
@@ -29,14 +32,34 @@ export default function Farm(): JSX.Element {
   const [activeDialog, setActiveDialog] = useState<
     "stake" | "claim" | undefined
   >()
+  const { account } = useActiveWeb3React()
+  const basicPools = useContext(BasicPoolsContext)
   const { gauges } = useContext(GaugeContext)
   const gaugeAprs = useContext(AprsContext)
   const userState = useContext(UserStateContext)
   const getGaugeTVL = useGaugeTVL()
 
+  if (!account) {
+    return (
+      <Container>
+        <Paper sx={{ display: "flex", justifyContent: "center", padding: 4 }}>
+          <Typography>Please connect your wallet to see farms.</Typography>
+        </Paper>
+      </Container>
+    )
+  }
+
   return (
     <Container sx={{ pt: 5 }}>
-      <FarmListHeader />
+      <Box
+        position="sticky"
+        top={0}
+        bgcolor={(theme) => theme.palette.background.paper}
+        zIndex={(theme) => theme.zIndex.mobileStepper - 1}
+        py={2}
+      >
+        <FarmListHeader />
+      </Box>
 
       {Object.values(gauges)
         // .filter(({ gaugeName }) => gaugeName?.includes("SLP")) // uncomment to only show SLP gauge
@@ -51,11 +74,17 @@ export default function Farm(): JSX.Element {
           const myStake =
             userState?.gaugeRewards?.[gaugeAddress]?.amountStaked || Zero
           const tvl = getGaugeTVL(gaugeAddress)
+          const gaugePoolAddress = gauge.poolAddress
+
+          const gaugePool = Object.values(basicPools || {}).find(
+            (pool) => pool.poolAddress === gaugePoolAddress,
+          )
+          const poolTokens = gaugePool?.tokens
           return {
             gauge,
             gaugeAddress,
             farmName,
-            poolName,
+            poolTokens,
             aprs,
             tvl,
             myStake,
@@ -70,11 +99,11 @@ export default function Farm(): JSX.Element {
           }
           return a.myStake.gt(b.myStake) ? -1 : a.tvl.gt(b.tvl) ? -1 : 1
         })
-        .map(({ gaugeAddress, farmName, aprs, tvl, myStake, poolName }) => {
+        .map(({ gaugeAddress, farmName, aprs, poolTokens, tvl, myStake }) => {
           return (
             <FarmOverview
               farmName={farmName}
-              poolName={poolName}
+              poolTokens={poolTokens}
               aprs={aprs}
               tvl={tvl}
               myStake={myStake}
@@ -123,51 +152,10 @@ export default function Farm(): JSX.Element {
   )
 }
 
-function useGaugeTVL(): (gaugeAddress?: string) => BigNumber {
-  const { gauges } = useContext(GaugeContext)
-  const { sdlWethSushiPool, tokenPricesUSD } = useSelector(
-    (state: AppState) => state.application,
-  )
-  const basicPools = useContext(BasicPoolsContext)
-  const tokens = useContext(TokensContext)
-
-  return useCallback(
-    (gaugeAddress?: string): BigNumber => {
-      if (!gaugeAddress) return Zero
-      const gauge = Object.values(gauges).find(
-        (gauge) => gauge.address === gaugeAddress,
-      )
-      const basicPool = basicPools?.[gauge?.poolName || ""]
-
-      if (gauge && gauge.gaugeName === sushiGaugeName) {
-        // special case for the sdl/weth pair
-        const poolTVL = sdlWethSushiPool?.wethReserve
-          ? sdlWethSushiPool.wethReserve // 1e18
-              .mul(parseUnits(String(tokenPricesUSD?.["ETH"] || "0.0"), 3)) // 1e18 * 1e3 = 1e21
-              .mul(2)
-              .div(1e3) // 1e21 / 1e3 = 1e18
-          : Zero
-        const lpTokenPriceUSD = sdlWethSushiPool?.totalSupply.gt(0)
-          ? poolTVL.mul(BN_1E18).div(sdlWethSushiPool.totalSupply)
-          : Zero
-        return lpTokenPriceUSD.mul(gauge.gaugeTotalSupply || Zero).div(BN_1E18)
-      }
-      if (basicPool && gauge) {
-        const { lpTokenPriceUSD } = getPriceDataForPool(
-          tokens,
-          basicPool,
-          tokenPricesUSD,
-        )
-        return lpTokenPriceUSD.mul(gauge.gaugeTotalSupply || Zero).div(BN_1E18)
-      }
-      return Zero
-    },
-    [gauges, basicPools, sdlWethSushiPool, tokenPricesUSD, tokens],
-  )
-}
-
 function FarmListHeader(): JSX.Element {
   const { t } = useTranslation()
+  const theme = useTheme()
+  const isLgDown = useMediaQuery(theme.breakpoints.down("lg"))
   return (
     <Grid
       container
@@ -177,18 +165,22 @@ function FarmListHeader(): JSX.Element {
         px: 3,
       }}
     >
-      <Grid item xs={3.5}>
+      <Grid item xs={7} lg={3.5}>
         <Typography>{t("farms")}</Typography>
       </Grid>
       <Grid item xs={3}>
         <Typography>APR</Typography>
       </Grid>
-      <Grid item xs={1.5}>
-        <Typography>Gauge TVL</Typography>
-      </Grid>
-      <Grid item xs={1.5}>
-        <Typography>{t("myStaked")} LP</Typography>
-      </Grid>
+      {!isLgDown && (
+        <Grid item xs={1.5}>
+          <Typography>Gauge TVL</Typography>
+        </Grid>
+      )}
+      {!isLgDown && (
+        <Grid item xs={1.5}>
+          <Typography>{t("myStaked")} LP</Typography>
+        </Grid>
+      )}
     </Grid>
   )
 }

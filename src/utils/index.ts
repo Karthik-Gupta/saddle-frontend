@@ -449,40 +449,28 @@ export const calculateBoost = (
   totalWorkingSupply: BigNumber,
   userBalanceVeSDL: BigNumber,
   totalSupplyVeSDL: BigNumber,
-): BigNumber | undefined => {
+): BigNumber | null => {
   if (totalSupplyVeSDL.isZero()) return parseEther("1")
 
-  let lim = userLPAmount
-    .mul(BigNumber.from(100))
-    .mul(BigNumber.from(40))
-    .div(BigNumber.from(100))
-
-  const newTotalLPDeposit = totalLPDeposit.add(userLPAmount)
+  let lim = userLPAmount.mul(BigNumber.from(40)).div(BigNumber.from(100))
 
   lim = lim.add(
-    newTotalLPDeposit
+    totalLPDeposit
       .mul(userBalanceVeSDL)
       .div(totalSupplyVeSDL)
-      .mul(BigNumber.from(100))
       .mul(BigNumber.from(60))
       .div(BigNumber.from(100)),
   )
 
-  lim = minBigNumber(userLPAmount.mul(BigNumber.from(100)), lim)
+  lim = minBigNumber(userLPAmount, lim)
 
   const noBoostLim = userLPAmount
     .mul(BigNumber.from(40))
     .div(BigNumber.from(100))
 
-  const noBoostSupply = totalWorkingSupply
-    .add(noBoostLim)
-    .sub(workingBalances)
-    .mul(BigNumber.from(100))
+  const noBoostSupply = totalWorkingSupply.add(noBoostLim).sub(workingBalances)
 
-  const newWorkingSupply = totalWorkingSupply
-    .add(lim)
-    .sub(workingBalances)
-    .mul(BigNumber.from(100))
+  const newWorkingSupply = totalWorkingSupply.add(lim).sub(workingBalances)
 
   if (newWorkingSupply.mul(noBoostLim).isZero()) return parseEther("1")
 
