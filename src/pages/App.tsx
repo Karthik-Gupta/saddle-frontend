@@ -42,7 +42,7 @@ import fetchSwapStats from "../utils/getSwapStats"
 import fetchTokenPricesUSD from "../utils/updateTokenPrices"
 import getSnapshotVoteData from "../utils/getSnapshotVoteData"
 import { useActiveWeb3React } from "../hooks"
-import { useIntercom } from "react-use-intercom"
+//import { useIntercom } from "react-use-intercom"
 import usePoller from "../hooks/usePoller"
 import { useSdlWethSushiPairContract } from "../hooks/useContract"
 
@@ -70,7 +70,7 @@ const AppContainer = styled("div")(({ theme }) => {
 export default function App(): ReactElement {
   const { chainId } = useActiveWeb3React()
   const theme = useTheme()
-  const { boot } = useIntercom()
+  //const { boot } = useIntercom()
 
   const pools = useMemo(() => {
     return Object.values(POOLS_MAP).filter(
@@ -78,9 +78,9 @@ export default function App(): ReactElement {
     )
   }, [chainId])
 
-  useEffect(() => {
-    boot()
-  }, [boot])
+  // useEffect(() => {
+  //   boot()
+  // }, [boot])
 
   return (
     <Suspense fallback={null}>
