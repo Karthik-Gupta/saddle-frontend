@@ -10,6 +10,7 @@ export const NETWORK_LABEL: Partial<Record<ChainId, string>> = {
   [ChainId.EVMOS]: "Evmos",
   [ChainId.EVMOS_TESTNET]: "Evmos Testnet",
   [ChainId.KAVA_TESTNET]: "Kava Testnet",
+  [ChainId.PULSECHAIN_TESTNET]: "PulseChain Testnet",
   [ChainId.HARDHAT]: "Hardhat 👷🏼‍♂️",
 }
 
@@ -23,6 +24,7 @@ export const NETWORK_NATIVE_TOKENS: Record<ChainId, string> = {
   [ChainId.EVMOS]: "EVMOS",
   [ChainId.EVMOS_TESTNET]: "tEVMOS",
   [ChainId.KAVA_TESTNET]: "KAVA",
+  [ChainId.PULSECHAIN_TESTNET]: "TPLS",
   [ChainId.HARDHAT]: "ETH",
 }
 export const COINGECKO_PLATFORM_ID: Record<ChainId, string | null> = {
@@ -34,6 +36,7 @@ export const COINGECKO_PLATFORM_ID: Record<ChainId, string | null> = {
   [ChainId.EVMOS]: "evmos",
   [ChainId.EVMOS_TESTNET]: null,
   [ChainId.KAVA_TESTNET]: null,
+  [ChainId.PULSECHAIN_TESTNET]: null,
   [ChainId.HARDHAT]: null,
 }
 
