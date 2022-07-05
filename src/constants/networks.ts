@@ -36,7 +36,7 @@ export const COINGECKO_PLATFORM_ID: Record<ChainId, string | null> = {
   [ChainId.EVMOS]: "evmos",
   [ChainId.EVMOS_TESTNET]: null,
   [ChainId.KAVA_TESTNET]: null,
-  [ChainId.PULSECHAIN_TESTNET]: null,
+  [ChainId.PULSECHAIN_TESTNET]: "pulsechain",
   [ChainId.HARDHAT]: null,
 }
 
