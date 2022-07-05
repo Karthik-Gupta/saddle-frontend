@@ -73,5 +73,5 @@ export const uauth = new UAuthConnector({
 
 export const walletlink = new WalletLinkConnector({
   url: NETWORK_URL,
-  appName: "Turing",
+  appName: "Saddle",
 })
