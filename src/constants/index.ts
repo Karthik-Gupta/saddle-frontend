@@ -54,6 +54,23 @@ export const ARB_FRAX_USDS_METAPOOL_NAME = "arbFRAXBP-SUSD"
 export const FTM_FRAX_USDT_METAPOOL_NAME = "ftmFRAXBP-USDT"
 export const FTM_FRAX_ALUSD_METAPOOL_NAME = "ftmFRAXBP-alUSD"
 export const FTM_FRAX_ALUSD_METAPOOL_DEPRECATED_NAME = "ftmFRAXBP-alUSD-old"
+//Pulsechain base and meta pools
+export const USD_POOL_NAME = "turingUSD"
+export const FOUR_POOL_NAME = "turingD4"
+export const WRS_BTC_POOL_NAME = "turingWRenSBTC"
+export const ST_ETH_POOL_NAME = "turingSTETH"
+export const R_ETH_POOL_NAME = "turingRETH"
+export const AL_ETH_POOL_NAME = "turingalETH"
+export const EUR_POOL_NAME = "turingEUR"
+export const FRAX_META_POOL_NAME = "turingFrax-USD"
+export const MIM_META_POOL_NAME = "turingMIM-USD"
+export const SUSD_META_POOL_NAME = "turingSUSD-USD"
+export const FEI_META_POOL_NAME = "turingFEI-USD"
+export const AL_USD_META_POOL_NAME = "turingALUSD-USD"
+export const TUSD_META_POOL_NAME = "turingTUSD-USD"
+export const USDL_META_POOL_NAME = "turingUSDL-USD"
+export const TBTC_META_POOL_NAME = "turingTBTC-BTC"
+export const BUSD_META_POOL_NAME = "turingBUSD-USD"
 
 export type PoolName =
   | typeof BTC_POOL_NAME
@@ -95,6 +112,22 @@ export type PoolName =
   | typeof FTM_FRAX_ALUSD_METAPOOL_NAME
   | typeof FRAX_ALUSD_METAPOOL_DEPRECATED_NAME
   | typeof FTM_FRAX_ALUSD_METAPOOL_DEPRECATED_NAME
+  | typeof USD_POOL_NAME
+  | typeof FOUR_POOL_NAME
+  | typeof WRS_BTC_POOL_NAME
+  | typeof ST_ETH_POOL_NAME
+  | typeof R_ETH_POOL_NAME
+  | typeof AL_ETH_POOL_NAME
+  | typeof EUR_POOL_NAME
+  | typeof FRAX_META_POOL_NAME
+  | typeof MIM_META_POOL_NAME
+  | typeof SUSD_META_POOL_NAME
+  | typeof FEI_META_POOL_NAME
+  | typeof AL_USD_META_POOL_NAME
+  | typeof TUSD_META_POOL_NAME
+  | typeof USDL_META_POOL_NAME
+  | typeof TBTC_META_POOL_NAME
+  | typeof BUSD_META_POOL_NAME
 
 export enum ChainId {
   MAINNET = 1,
@@ -109,6 +142,7 @@ export enum ChainId {
   EVMOS = 9001,
   EVMOS_TESTNET = 9000,
   KAVA_TESTNET = 2221,
+  PULSECHAIN_TESTNET = 941,
 }
 export enum PoolTypes {
   BTC,
@@ -727,6 +761,171 @@ export const GAUGE_CONTROLLER_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x99Cb6c36816dE2131eF2626bb5dEF7E5cc8b9B14",
 })
 
+// Pulsechain
+export const USD_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xcc565983c45a052f52294F603e98F88f4E5F2284",
+})
+
+export const USD_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xc3f9fCF720556104baa4Cf493a52D26c3B1ded47",
+})
+
+export const FOUR_POOL_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x43082e3500328D19205A64d16B3d61229c33cb42",
+})
+
+export const FOUR_POOL_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x578701CCfF3Bb8073584b661902A87f7D0aea8De",
+})
+
+export const WRS_BTC_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x73253F368b8bBd0AF305824eB3332957b577144e",
+})
+
+export const WRS_BTC_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x03D4e1554dE7CB21caDB8177A0BCc03925990bF2",
+})
+
+export const ST_ETH_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xE36BE4EA646F84f2607a8cceE9DE7F37476C4f57",
+})
+
+export const ST_ETH_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xEb1440eAE3B386606e44705a4e705d535dD7065f",
+})
+
+export const R_ETH_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x5D3Bc5B723F80aC03B69f1E72df2c335E31d31f9",
+})
+
+export const R_ETH_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x1Ab3DfdcC86020Fde14782998cD6625662af9868",
+})
+
+export const AL_ETH_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xA85373bE75044f0aF21d56D17dc9c266A2CF8732",
+})
+
+export const AL_ETH_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xF4993A5c5007f03b9136919489CB05BFF5C2A690",
+})
+
+export const EUR_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x5Bc44E3C4f9Ba1DF85cef94374dD59DbA832c119",
+})
+
+export const EUR_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xAFB88A5Ff6b6695BC7bF4ACdB78b467E5E0A9480",
+})
+
+export const FRAX_META_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xA6053D8727faAF932adc3089118D5d3e246f1779",
+})
+
+export const FRAX_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xc2a84D3aae08b8eF95b61C8b608503119f1Aea7F",
+})
+
+export const FRAX_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x28dC54d41a351C8F8D98234C0C2322d6785ad735",
+})
+
+export const MIM_META_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x052af6aE21feA08f0d41E51DAE5319670755A924",
+})
+
+export const MIM_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xBe8c5649758533F1b48D9e11B7ed403067a788Ea",
+})
+
+export const MIM_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x918d2a281fD415Bc3ACc252c005d3798b35c8410",
+})
+
+export const S_USD_META_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xB2F6a8d9d372a10DF636d210f2a40d2534924F5F",
+})
+
+export const S_USD_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xCDFE0734f77Eca6dd16efD11CcB88C17842D37cC",
+})
+
+export const S_USD_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xbE872CEBd88cEFE36C176c87c13EAC3a52EF58a3",
+})
+
+export const FEI_META_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x7AF35f4e9016A49D4130fDfF2D826a6640440E4c",
+})
+
+export const FEI_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xE7Af7800654e15B66A44F5F3B659A4AF1D771839",
+})
+
+export const FEI_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xF0B42deeb2Ea47e177D00692aa4c50727a0d424f",
+})
+
+export const AL_USD_META_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x41A386E23Adf5993f975f896788CDAb75c57e63c",
+})
+
+export const AL_USD_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x05A85d4fAc0E60F856f04e142A32C92828bEdE51",
+})
+
+export const AL_USD_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x9BFC2Ce8625FE434294BF0822643D24C63BF60C6",
+})
+
+export const TUSD_META_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xFc158Be77a26a7Cf4459E4970Ae98E4d34866A9b",
+})
+
+export const TUSD_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x4945BDbaC658A04f61997a9685e99971F74D66b4",
+})
+
+export const TUSD_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x64f8D1F236bbE8F311Fa8331b26Dd6E249516F4f",
+})
+
+export const USDL_META_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x62fcE8f6cfd02aF5622CD1fa6F4F418AAE8355bc",
+})
+
+export const USDL_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x52c3A0C120eBb228307055914C4840D97747747B",
+})
+
+export const USDL_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x967A267FEc4691F3aFcD0c5Ac53B8b3848740552",
+})
+
+export const BUSD_META_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x39ca80A0C67B21d245C6f041E408a1A5affC0951",
+})
+
+export const BUSD_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x09A52cE7c23e8f7578408f4621d471e44645C2c0",
+})
+
+export const BUSD_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x82745CA49d56F19E0Cf62ce8C7Bce894BC902a0a",
+})
+
+export const T_BTC_META_SWAP_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x859454b3C1880e0306e0eA8c395495Df09289Db9",
+})
+
+export const T_BTC_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x9Cb435B3BCDEE0CacA43039e463B1fd787946857",
+})
+
+export const T_BTC_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xDA239ca08a58e279b33F97eB32EFC877912A7baC",
+})
+
 export const SPA = new Token(
   SPA_TOKEN_ADDRESSES,
   18,
@@ -1137,6 +1336,167 @@ export const D4_SWAP_TOKEN = new Token(
   true,
 )
 
+// Pulsechain
+export const USD_SWAP_TOKEN = new Token(
+  USD_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingUSD",
+  "turingusd",
+  "Turing DAI/USDC/USDT",
+  false,
+  true,
+)
+
+export const FOUR_POOL_SWAP_TOKEN = new Token(
+  FOUR_POOL_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingD4",
+  "turingd4",
+  "Turing alUSD/FEI/FRAX/MIM",
+  false,
+  true,
+)
+
+export const WRS_BTC_SWAP_TOKEN = new Token(
+  WRS_BTC_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingWRenSBTC",
+  "turingwrensbtc",
+  "Turing WBTC/renBTC/sBTC",
+  false,
+  true,
+)
+
+export const ST_ETH_SWAP_TOKEN = new Token(
+  ST_ETH_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingSTETH",
+  "turingsteth",
+  "Turing WETH/stETH",
+  false,
+  true,
+)
+
+export const R_ETH_SWAP_TOKEN = new Token(
+  R_ETH_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingRETH",
+  "turingreth",
+  "Turing WETH/rETH",
+  false,
+  true,
+)
+
+export const AL_ETH_SWAP_TOKEN = new Token(
+  AL_ETH_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingalETH",
+  "turingaleth",
+  "Turing WETH/alETH/sETH",
+  false,
+  true,
+)
+
+export const EUR_SWAP_TOKEN = new Token(
+  EUR_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingEUR",
+  "turingeur",
+  "Turing EURS/sEUR/EUROC",
+  false,
+  true,
+)
+
+export const FRAX_META_SWAP_TOKEN = new Token(
+  FRAX_META_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingFrax-USD",
+  "turingfrax-usd",
+  "Turing FRAX/turingUSD",
+  false,
+  true,
+)
+
+export const MIM_META_SWAP_TOKEN = new Token(
+  MIM_META_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingMIM-USD",
+  "turingmim-usd",
+  "Turing MIM/turingUSD",
+  false,
+  true,
+)
+
+export const S_USD_META_SWAP_TOKEN = new Token(
+  S_USD_META_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingSUSD-USD",
+  "turingsusd-usd",
+  "Turing SUSD/turingUSD",
+  false,
+  true,
+)
+
+export const FEI_META_SWAP_TOKEN = new Token(
+  FEI_META_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingFEI-USD",
+  "turingfei-usd",
+  "Turing FEI/turingUSD",
+  false,
+  true,
+)
+
+export const AL_USD_META_SWAP_TOKEN = new Token(
+  AL_USD_META_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingALUSD-USD",
+  "turingalusd-usd",
+  "Turing ALUSD/turingUSD",
+  false,
+  true,
+)
+
+export const TUSD_META_SWAP_TOKEN = new Token(
+  TUSD_META_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingTUSD-USD",
+  "turingtusd-usd",
+  "Turing TUSD/turingUSD",
+  false,
+  true,
+)
+
+export const USDL_META_SWAP_TOKEN = new Token(
+  USDL_META_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingUSDL-USD",
+  "turingusdl-usd",
+  "Turing USDL/turingUSD",
+  false,
+  true,
+)
+
+export const BUSD_META_SWAP_TOKEN = new Token(
+  BUSD_META_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingBUSD-USD",
+  "turingbusd-usd",
+  "Turing BUSD/turingUSD",
+  false,
+  true,
+)
+
+export const T_BTC_META_SWAP_TOKEN = new Token(
+  T_BTC_META_SWAP_TOKEN_ADDRESSES,
+  18,
+  "turingTBTC-BTC",
+  "turingtbtc-btc",
+  "Turing TBTC/turingBTC",
+  false,
+  true,
+)
+
 // Stablecoins
 const WCUSD_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0xad3e3fc59dff318beceaab7d00eb4f68b1ecf195",
@@ -1154,6 +1514,7 @@ const SUSD_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
   [ChainId.HARDHAT]: "0x0E801D84Fa97b50751Dbf25036d067dCf18858bF",
   [ChainId.OPTIMISM]: "0x8c6f28f2F1A3C87F0f938b96d27520d9751ec8d9",
+  [ChainId.PULSECHAIN_TESTNET]: "0x8d2514A25Ea7e70F56012A9933d5bc656C98206C",
 })
 export const SUSD = new Token(
   SUSD_CONTRACT_ADDRESSES,
@@ -1172,6 +1533,7 @@ const DAI_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.FANTOM]: "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
   [ChainId.EVMOS_TESTNET]: "0x6CE6BeeEDeFd2d83C1c6EC191ceBCE0317227852",
   [ChainId.EVMOS]: "0x63743ACF2c7cfee65A5E356A4C4A005b586fC7AA",
+  [ChainId.PULSECHAIN_TESTNET]: "0xDA4d88363b392B7deFDcc673b5e7b99632953D7B",
 })
 
 const MAD_DAI_CONTRACT_ADDRESSES = buildAddresses({
@@ -1199,6 +1561,7 @@ const USDC_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.EVMOS_TESTNET]: "0xF4cd157e54c7B658d7A4995d84372C3dc79D1755",
   [ChainId.EVMOS]: "0x51e44FfaD5C2B122C8b635671FCC8139dc636E82",
   [ChainId.KAVA_TESTNET]: "0x6CE6BeeEDeFd2d83C1c6EC191ceBCE0317227852",
+  [ChainId.PULSECHAIN_TESTNET]: "0xc1C34DFA50D458f7C415c411b6D33106C9B40E4b",
 })
 
 export const USDC = new Token(
@@ -1232,6 +1595,7 @@ const USDT_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.EVMOS]: "0x7FF4a56B32ee13D7D4D405887E0eA37d61Ed919e",
   [ChainId.KAVA_TESTNET]: "0xF4cd157e54c7B658d7A4995d84372C3dc79D1755",
   [ChainId.FANTOM]: "0x049d68029688eAbF473097a2fC38ef61633A3C7A",
+  [ChainId.PULSECHAIN_TESTNET]: "0x554EE9AD86966Fb3aF48F4936A818f91b753C40e",
 })
 
 export const USDT = new Token(
@@ -1268,6 +1632,7 @@ export const NUSD = new Token(
 
 const MIM_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.ARBITRUM]: "0xfea7a6a0b346362bf88a9e4a88416b77a57d6c2a",
+  [ChainId.PULSECHAIN_TESTNET]: "0xc56984162B3923541d939c04A843dE9505C6FC1E",
 })
 export const MIM = new Token(
   MIM_CONTRACT_ADDRESSES,
@@ -1285,6 +1650,7 @@ const FRAX_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.OPTIMISM]: "0x2E3D870790dC77A83DD1d18184Acc7439A53f475",
   [ChainId.FANTOM]: "0xdc301622e621166bd8e82f2ca0a26c13ad0be355",
   [ChainId.EVMOS]: "0xE03494D0033687543a80c9B1ca7D6237F2EA8BD8",
+  [ChainId.PULSECHAIN_TESTNET]: "0x12119dA5BBe0ba16Ffe47265105278EC7939aecb",
 })
 
 const USDS_CONTRACT_ADDRESSES = buildAddresses({
@@ -1324,6 +1690,7 @@ const ALUSD_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.ROPSTEN]: "0x8b7a92FdbC77c6d8c61644D118c37D813B2069C4",
   [ChainId.HARDHAT]: "0x84eA74d481Ee0A5332c457a4d796187F6Ba67fEB",
   [ChainId.FANTOM]: "0xB67FA6deFCe4042070Eb1ae1511Dcd6dcc6a532E",
+  [ChainId.PULSECHAIN_TESTNET]: "0xf9309bEda593962cD37Aa278517F82D76a243573",
 })
 export const ALUSD = new Token(
   ALUSD_CONTRACT_ADDRESSES,
@@ -1333,6 +1700,94 @@ export const ALUSD = new Token(
   "Alchemix USD",
 )
 
+// pulsechain
+const TUSD_CONTRACT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xE61ccEB75038f1E5b381417Fa200cC9eB77b5bB4",
+})
+export const TUSD = new Token(
+  TUSD_CONTRACT_ADDRESSES,
+  18,
+  "TUSD",
+  "tusd",
+  "TrueUSD",
+)
+
+const USDL_CONTRACT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0xba83B9248098Aa827C0e7C07c147bf404D961730",
+})
+export const USDL = new Token(
+  USDL_CONTRACT_ADDRESSES,
+  18,
+  "USDL",
+  "usdl",
+  "USDL",
+)
+
+const BUSD_CONTRACT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x4B6e8830D1618442CE2556cfB5d93336EF6e3a4a",
+})
+export const BUSD = new Token(
+  BUSD_CONTRACT_ADDRESSES,
+  18,
+  "BUSD",
+  "busd",
+  "Binance USD",
+)
+
+const ST_ETH_CONTRACT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x2bf07b02c73b464527563FE6045C3A403E1c631D",
+})
+export const STETH = new Token(
+  ST_ETH_CONTRACT_ADDRESSES,
+  18,
+  "stETH",
+  "steth",
+  "Lido Staked ETH",
+)
+
+const R_ETH_CONTRACT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x999f323bf864Be1719CFb3176Bb4B2C6b1235169",
+})
+export const RETH = new Token(
+  R_ETH_CONTRACT_ADDRESSES,
+  18,
+  "rETH",
+  "reth",
+  "Rocket Pool ETH",
+)
+
+const EURS_CONTRACT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x7b503dE982feE391047C0dAd56fD631fe191f561",
+})
+export const EURS = new Token(
+  EURS_CONTRACT_ADDRESSES,
+  2,
+  "EURS",
+  "eurs",
+  "Stasis EURO",
+)
+
+const SEUR_CONTRACT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x34B2C705119a6232Ace73aEfb439029de0CFAf51",
+})
+export const SEUR = new Token(
+  SEUR_CONTRACT_ADDRESSES,
+  18,
+  "sEUR",
+  "seur",
+  "Synthetic EURO",
+)
+
+const EUROC_CONTRACT_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x7263E49AB847Ab4F05457f7ECE71FAD2dE55462E",
+})
+export const EUROC = new Token(
+  EUROC_CONTRACT_ADDRESSES,
+  6,
+  "EUROC",
+  "euroc",
+  "Euro Coin",
+)
 export const FRAX_ARB_USD_POOL_V2_TOKENS = [FRAX, USDC, USDT]
 export const STABLECOIN_POOL_TOKENS = [DAI, USDC, USDT]
 export const SUSD_POOL_TOKENS = [SUSD, ...STABLECOIN_POOL_TOKENS]
@@ -1372,6 +1827,7 @@ const TBTC_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x8daebade922df735c38c80c7ebd708af50815faa",
   [ChainId.ROPSTEN]: "0x9F6aA48f852Dd928F53A7dd3dcd2AC96a76c8727",
   [ChainId.HARDHAT]: "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+  [ChainId.PULSECHAIN_TESTNET]: "0x2626231226Ae17A3Af0601BCd8EF995F844B2b52",
 })
 export const TBTC = new Token(
   TBTC_CONTRACT_ADDRESSES,
@@ -1399,6 +1855,7 @@ const WBTC_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.ROPSTEN]: "0x7264594dFB80a150f80b2988862605dDfda53727",
   [ChainId.HARDHAT]: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
   [ChainId.EVMOS]: "0xF80699Dc594e00aE7bA200c7533a07C1604A106D",
+  [ChainId.PULSECHAIN_TESTNET]: "0x79a3a03656034c4e8Fd5F351ac81941c1Cb73581",
 })
 export const WBTC = new Token(
   WBTC_CONTRACT_ADDRESSES,
@@ -1413,6 +1870,7 @@ const RENBTC_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.ROPSTEN]: "0x79B92D075d72d639D46D30CE15e6DdDE50ad5890",
   [ChainId.HARDHAT]: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
   [ChainId.EVMOS]: "0xb1a8C961385B01C3aA782fba73E151465445D319",
+  [ChainId.PULSECHAIN_TESTNET]: "0xf4A9101f0d2Ad2d513fdC88B351F5a61CfB76F39",
 })
 export const RENBTC = new Token(
   RENBTC_CONTRACT_ADDRESSES,
@@ -1426,6 +1884,7 @@ const SBTC_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0xfe18be6b3bd88a2d2a7f928d00292e7a9963cfc6",
   [ChainId.ROPSTEN]: "0xAc2931cFA6ff57Aaf64B43DFdc5190ca3c341640",
   [ChainId.HARDHAT]: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
+  [ChainId.PULSECHAIN_TESTNET]: "0x45F3f7565DAb68Bf87DfA89C951c662D884813F5",
 })
 export const SBTC = new Token(
   SBTC_CONTRACT_ADDRESSES,
@@ -1453,6 +1912,7 @@ const WETH_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
   [ChainId.ROPSTEN]: "0x0B68F3b6c7fc0b6dD4D9a2399C4AE35be060ba42",
   [ChainId.HARDHAT]: "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
+  [ChainId.PULSECHAIN_TESTNET]: "0x50A56ACDb6B4c69C1C103485856280c367f27887",
 })
 export const WETH = new Token(
   WETH_CONTRACT_ADDRESSES,
@@ -1481,6 +1941,7 @@ const ALETH_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x0100546F2cD4C9D97f798fFC9755E47865FF7Ee6",
   [ChainId.ROPSTEN]: "0xaA91d3f2C53BDBEdd45FaB0308d0b51315Dc32E7",
   [ChainId.HARDHAT]: "0x09635F643e140090A9A8Dcd712eD6285858ceBef",
+  [ChainId.PULSECHAIN_TESTNET]: "0x8CBf42EC28D64d82C522C76A251FFF6E2abf2C09",
 })
 export const ALETH = new Token(
   ALETH_CONTRACT_ADDRESSES,
@@ -1494,6 +1955,7 @@ const SETH_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x5e74C9036fb86BD7eCdcb084a0673EFc32eA31cb",
   [ChainId.ROPSTEN]: "0x82BD6d2A185ed1C48e01830853fEf7f4D02fF1cC",
   [ChainId.HARDHAT]: "0x67d269191c92Caf3cD7723F116c85e6E9bf55933",
+  [ChainId.PULSECHAIN_TESTNET]: "0x98F211743b0DDeF105d0c5d71ff3f48aAd7235A4",
 })
 export const SETH = new Token(
   SETH_CONTRACT_ADDRESSES,
@@ -1510,6 +1972,7 @@ const FEI_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
   [ChainId.ROPSTEN]: "0x02020a3006587080a00d6675AFfACC99344521AC",
   [ChainId.HARDHAT]: "0xa82fF9aFd8f496c3d6ac40E2a0F282E47488CFc9",
+  [ChainId.PULSECHAIN_TESTNET]: "0x29Db61d1b31c37Ec4a3f54984fC0DCeF853011CD",
 })
 export const FEI = new Token(
   FEI_CONTRACT_ADDRESSES,
@@ -1537,6 +2000,35 @@ export const D4_POOL_TOKENS = [ALUSD, FEI, FRAX, LUSD]
 export const WCUSD_POOL_TOKENS = [WCUSD, ...STABLECOIN_POOL_TOKENS]
 export const WCUSD_UNDERLYING_POOL_TOKENS = [WCUSD, STABLECOIN_SWAP_V2_TOKEN]
 
+// pulsechain
+export const USD_POOL_TOKENS = [DAI, USDC, USDT]
+export const FOUR_POOL_TOKENS = [ALUSD, FEI, FRAX, MIM]
+export const WRS_BTC_POOL_TOKENS = [WBTC, RENBTC, SBTC]
+export const ST_ETH_POOL_TOKENS = [WETH, STETH]
+export const R_ETH_POOL_TOKENS = [WETH, RETH]
+export const AL_ETH_POOL_TOKENS = [WETH, ALETH, SETH]
+export const EUR_POOL_TOKENS = [EURS, SEUR, EUROC]
+
+export const TBTC_BTC_POOL_TOKENS = [TBTC, ...WRS_BTC_POOL_TOKENS]
+export const TBTC_BTC_UNDERLYING_POOL_TOKENS = [TBTC, WRS_BTC_SWAP_TOKEN]
+
+export const FRAX_USD_POOL_TOKENS = [FRAX, ...USD_POOL_TOKENS]
+export const FRAX_USD_UNDERLYING_POOL_TOKENS = [FRAX, USD_SWAP_TOKEN]
+export const MIM_USD_POOL_TOKENS = [MIM, ...USD_POOL_TOKENS]
+export const MIM_USD_UNDERLYING_POOL_TOKENS = [MIM, USD_SWAP_TOKEN]
+export const SUSD_USD_POOL_TOKENS = [SUSD, ...USD_POOL_TOKENS]
+export const SUSD_USD_UNDERLYING_POOL_TOKENS = [SUSD, USD_SWAP_TOKEN]
+export const FEI_USD_POOL_TOKENS = [FEI, ...USD_POOL_TOKENS]
+export const FEI_USD_UNDERLYING_POOL_TOKENS = [FEI, USD_SWAP_TOKEN]
+export const ALUSD_USD_POOL_TOKENS = [ALUSD, ...USD_POOL_TOKENS]
+export const ALUSD_USD_UNDERLYING_POOL_TOKENS = [ALUSD, USD_SWAP_TOKEN]
+export const TUSD_USD_POOL_TOKENS = [TUSD, ...USD_POOL_TOKENS]
+export const TUSD_USD_UNDERLYING_POOL_TOKENS = [TUSD, USD_SWAP_TOKEN]
+export const USDL_USD_POOL_TOKENS = [USDL, ...USD_POOL_TOKENS]
+export const USDL_USD_UNDERLYING_POOL_TOKENS = [USDL, USD_SWAP_TOKEN]
+export const BUSD_USD_POOL_TOKENS = [BUSD, ...USD_POOL_TOKENS]
+export const BUSD_USD_UNDERLYING_POOL_TOKENS = [BUSD, USD_SWAP_TOKEN]
+
 export type Pool = {
   name: PoolName
   lpToken: Token
@@ -1556,460 +2048,206 @@ export type PoolsMap = {
   [poolName: string]: Pool
 }
 export const POOLS_MAP: PoolsMap = {
-  [BTC_POOL_NAME]: {
-    name: BTC_POOL_NAME,
-    addresses: BTC_SWAP_ADDRESSES,
-    lpToken: BTC_SWAP_TOKEN,
-    poolTokens: BTC_POOL_TOKENS,
-    isSynthetic: true,
-    type: PoolTypes.BTC,
-    route: "btc",
-    isOutdated: true,
-    rewardPids: buildPids({}),
-    isGuarded: true,
-  },
-  [BTC_POOL_V2_NAME]: {
-    name: BTC_POOL_V2_NAME,
-    addresses: BTC_SWAP_V2_ADDRESSES,
-    lpToken: BTC_SWAP_V2_TOKEN,
-    poolTokens: BTC_POOL_V2_TOKENS,
-    isSynthetic: true,
-    type: PoolTypes.BTC,
-    route: "btcv2",
-    rewardPids: buildPids({ [ChainId.MAINNET]: 4, [ChainId.HARDHAT]: 4 }),
-  },
-  [EVMOS_BTC_POOL_NAME]: {
-    name: EVMOS_BTC_POOL_NAME,
-    addresses: EVMOS_BTC_SWAP_ADDRESSES,
-    lpToken: EVMOS_BTC_SWAP_TOKEN,
-    poolTokens: EVMOS_BTC_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.BTC,
-    route: "evmos-btc",
-    rewardPids: buildPids({}),
-  },
-  [EVMOS_4_POOL_NAME]: {
-    name: EVMOS_4_POOL_NAME,
-    addresses: EVMOS_4_POOL_SWAP_ADDRESSES,
-    lpToken: EVMOS_4_POOL_SWAP_TOKEN,
-    poolTokens: EVMOS_4_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "evmos-4pool",
-    rewardPids: buildPids({}),
-  },
-  [EVMOS_FRAX_3_POOL_NAME]: {
-    name: EVMOS_FRAX_3_POOL_NAME,
-    addresses: EVMOS_FRAX_3_POOL_SWAP_ADDRESSES,
-    lpToken: EVMOS_FRAX_3_POOL_SWAP_TOKEN,
-    poolTokens: EVMOS_FRAX_3_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "evmos-frax-3pool",
-    rewardPids: buildPids({ [ChainId.EVMOS]: 1 }),
-  },
-  [FRAX_3_POOL_NAME]: {
-    name: FRAX_3_POOL_NAME,
-    addresses: FRAX_3_POOL_SWAP_ADDRESSES,
-    lpToken: FRAX_3_POOL_SWAP_TOKEN,
-    poolTokens: FRAX_3_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "frax-3pool",
-    rewardPids: buildPids({ [ChainId.MAINNET]: 11 }),
-  },
-  [STABLECOIN_POOL_NAME]: {
-    name: STABLECOIN_POOL_NAME,
-    addresses: STABLECOIN_SWAP_ADDRESSES,
-    lpToken: STABLECOIN_SWAP_TOKEN,
-    poolTokens: STABLECOIN_POOL_TOKENS,
+  [USD_POOL_NAME]: {
+    name: USD_POOL_NAME,
+    addresses: USD_SWAP_ADDRESSES,
+    lpToken: USD_SWAP_TOKEN,
+    poolTokens: USD_POOL_TOKENS,
     isSynthetic: false,
     type: PoolTypes.USD,
     route: "usd",
+    isOutdated: false,
     rewardPids: buildPids({}),
+    isGuarded: false,
   },
-  [STABLECOIN_POOL_V2_NAME]: {
-    name: STABLECOIN_POOL_V2_NAME,
-    addresses: STABLECOIN_SWAP_V2_ADDRESSES,
-    lpToken: STABLECOIN_SWAP_V2_TOKEN,
-    poolTokens: STABLECOIN_POOL_TOKENS,
+  [FOUR_POOL_NAME]: {
+    name: FOUR_POOL_NAME,
+    addresses: FOUR_POOL_SWAP_ADDRESSES,
+    lpToken: FOUR_POOL_SWAP_TOKEN,
+    poolTokens: FOUR_POOL_TOKENS,
     isSynthetic: false,
     type: PoolTypes.USD,
-    route: "usdv2",
-    rewardPids: buildPids({ [ChainId.MAINNET]: 3, [ChainId.HARDHAT]: 3 }),
+    route: "usd-4",
+    isOutdated: false,
+    rewardPids: buildPids({}),
+    isGuarded: false,
   },
-  [VETH2_POOL_NAME]: {
-    name: VETH2_POOL_NAME,
-    addresses: VETH2_SWAP_ADDRESSES,
-    lpToken: VETH2_SWAP_TOKEN,
-    poolTokens: VETH2_POOL_TOKENS,
+  [WRS_BTC_POOL_NAME]: {
+    name: WRS_BTC_POOL_NAME,
+    addresses: WRS_BTC_SWAP_ADDRESSES,
+    lpToken: WRS_BTC_SWAP_TOKEN,
+    poolTokens: WRS_BTC_POOL_TOKENS,
+    isSynthetic: true,
+    type: PoolTypes.BTC,
+    route: "btc",
+    isOutdated: false,
+    rewardPids: buildPids({}),
+    isGuarded: false,
+  },
+  [ST_ETH_POOL_NAME]: {
+    name: ST_ETH_POOL_NAME,
+    addresses: ST_ETH_SWAP_ADDRESSES,
+    lpToken: ST_ETH_SWAP_TOKEN,
+    poolTokens: ST_ETH_POOL_TOKENS,
     isSynthetic: false,
     type: PoolTypes.ETH,
-    route: "veth2",
+    route: "steth",
+    isOutdated: false,
     rewardPids: buildPids({}),
+    isGuarded: false,
   },
-  [ALETH_POOL_NAME]: {
-    name: ALETH_POOL_NAME,
-    addresses: ALETH_SWAP_ADDRESSES,
-    lpToken: ALETH_SWAP_TOKEN,
-    poolTokens: ALETH_POOL_TOKENS,
+  [R_ETH_POOL_NAME]: {
+    name: R_ETH_POOL_NAME,
+    addresses: R_ETH_SWAP_ADDRESSES,
+    lpToken: R_ETH_SWAP_TOKEN,
+    poolTokens: R_ETH_POOL_TOKENS,
+    isSynthetic: false,
+    type: PoolTypes.ETH,
+    route: "reth",
+    isOutdated: false,
+    rewardPids: buildPids({}),
+    isGuarded: false,
+  },
+  [AL_ETH_POOL_NAME]: {
+    name: AL_ETH_POOL_NAME,
+    addresses: AL_ETH_SWAP_ADDRESSES,
+    lpToken: AL_ETH_SWAP_TOKEN,
+    poolTokens: AL_ETH_POOL_TOKENS,
     isSynthetic: true,
     type: PoolTypes.ETH,
     route: "aleth",
-    rewardPids: buildPids({ [ChainId.MAINNET]: 1, [ChainId.HARDHAT]: 1 }),
+    isOutdated: false,
+    rewardPids: buildPids({}),
+    isGuarded: false,
   },
-  [D4_POOL_NAME]: {
-    name: D4_POOL_NAME,
-    addresses: D4_SWAP_ADDRESSES,
-    lpToken: D4_SWAP_TOKEN,
-    poolTokens: D4_POOL_TOKENS,
+  [EUR_POOL_NAME]: {
+    name: EUR_POOL_NAME,
+    addresses: EUR_SWAP_ADDRESSES,
+    lpToken: EUR_SWAP_TOKEN,
+    poolTokens: EUR_POOL_TOKENS,
+    isSynthetic: true,
+    type: PoolTypes.OTHER,
+    route: "eur",
+    isOutdated: false,
+    rewardPids: buildPids({}),
+    isGuarded: false,
+  },
+  [FRAX_META_POOL_NAME]: {
+    name: FRAX_META_POOL_NAME,
+    metaSwapAddresses: FRAX_META_SWAP_ADDRESSES,
+    lpToken: FRAX_META_SWAP_TOKEN,
+    poolTokens: FRAX_USD_POOL_TOKENS,
+    addresses: FRAX_META_SWAP_DEPOSIT_ADDRESSES,
     isSynthetic: false,
     type: PoolTypes.USD,
-    route: "d4",
-    rewardPids: buildPids({ [ChainId.MAINNET]: 2, [ChainId.HARDHAT]: 2 }),
-  },
-  [ARB_USD_POOL_NAME]: {
-    name: ARB_USD_POOL_NAME,
-    addresses: ARB_USD_SWAP_ADDRESSES,
-    lpToken: ARB_USD_SWAP_TOKEN,
-    poolTokens: ARB_USD_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "arbusd",
-    rewardPids: buildPids({ [ChainId.ARBITRUM]: 1 }),
-  },
-  [OPT_USD_POOL_NAME]: {
-    name: OPT_USD_POOL_NAME,
-    addresses: OPT_USD_SWAP_ADDRESSES,
-    lpToken: OPT_USD_SWAP_TOKEN,
-    poolTokens: OPT_USD_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "optusd",
+    underlyingPoolTokens: FRAX_USD_UNDERLYING_POOL_TOKENS,
+    underlyingPool: USD_POOL_NAME,
+    route: "frax-usd",
     rewardPids: buildPids({}),
   },
-  [FRAX_OPT_USD_METAPOOL_NAME]: {
-    name: FRAX_OPT_USD_METAPOOL_NAME,
-    addresses: FRAX_OPT_USD_META_SWAP_DEPOSIT_ADDRESSES,
-    lpToken: FRAX_OPT_USD_SWAP_TOKEN,
-    poolTokens: FRAX_OPT_USD_POOL_TOKENS,
+  [MIM_META_POOL_NAME]: {
+    name: MIM_META_POOL_NAME,
+    metaSwapAddresses: MIM_META_SWAP_ADDRESSES,
+    lpToken: MIM_META_SWAP_TOKEN,
+    poolTokens: MIM_USD_POOL_TOKENS,
+    addresses: MIM_META_SWAP_DEPOSIT_ADDRESSES,
     isSynthetic: false,
     type: PoolTypes.USD,
-    metaSwapAddresses: FRAX_OPT_USD_SWAP_ADDRESSES,
-    underlyingPoolTokens: FRAX_OPT_USD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: OPT_USD_POOL_NAME,
-    route: "frax-optusd",
+    underlyingPoolTokens: MIM_USD_UNDERLYING_POOL_TOKENS,
+    underlyingPool: USD_POOL_NAME,
+    route: "mim-usd",
     rewardPids: buildPids({}),
   },
-  [USDS_ARB_USD_METAPOOL_NAME]: {
-    name: USDS_ARB_USD_METAPOOL_NAME,
-    addresses: USDS_ARB_USD_META_SWAP_DEPOSIT_ADDRESSES,
-    lpToken: USDS_ARB_USD_SWAP_TOKEN,
-    poolTokens: USDS_ARB_USD_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    metaSwapAddresses: USDS_ARB_USD_SWAP_ADDRESSES,
-    underlyingPoolTokens: USDS_ARB_USD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: FRAX_ARB_USD_POOL_V2_NAME,
-    route: "usds-arbusd",
-    rewardPids: buildPids({ [ChainId.ARBITRUM]: 2 }),
-  },
-  [FRAX_ARB_USD_POOL_V2_NAME]: {
-    name: FRAX_ARB_USD_POOL_V2_NAME,
-    addresses: FRAX_ARB_USD_SWAP_V2_ADDRESSES,
-    lpToken: FRAX_ARB_USD_SWAP_V2_TOKEN,
-    poolTokens: FRAX_ARB_USD_POOL_V2_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "frax-arbusdv2",
-    rewardPids: buildPids({}),
-  },
-  [SUSD_METAPOOL_V2_NAME]: {
-    name: SUSD_METAPOOL_V2_NAME,
-    lpToken: SUSD_SWAP_V2_TOKEN,
-    poolTokens: SUSD_POOL_TOKENS,
-    addresses: SUSD_META_SWAP_V2_DEPOSIT_ADDRESSES,
+  [SUSD_META_POOL_NAME]: {
+    name: SUSD_META_POOL_NAME,
+    metaSwapAddresses: S_USD_META_SWAP_ADDRESSES,
+    lpToken: S_USD_META_SWAP_TOKEN,
+    poolTokens: SUSD_USD_POOL_TOKENS,
+    addresses: S_USD_META_SWAP_DEPOSIT_ADDRESSES,
     isSynthetic: true,
     type: PoolTypes.USD,
-    metaSwapAddresses: SUSD_META_SWAP_V2_ADDRESSES,
-    underlyingPoolTokens: SUSD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: STABLECOIN_POOL_V2_NAME,
-    route: "susdv2",
-    rewardPids: buildPids({ [ChainId.MAINNET]: 6 }),
-  },
-  [SUSD_METAPOOL_NAME]: {
-    name: SUSD_METAPOOL_NAME,
-    lpToken: SUSD_SWAP_TOKEN,
-    poolTokens: SUSD_POOL_TOKENS,
-    addresses: SUSD_META_SWAP_DEPOSIT_ADDRESSES,
-    isSynthetic: true,
-    type: PoolTypes.USD,
-    metaSwapAddresses: SUSD_META_SWAP_ADDRESSES,
-    underlyingPoolTokens: SUSD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: STABLECOIN_POOL_V2_NAME,
+    underlyingPoolTokens: SUSD_USD_UNDERLYING_POOL_TOKENS,
+    underlyingPool: USD_POOL_NAME,
     route: "susd",
     rewardPids: buildPids({}),
   },
-  [TBTC_METAPOOL_NAME]: {
-    name: TBTC_METAPOOL_NAME,
-    lpToken: TBTC_SWAP_TOKEN,
-    poolTokens: TBTC_POOL_TOKENS,
-    addresses: TBTC_META_SWAP_DEPOSIT_ADDRESSES,
+  [FEI_META_POOL_NAME]: {
+    name: FEI_META_POOL_NAME,
+    metaSwapAddresses: FEI_META_SWAP_ADDRESSES,
+    lpToken: FEI_META_SWAP_TOKEN,
+    poolTokens: FEI_USD_POOL_TOKENS,
+    addresses: FEI_META_SWAP_DEPOSIT_ADDRESSES,
+    isSynthetic: false,
+    type: PoolTypes.USD,
+    underlyingPoolTokens: FEI_USD_UNDERLYING_POOL_TOKENS,
+    underlyingPool: USD_POOL_NAME,
+    route: "fei-usd",
+    rewardPids: buildPids({}),
+  },
+  [AL_USD_META_POOL_NAME]: {
+    name: AL_USD_META_POOL_NAME,
+    metaSwapAddresses: AL_USD_META_SWAP_ADDRESSES,
+    lpToken: AL_USD_META_SWAP_TOKEN,
+    poolTokens: ALUSD_USD_POOL_TOKENS,
+    addresses: AL_USD_META_SWAP_DEPOSIT_ADDRESSES,
+    isSynthetic: false,
+    type: PoolTypes.USD,
+    underlyingPoolTokens: ALUSD_USD_UNDERLYING_POOL_TOKENS,
+    underlyingPool: USD_POOL_NAME,
+    route: "alusd",
+    rewardPids: buildPids({}),
+  },
+  [TUSD_META_POOL_NAME]: {
+    name: TUSD_META_POOL_NAME,
+    metaSwapAddresses: TUSD_META_SWAP_ADDRESSES,
+    lpToken: TUSD_META_SWAP_TOKEN,
+    poolTokens: TUSD_USD_POOL_TOKENS,
+    addresses: TUSD_META_SWAP_DEPOSIT_ADDRESSES,
+    isSynthetic: false,
+    type: PoolTypes.USD,
+    underlyingPoolTokens: TUSD_USD_UNDERLYING_POOL_TOKENS,
+    underlyingPool: USD_POOL_NAME,
+    route: "tusd",
+    rewardPids: buildPids({}),
+  },
+  [USDL_META_POOL_NAME]: {
+    name: USDL_META_POOL_NAME,
+    metaSwapAddresses: USDL_META_SWAP_ADDRESSES,
+    lpToken: USDL_META_SWAP_TOKEN,
+    poolTokens: USDL_USD_POOL_TOKENS,
+    addresses: USDL_META_SWAP_DEPOSIT_ADDRESSES,
+    isSynthetic: false,
+    type: PoolTypes.USD,
+    underlyingPoolTokens: USDL_USD_UNDERLYING_POOL_TOKENS,
+    underlyingPool: USD_POOL_NAME,
+    route: "usdl",
+    rewardPids: buildPids({}),
+  },
+  [BUSD_META_POOL_NAME]: {
+    name: BUSD_META_POOL_NAME,
+    metaSwapAddresses: BUSD_META_SWAP_ADDRESSES,
+    lpToken: BUSD_META_SWAP_TOKEN,
+    poolTokens: BUSD_USD_POOL_TOKENS,
+    addresses: BUSD_META_SWAP_DEPOSIT_ADDRESSES,
+    isSynthetic: false,
+    type: PoolTypes.USD,
+    underlyingPoolTokens: BUSD_USD_UNDERLYING_POOL_TOKENS,
+    underlyingPool: USD_POOL_NAME,
+    route: "busd",
+    rewardPids: buildPids({}),
+  },
+  [TBTC_META_POOL_NAME]: {
+    name: TBTC_META_POOL_NAME,
+    metaSwapAddresses: TBTC_META_SWAP_ADDRESSES,
+    lpToken: T_BTC_META_SWAP_TOKEN,
+    poolTokens: TBTC_BTC_POOL_TOKENS,
+    addresses: T_BTC_META_SWAP_DEPOSIT_ADDRESSES,
     isSynthetic: true,
     type: PoolTypes.BTC,
-    metaSwapAddresses: TBTC_META_SWAP_ADDRESSES,
-    underlyingPoolTokens: TBTC_UNDERLYING_POOL_TOKENS,
-    underlyingPool: BTC_POOL_V2_NAME,
+    underlyingPoolTokens: TBTC_BTC_UNDERLYING_POOL_TOKENS,
+    underlyingPool: WRS_BTC_POOL_NAME,
     route: "tbtc",
     rewardPids: buildPids({}),
-  },
-  [TBTC_METAPOOL_V2_NAME]: {
-    name: TBTC_METAPOOL_V2_NAME,
-    lpToken: TBTC_SWAP_V2_TOKEN,
-    poolTokens: TBTC_POOL_TOKENS,
-    addresses: TBTC_META_SWAP_V2_DEPOSIT_ADDRESSES,
-    isSynthetic: true,
-    type: PoolTypes.BTC,
-    metaSwapAddresses: TBTC_META_SWAP_V2_ADDRESSES,
-    underlyingPoolTokens: TBTC_UNDERLYING_POOL_TOKENS,
-    underlyingPool: BTC_POOL_V2_NAME,
-    route: "tbtcv2",
-    rewardPids: buildPids({ [ChainId.MAINNET]: 5 }),
-  },
-  [WCUSD_METAPOOL_NAME]: {
-    name: WCUSD_METAPOOL_NAME,
-    lpToken: WCUSD_SWAP_TOKEN,
-    poolTokens: WCUSD_POOL_TOKENS,
-    addresses: WCUSD_META_SWAP_DEPOSIT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    metaSwapAddresses: WCUSD_META_SWAP_ADDRESSES,
-    underlyingPoolTokens: WCUSD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: STABLECOIN_POOL_V2_NAME,
-    route: "wcusd",
-    rewardPids: buildPids({}),
-  },
-  [WCUSD_METAPOOL_V2_NAME]: {
-    name: WCUSD_METAPOOL_V2_NAME,
-    lpToken: WCUSD_SWAP_V2_TOKEN,
-    poolTokens: WCUSD_POOL_TOKENS,
-    addresses: WCUSD_META_SWAP_V2_DEPOSIT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    metaSwapAddresses: WCUSD_META_SWAP_V2_ADDRESSES,
-    underlyingPoolTokens: WCUSD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: STABLECOIN_POOL_V2_NAME,
-    route: "wcusdv2",
-    rewardPids: buildPids({ [ChainId.MAINNET]: 7 }),
-  },
-  [FTM_USD_POOL_NAME]: {
-    name: FTM_USD_POOL_NAME,
-    addresses: FTM_USD_SWAP_ADDRESSES,
-    lpToken: FTM_USD_SWAP_TOKEN,
-    poolTokens: FTM_USD_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "ftmusd",
-    rewardPids: buildPids({}),
-  },
-  [EVMOS_TESTNET_POOL_NAME]: {
-    name: EVMOS_TESTNET_POOL_NAME,
-    addresses: EVMOS_TESTNET_SWAP_ADDRESSES,
-    lpToken: EVMOS_TESTNET_SWAP_TOKEN,
-    poolTokens: EVMOS_TESTNET_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "evmostestnetusd",
-    rewardPids: buildPids({}),
-  },
-  [EVMOS_POOL_NAME]: {
-    name: EVMOS_POOL_NAME,
-    addresses: EVMOS_SWAP_ADDRESSES,
-    lpToken: EVMOS_SWAP_TOKEN,
-    poolTokens: EVMOS_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "evmosusd",
-    rewardPids: buildPids({}),
-  },
-  [KAVA_TESTNET_USD_POOL_NAME]: {
-    name: KAVA_TESTNET_USD_POOL_NAME,
-    addresses: KAVA_TESTNET_USD_SWAP_ADDRESSES,
-    lpToken: KAVA_TESTNET_USD_SWAP_TOKEN,
-    poolTokens: KAVA_TESTNET_USD_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "kavatestnetusd",
-    rewardPids: buildPids({}),
-  },
-  [TBTC_EVMOS_BTC_METAPOOL_NAME]: {
-    name: TBTC_EVMOS_BTC_METAPOOL_NAME,
-    addresses: TBTC_EVMOS_BTC_META_SWAP_DEPOSIT_ADDRESSES,
-    lpToken: TBTC_EVMOS_BTC_SWAP_TOKEN,
-    poolTokens: TBTC_EVMOS_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.BTC,
-    metaSwapAddresses: EVMOS_TBTC_META_SWAP_ADDRESSES,
-    underlyingPoolTokens: TBTC_EVMOS_UNDERLYING_POOL_TOKENS,
-    underlyingPool: EVMOS_BTC_POOL_NAME,
-    route: "tbtc-evmosbtc",
-    rewardPids: buildPids({}),
-  },
-  [TBTC_METAPOOL_V2_BTCV2_V3_NAME]: {
-    name: TBTC_METAPOOL_V2_BTCV2_V3_NAME,
-    lpToken: TBTC_SWAP_V3_TOKEN,
-    poolTokens: TBTC_POOL_TOKENS,
-    addresses: TBTC_META_SWAP_V3_DEPOSIT_ADDRESSES,
-    isSynthetic: true,
-    type: PoolTypes.BTC,
-    metaSwapAddresses: TBTC_META_SWAP_V3_ADDRESSES,
-    underlyingPoolTokens: TBTC_UNDERLYING_POOL_TOKENS,
-    underlyingPool: BTC_POOL_V2_NAME,
-    route: "tbtcv2btcv2v3",
-    rewardPids: buildPids({ [ChainId.MAINNET]: 8 }),
-  },
-  [WCUSD_METAPOOL_V2_USDV2_V3_NAME]: {
-    name: WCUSD_METAPOOL_V2_USDV2_V3_NAME,
-    lpToken: WCUSD_SWAP_V2_V3_TOKEN,
-    poolTokens: WCUSD_POOL_TOKENS,
-    addresses: WCUSD_META_SWAP_V3_DEPOSIT_ADDRESSES,
-    isSynthetic: true,
-    type: PoolTypes.USD,
-    metaSwapAddresses: WCUSD_META_SWAP_V3_ADDRESSES,
-    underlyingPoolTokens: WCUSD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: STABLECOIN_POOL_V2_NAME,
-    route: "wcusdv2usdv2v3",
-    rewardPids: buildPids({ [ChainId.MAINNET]: 10 }),
-  },
-  [SUSD_METAPOOL_V2_USDV2_V3_NAME]: {
-    name: SUSD_METAPOOL_V2_USDV2_V3_NAME,
-    lpToken: SUSD_SWAP_V2_V3_TOKEN,
-    poolTokens: SUSD_POOL_TOKENS,
-    addresses: SUSD_META_SWAP_V3_DEPOSIT_ADDRESSES,
-    isSynthetic: true,
-    type: PoolTypes.USD,
-    metaSwapAddresses: SUSD_META_SWAP_V3_ADDRESSES,
-    underlyingPoolTokens: SUSD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: STABLECOIN_POOL_V2_NAME,
-    route: "susdv2usdv2v3",
-    rewardPids: buildPids({ [ChainId.MAINNET]: 9 }),
-  },
-  [FRAX_USDC_POOL_NAME]: {
-    name: FRAX_USDC_POOL_NAME,
-    addresses: FRAX_USDC_SWAP_ADDRESSES,
-    lpToken: FRAX_USDC_SWAP_TOKEN,
-    poolTokens: FRAX_USDC_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "fraxusdc",
-    rewardPids: buildPids({}),
-  },
-  [FRAX_USDT_METAPOOL_NAME]: {
-    name: FRAX_USDT_METAPOOL_NAME,
-    lpToken: FRAX_USDT_METAPOOL_TOKEN,
-    poolTokens: FRAX_USDT_POOL_TOKENS,
-    addresses: FRAX_USDT_METAPOOL_DEPOSIT_CONTRACT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    metaSwapAddresses: FRAX_USDT_METAPOOL_SWAP_CONTRACT_ADDRESSES,
-    underlyingPoolTokens: FRAX_USDT_UNDERLYING_POOL_TOKENS,
-    underlyingPool: FRAX_USDC_POOL_NAME,
-    route: "fraxusdtmeta",
-    rewardPids: buildPids({}),
-  },
-  [FRAX_SUSD_METAPOOL_NAME]: {
-    name: FRAX_SUSD_METAPOOL_NAME,
-    lpToken: FRAX_SUSD_METAPOOL_TOKEN,
-    poolTokens: FRAX_SUSD_POOL_TOKENS,
-    addresses: FRAX_SUSD_METAPOOL_DEPOSIT_CONTRACT_ADDRESSES,
-    isSynthetic: true,
-    type: PoolTypes.USD,
-    metaSwapAddresses: FRAX_SUSD_METAPOOL_SWAP_CONTRACT_ADDRESSES,
-    underlyingPoolTokens: FRAX_SUSD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: FRAX_USDC_POOL_NAME,
-    route: "fraxsusdmeta",
-    rewardPids: buildPids({}),
-  },
-  [FRAX_ALUSD_METAPOOL_NAME]: {
-    name: FRAX_ALUSD_METAPOOL_NAME,
-    lpToken: FRAX_ALUSD_METAPOOL_TOKEN,
-    poolTokens: FRAX_ALUSD_POOL_TOKENS,
-    addresses: FRAX_ALUSD_METAPOOL_DEPOSIT_CONTRACT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    metaSwapAddresses: FRAX_ALUSD_METAPOOL_SWAP_CONTRACT_ADDRESSES,
-    underlyingPoolTokens: FRAX_ALUSD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: FRAX_USDC_POOL_NAME,
-    route: "fraxalusdmeta",
-    rewardPids: buildPids({}),
-  },
-  [FRAX_ALUSD_METAPOOL_DEPRECATED_NAME]: {
-    name: FRAX_ALUSD_METAPOOL_DEPRECATED_NAME,
-    lpToken: FRAX_ALUSD_METAPOOL_TOKEN_DEPRECATED,
-    poolTokens: FRAX_ALUSD_POOL_TOKENS,
-    addresses: FRAX_ALUSD_METAPOOL_DEPOSIT_CONTRACT_DEPRECATED_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    metaSwapAddresses: FRAX_ALUSD_METAPOOL_SWAP_CONTRACT_DEPRECATED_ADDRESSES,
-    underlyingPoolTokens: FRAX_ALUSD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: FRAX_USDC_POOL_NAME,
-    route: "fraxalusdmetaold",
-    rewardPids: buildPids({}),
-    isOutdated: true,
-  },
-  [ARB_FRAX_USDS_METAPOOL_NAME]: {
-    name: ARB_FRAX_USDS_METAPOOL_NAME,
-    lpToken: ARB_FRAX_USDS_METAPOOL_TOKEN,
-    poolTokens: ARB_FRAX_USDS_POOL_TOKENS,
-    addresses: ARB_FRAX_USDS_METAPOOL_DEPOSIT_CONTRACT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    metaSwapAddresses: ARB_FRAX_USDS_METAPOOL_SWAP_CONTRACT_ADDRESSES,
-    underlyingPoolTokens: ARB_FRAX_USDS_UNDERLYING_POOL_TOKENS,
-    underlyingPool: FRAX_USDC_POOL_NAME,
-    route: "fraxusdsmeta",
-    rewardPids: buildPids({}),
-  },
-  [FTM_FRAX_USDT_METAPOOL_NAME]: {
-    name: FTM_FRAX_USDT_METAPOOL_NAME,
-    lpToken: FTM_FRAX_USDT_METAPOOL_TOKEN,
-    poolTokens: FTM_FRAX_USDT_POOL_TOKENS,
-    addresses: FTM_FRAX_USDT_METAPOOL_DEPOSIT_CONTRACT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    metaSwapAddresses: FTM_FRAX_USDT_METAPOOL_SWAP_CONTRACT_ADDRESSES,
-    underlyingPoolTokens: FTM_FRAX_USDT_UNDERLYING_POOL_TOKENS,
-    underlyingPool: FTM_USD_POOL_NAME,
-    route: "fraxusdtmeta",
-    rewardPids: buildPids({}),
-  },
-  [FTM_FRAX_ALUSD_METAPOOL_NAME]: {
-    name: FTM_FRAX_ALUSD_METAPOOL_NAME,
-    lpToken: FTM_FRAX_ALUSD_METAPOOL_TOKEN,
-    poolTokens: FTM_FRAX_ALUSD_POOL_TOKENS,
-    addresses: FTM_FRAX_ALUSD_METAPOOL_DEPOSIT_CONTRACT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    metaSwapAddresses: FTM_FRAX_ALUSD_METAPOOL_SWAP_CONTRACT_ADDRESSES,
-    underlyingPoolTokens: FTM_FRAX_ALUSD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: FTM_USD_POOL_NAME,
-    route: "fraxalusdmeta",
-    rewardPids: buildPids({}),
-  },
-  [FTM_FRAX_ALUSD_METAPOOL_DEPRECATED_NAME]: {
-    name: FTM_FRAX_ALUSD_METAPOOL_DEPRECATED_NAME,
-    lpToken: FTM_FRAX_ALUSD_METAPOOL_TOKEN_DEPRECATED,
-    poolTokens: FTM_FRAX_ALUSD_POOL_TOKENS,
-    addresses: FTM_FRAX_ALUSD_METAPOOL_DEPOSIT_CONTRACT_DEPRECATED_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    metaSwapAddresses:
-      FTM_FRAX_ALUSD_METAPOOL_SWAP_CONTRACT_DEPRECATED_ADDRESSES,
-    underlyingPoolTokens: FTM_FRAX_ALUSD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: FTM_USD_POOL_NAME,
-    route: "fraxalusdmetaold",
-    rewardPids: buildPids({}),
-    isOutdated: true,
   },
 }
 
@@ -2061,37 +2299,32 @@ export function getIsLegacySwapABIPoolByAddress(
   poolAddress: string,
 ): boolean {
   const legacyAddresses = [
-    BTC_POOL_NAME,
-    STABLECOIN_POOL_NAME,
-    VETH2_POOL_NAME,
+    WRS_BTC_POOL_NAME,
+    USD_POOL_NAME,
+    AL_ETH_POOL_NAME,
+    EUR_POOL_NAME,
   ].map((name) => POOLS_MAP[name].addresses[chainId])
   return legacyAddresses.includes(poolAddress)
 }
 export function isLegacySwapABIPool(poolName: string): boolean {
-  return new Set([BTC_POOL_NAME, STABLECOIN_POOL_NAME, VETH2_POOL_NAME]).has(
-    poolName,
-  )
+  return new Set([
+    WRS_BTC_POOL_NAME,
+    USD_POOL_NAME,
+    AL_ETH_POOL_NAME,
+    EUR_POOL_NAME,
+  ]).has(poolName)
 }
 export function isMetaPool(poolName = ""): boolean {
   return new Set([
-    FRAX_OPT_USD_METAPOOL_NAME,
-    SUSD_METAPOOL_NAME,
-    SUSD_METAPOOL_V2_NAME,
-    TBTC_METAPOOL_NAME,
-    TBTC_METAPOOL_V2_NAME,
-    USDS_ARB_USD_METAPOOL_NAME,
-    WCUSD_METAPOOL_NAME,
-    WCUSD_METAPOOL_V2_NAME,
-    TBTC_EVMOS_BTC_METAPOOL_NAME,
-    TBTC_METAPOOL_V2_BTCV2_V3_NAME,
-    WCUSD_METAPOOL_V2_USDV2_V3_NAME,
-    SUSD_METAPOOL_V2_USDV2_V3_NAME,
-    FRAX_USDT_METAPOOL_NAME,
-    FRAX_SUSD_METAPOOL_NAME,
-    FRAX_ALUSD_METAPOOL_NAME,
-    ARB_FRAX_USDS_METAPOOL_NAME,
-    FTM_FRAX_USDT_METAPOOL_NAME,
-    FTM_FRAX_ALUSD_METAPOOL_NAME,
+    FRAX_META_POOL_NAME,
+    MIM_META_POOL_NAME,
+    SUSD_META_POOL_NAME,
+    FEI_META_POOL_NAME,
+    AL_USD_META_POOL_NAME,
+    TUSD_META_POOL_NAME,
+    USDL_META_POOL_NAME,
+    BUSD_META_POOL_NAME,
+    TBTC_META_POOL_NAME,
   ]).has(poolName)
 }
 
@@ -2237,8 +2470,8 @@ export const SYNTH_TRACKING_ID =
 // FLAGS
 export const IS_VIRTUAL_SWAP_ACTIVE = true
 export const IS_L2_SUPPORTED = true
-export const IS_SDL_LIVE = true
-export const IS_VESDL_LIVE = true
+export const IS_SDL_LIVE = false
+export const IS_VESDL_LIVE = false
 export const IS_POOL_REGISTRY_MIGRATION_LIVE = false
 // FLAGS END
 
