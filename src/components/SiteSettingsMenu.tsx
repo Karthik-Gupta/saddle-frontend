@@ -96,7 +96,6 @@ function NetworkSection(): ReactElement {
     ChainId.MAINNET,
     ChainId.FANTOM,
     ChainId.EVMOS,
-    ChainId.PULSECHAIN_TESTNET,
     ...(IS_DEVELOPMENT
       ? [ChainId.EVMOS_TESTNET, ChainId.PULSECHAIN_TESTNET]
       : []),
