@@ -70,14 +70,14 @@ function TopMenu(): ReactElement {
     <AppBar position="static" elevation={0}>
       <Toolbar data-testid="topMenuContainer" sx={{ xs: 0, lg: 7 }}>
         <Box display="flex" width="100%" alignItems="center">
-          <Box flex={{ xl: 1 }}>
+          <Box flex={1}>
             <NavLink to="/">
               <SaddleLogo height={isUnderLaptopSize ? "40px" : "100"} />
             </NavLink>
           </Box>
 
           <Stack
-            display={isUnderLaptopSize ? "none" : "block"}
+            display={isUnderLaptopSize ? "none" : "flex"}
             bottom={{ xs: theme.spacing(4) }}
             right="50%"
             flex={1}
@@ -178,7 +178,9 @@ function MenuList() {
   const { t } = useTranslation()
   const { chainId } = useActiveWeb3React()
   const gaugesAreActive = areGaugesActive(chainId)
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { pathname } = useLocation()
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
   const activeTab = pathname.split("/")[1] as ActiveTabType
   return (
     <React.Fragment>
@@ -217,7 +219,7 @@ function SDLPrice({ sdlPrice }: SDLPriceProps): ReactElement | null {
   if (sdlPrice === undefined) return null
 
   const SUSHI_WETH_SDL_POOL_URL =
-    "https://app.sushi.com/analytics/pools/0x0c6f06b32e6ae0c110861b8607e67da594781961?chainId=1"
+    "https://ethereum.sushi.com/swap?inputCurrency=ETH&outputCurrency=0xf1Dc500FdE233A4055e25e5BbF516372BC4F6871"
   return (
     <Button
       variant="contained"
