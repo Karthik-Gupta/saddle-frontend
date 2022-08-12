@@ -19,12 +19,12 @@ import {
   format,
   formatDuration,
   getUnixTime,
-  intervalToDuration,
   secondsToHours,
 } from "date-fns"
 import { commify, formatUnits, parseEther } from "@ethersproject/units"
 import { enUS, zhCN } from "date-fns/locale"
 import { enqueuePromiseToast, enqueueToast } from "../../components/Toastify"
+import { formatBNToString, getIntervalBetweenTwoDates } from "../../utils"
 import { useDispatch, useSelector } from "react-redux"
 import {
   useFeeDistributor,
@@ -46,7 +46,6 @@ import VeSDLWrongNetworkModal from "./VeSDLWrongNetworkModal"
 import VeTokenCalculator from "./VeTokenCalculator"
 import { Zero } from "@ethersproject/constants"
 import checkAndApproveTokenForTrade from "../../utils/checkAndApproveTokenForTrade"
-import { formatBNToString } from "../../utils"
 import { minBigNumber } from "../../utils/minBigNumber"
 import { updateLastTransactionTimes } from "../../state/application"
 import { useActiveWeb3React } from "../../hooks"
@@ -279,10 +278,7 @@ export default function VeSDL(): JSX.Element {
   const duration =
     proposedUnlockDate &&
     !isNaN(proposedUnlockDate.valueOf()) &&
-    intervalToDuration({
-      start: proposedUnlockDate,
-      end: lockEnd || new Date(),
-    })
+    getIntervalBetweenTwoDates(proposedUnlockDate, lockEnd)
   const additionalLockDuration =
     duration &&
     formatDuration(
@@ -416,7 +412,7 @@ export default function VeSDL(): JSX.Element {
               data-testid="lockVeSdlBtn"
               fullWidth
               size="large"
-              onClick={handleLock}
+              onClick={() => void handleLock()}
               disabled={disableLock || !isValidNetwork}
             >
               {lockedSDLVal.isZero() ? t("createLock") : t("adjustLock")}
@@ -454,7 +450,7 @@ export default function VeSDL(): JSX.Element {
                 {loading ? (
                   <Skeleton width="100px" sx={{ display: "inline-block" }} />
                 ) : (
-                  formatUnits(lockedSDLVal)
+                  commify(formatBNToString(lockedSDLVal, 18, 2))
                 )}
               </Typography>
             </Typography>
@@ -468,7 +464,7 @@ export default function VeSDL(): JSX.Element {
                 {loading ? (
                   <Skeleton width="100px" sx={{ display: "inline-block" }} />
                 ) : (
-                  formatUnits(veSdlTokenBalance)
+                  commify(formatBNToString(veSdlTokenBalance, 18, 2))
                 )}
               </Typography>
             </Typography>
@@ -481,7 +477,7 @@ export default function VeSDL(): JSX.Element {
                 }}
               >
                 {t("withdrawAlertMsg", {
-                  sdlValue: commify(formatUnits(penaltyAmount)),
+                  sdlValue: commify(formatBNToString(penaltyAmount, 18, 2)),
                   weeksLeftForUnlock: Math.ceil(
                     secondsToHours(leftTimeForUnlock) / WEEK_HOUR,
                   ),
@@ -548,7 +544,7 @@ export default function VeSDL(): JSX.Element {
         modalText={t("confirmUnlock", {
           penaltyPercent: formatBNToString(penaltyPercent, 18, 3),
         })}
-        onOK={unlock}
+        onOK={() => void unlock()}
         onClose={() => setUnlockConfirmOpen(false)}
       />
     </Container>

@@ -202,7 +202,7 @@ export default function TokenClaimDialog({
                 items={[
                   [t("retroactiveDrop"), rewardBalances.retroactive || Zero],
                 ]}
-                claimCallback={() => claimRetroReward()}
+                claimCallback={() => void claimRetroReward()}
                 status={claimsStatuses["retroactive"]}
               />
 
@@ -239,7 +239,7 @@ export default function TokenClaimDialog({
                     items={[
                       [pool.poolName, rewardBalances[pool.poolName] || Zero],
                     ]}
-                    claimCallback={() => claimPoolReward(pool)}
+                    claimCallback={() => void claimPoolReward(pool)}
                     status={
                       claimsStatuses["allPools"] ||
                       claimsStatuses[pool.poolName]
@@ -271,7 +271,7 @@ export default function TokenClaimDialog({
                           ["SDL", userClaimableSdl ?? Zero],
                           ...userClaimableOtherRewards,
                         ]}
-                        claimCallback={() => claimGaugeReward(gauge)}
+                        claimCallback={() => void claimGaugeReward(gauge)}
                         status={
                           claimsStatuses["allGauges"] ||
                           claimsStatuses[gauge?.gaugeName ?? ""]
@@ -296,7 +296,7 @@ export default function TokenClaimDialog({
                       items={[
                         [pool.poolName, rewardBalances[pool.poolName] || Zero],
                       ]}
-                      claimCallback={() => claimPoolReward(pool)}
+                      claimCallback={() => void claimPoolReward(pool)}
                       status={
                         claimsStatuses["allPools"] ||
                         claimsStatuses[pool.poolName]
@@ -332,7 +332,7 @@ export default function TokenClaimDialog({
             size="large"
             fullWidth
             disabled={poolsWithUserRewards.length < 2}
-            onClick={() => claimAllPoolsRewards(poolsWithUserRewards)}
+            onClick={() => void claimAllPoolsRewards(poolsWithUserRewards)}
           >
             {t("claimForAllOutdatedPools")}
           </Button>
@@ -354,7 +354,10 @@ function ClaimListItem({
   status?: STATUSES
 }): ReactElement {
   const { t } = useTranslation()
-  const disabled = status === STATUSES.PENDING || status === STATUSES.SUCCESS
+  const disabled =
+    status === STATUSES.PENDING ||
+    status === STATUSES.SUCCESS ||
+    items.every(([, amount]) => amount.isZero())
   // @dev - our formatting assumes all tokens are 1e18
   return (
     <ListItem>
@@ -453,12 +456,24 @@ function useRewardClaims() {
         rewards: GaugeReward[]
       } | null,
     ) => {
-      if (!chainId || !account || !gaugeMinterContract || !library || !gauge)
+      if (!chainId || !account || !gaugeMinterContract || !library || !gauge) {
+        enqueueToast("error", "Unable to claim reward")
         return
+      }
+
+      if (gauge.rewards.length === 0) {
+        enqueueToast("error", "No rewards to claim")
+        return
+      }
       try {
         updateClaimStatus(gauge.gaugeName, STATUSES.PENDING)
         const claimPromises = []
-        if (gauge.rewards.length > 0 && gauge.address) {
+        const minterRewards = gauge.rewards.filter(({ isMinter }) => isMinter)
+        const gaugeRewards = gauge.rewards.filter(({ isMinter }) => !isMinter)
+        if (minterRewards.length > 0) {
+          claimPromises.push(gaugeMinterContract.mint(gauge.address))
+        }
+        if (gaugeRewards.length > 0) {
           const liquidityGaugeContract = getContract(
             gauge.address,
             LIQUIDITY_GAUGE_V5_ABI,
@@ -469,7 +484,6 @@ function useRewardClaims() {
             liquidityGaugeContract["claim_rewards(address)"](account),
           )
         }
-        claimPromises.push(gaugeMinterContract.mint(gauge.address))
         const txns = await Promise.all(claimPromises)
         await enqueuePromiseToast(
           chainId,

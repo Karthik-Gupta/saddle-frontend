@@ -114,8 +114,8 @@ export default function MyFarm({
               disabled={lpWalletBalance.isZero()}
               onClick={
                 gaugesAreActive
-                  ? onStakeClick
-                  : () => approveAndStake(lpWalletBalance)
+                  ? () => void onStakeClick()
+                  : () => void approveAndStake(lpWalletBalance)
               }
             >
               {t("stakeAll")}
@@ -143,8 +143,8 @@ export default function MyFarm({
               }
               onClick={
                 gaugesAreActive
-                  ? onUnstakeClick
-                  : () => unstakeMinichef(amountStakedMinichef)
+                  ? () => void onUnstakeClick()
+                  : () => void unstakeMinichef(amountStakedMinichef)
               }
             >
               {t("unstakeAll")}
@@ -166,7 +166,7 @@ export default function MyFarm({
                 size="large"
                 fullWidth
                 disabled={amountStakedMinichef.isZero()}
-                onClick={() => unstakeMinichef(amountStakedMinichef)}
+                onClick={() => void unstakeMinichef(amountStakedMinichef)}
               >
                 {t("unstake")}
               </Button>
@@ -187,7 +187,7 @@ export default function MyFarm({
                 size="large"
                 fullWidth
                 disabled={amountOfSpaClaimable.isZero()}
-                onClick={() => claimSPA()}
+                onClick={() => void claimSPA()}
               >
                 {t("claimAll")}
               </Button>
