@@ -39,7 +39,7 @@ import fetchSwapStats from "../utils/getSwapStats"
 import fetchTokenPricesUSD from "../utils/updateTokenPrices"
 import getSnapshotVoteData from "../utils/getSnapshotVoteData"
 import { useActiveWeb3React } from "../hooks"
-//import { useIntercom } from "react-use-intercom"
+import { useIntercom } from "react-use-intercom"
 import usePoller from "../hooks/usePoller"
 import { useSdlWethSushiPairContract } from "../hooks/useContract"
 
