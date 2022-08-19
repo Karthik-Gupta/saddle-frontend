@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material"
 import { BasicPool, BasicPoolsContext } from "../providers/BasicPoolsProvider"
-import { ChainId, SDL_TOKEN } from "../constants"
+import { ChainId, TUR_TOKEN } from "../constants"
 import { GaugeReward, areGaugesActive } from "../utils/gauges"
 import React, {
   ReactElement,
@@ -90,7 +90,8 @@ export default function TokenClaimDialog({
     chainId === ChainId.ARBITRUM ||
     chainId === ChainId.HARDHAT ||
     chainId === ChainId.ROPSTEN ||
-    chainId === ChainId.EVMOS
+    chainId === ChainId.EVMOS ||
+    chainId === ChainId.PULSECHAIN_TESTNET
 
   const rewardBalances = useContext(RewardsBalancesContext)
   const {
@@ -101,7 +102,7 @@ export default function TokenClaimDialog({
     claimRetroReward,
   } = useRewardClaims()
   const { addToken, canAdd } = useAddTokenToMetamask({
-    ...SDL_TOKEN,
+    ...TUR_TOKEN,
   })
 
   const gaugesAreActive = areGaugesActive(chainId)
@@ -218,9 +219,9 @@ export default function TokenClaimDialog({
           {!isClaimableNetwork && (
             <Typography style={{ whiteSpace: "pre-line" }}>
               <Trans i18nKey="disableRewardContent">
-                SDL is currently only deployed on Ethereum Mainnet and is not
+                TUR is currently only deployed on Pulsechain Testnet and is not
                 yet claimable on this chain. We display the amount that will be
-                claimable once SDL is available on this network. See
+                claimable once TUR is available on this network. See
                 <Link
                   href="https://docs.saddle.finance/saddle-faq#why-cant-i-claim-my-sdl-on-arbitrum"
                   color="secondary"
@@ -268,7 +269,7 @@ export default function TokenClaimDialog({
                       <ClaimListItem
                         title={gauge?.gaugeName}
                         items={[
-                          ["SDL", userClaimableSdl ?? Zero],
+                          ["TUR", userClaimableSdl ?? Zero],
                           ...userClaimableOtherRewards,
                         ]}
                         claimCallback={() => void claimGaugeReward(gauge)}
@@ -311,7 +312,7 @@ export default function TokenClaimDialog({
 
         <Typography my={3}>
           <Trans i18nKey="saddleTokenInfo" t={t}>
-            SDL token is launched by Saddle Finance. Read more about token
+            TUR token is launched by Turing Finance. Read more about token
             distribution{" "}
             <Link
               href="https://blog.saddle.finance/introducing-sdl"

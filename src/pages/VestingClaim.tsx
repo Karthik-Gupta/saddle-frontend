@@ -185,7 +185,7 @@ function VestingClaim(): ReactElement {
 
         <Typography mb={3}>
           <Trans i18nKey="saddleTokenInfo" t={t}>
-            SDL token is launched by Saddle Finance. Read more about token
+            TUR token is launched by Turing Finance. Read more about token
             distribution{" "}
             <Link
               href="https://blog.saddle.finance/introducing-sdl"

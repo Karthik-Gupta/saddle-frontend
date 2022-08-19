@@ -344,8 +344,8 @@ export default function VeSDL(): JSX.Element {
               showUSDprice={false}
               token={{
                 decimals: 18,
-                symbol: "SDL",
-                name: "SDL",
+                symbol: "TUR",
+                name: "TUR",
                 priceUSD: 0,
               }}
               disabled={
@@ -392,7 +392,7 @@ export default function VeSDL(): JSX.Element {
             <TokenInput
               token={{
                 decimals: 18,
-                symbol: "veSDL",
+                symbol: "veTUR",
                 name: t("voteEscrowSDL"),
                 priceUSD: 0,
               }}

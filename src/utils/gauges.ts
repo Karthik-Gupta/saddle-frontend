@@ -22,7 +22,7 @@ import { GaugeHelperContract } from "../../types/ethers-contracts/GaugeHelperCon
 import LIQUIDITY_GAUGE_V5_ABI from "../constants/abis/liquidityGaugeV5.json"
 import { LiquidityGaugeV5 } from "../../types/ethers-contracts/LiquidityGaugeV5"
 import { Minter } from "../../types/ethers-contracts/Minter"
-import { SDL_TOKEN_ADDRESSES } from "./../constants/index"
+import { TUR_TOKEN_ADDRESSES } from "./../constants/index"
 import { Web3Provider } from "@ethersproject/providers"
 import { Zero } from "@ethersproject/constants"
 import { isAddressZero } from "."
@@ -217,7 +217,7 @@ export async function getGaugeData(
         const sdlReward = {
           periodFinish: BN_MSIG_SDL_VEST_END_TIMESTAMP,
           rate: sdlRate,
-          tokenAddress: SDL_TOKEN_ADDRESSES[chainId].toLowerCase(),
+          tokenAddress: TUR_TOKEN_ADDRESSES[chainId].toLowerCase(),
           isMinter: true,
         }
         if (!lpTokenAddress) return previousGaugeData
@@ -359,7 +359,9 @@ export async function getGaugeRewardsUserData(
 
 export function areGaugesActive(chainId?: ChainId): boolean {
   return (
-    (chainId === ChainId.MAINNET || chainId === ChainId.HARDHAT) &&
+    (chainId === ChainId.MAINNET ||
+      chainId === ChainId.HARDHAT ||
+      chainId == ChainId.PULSECHAIN_TESTNET) &&
     IS_VESDL_LIVE
   )
 }

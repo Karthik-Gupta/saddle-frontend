@@ -9,7 +9,7 @@ import {
   MenuItem as MuiMenuItem,
   styled,
 } from "@mui/material"
-import { ChainId, IS_L2_SUPPORTED, IS_SDL_LIVE, SDL_TOKEN } from "../constants"
+import { ChainId, IS_L2_SUPPORTED, IS_SDL_LIVE, TUR_TOKEN } from "../constants"
 import {
   DEV_SUPPORTED_NETWORKS,
   SUPPORTED_NETWORKS,
@@ -77,13 +77,13 @@ export default function SiteSettingsMenu({
 
 function AddTokenSection(): ReactElement | null {
   const { addToken, canAdd } = useAddTokenToMetamask({
-    ...SDL_TOKEN,
+    ...TUR_TOKEN,
   })
   const { t } = useTranslation()
 
   return canAdd ? (
     <MenuItem onClick={() => addToken()}>
-      <span>{t("addSDL")}</span> <SaddleLogo height={24} width={24} />
+      <span>{t("addTUR")}</span> <SaddleLogo height={24} width={24} />
     </MenuItem>
   ) : null
 }

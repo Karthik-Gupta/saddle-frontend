@@ -8,10 +8,10 @@ import {
   MASTER_REGISTRY_CONTRACT_ADDRESSES,
   MINICHEF_CONTRACT_ADDRESSES,
   RETROACTIVE_VESTING_CONTRACT_ADDRESSES,
-  SDL_TOKEN_ADDRESSES,
   SDL_WETH_SUSHI_LP_CONTRACT_ADDRESSES,
   SYNTHETIX_CONTRACT_ADDRESSES,
   SYNTHETIX_EXCHANGE_RATES_CONTRACT_ADDRESSES,
+  TUR_TOKEN_ADDRESSES,
   Token,
   VOTING_ESCROW_CONTRACT_ADDRESS,
 } from "../constants"
@@ -51,7 +51,6 @@ import { PermissionlessDeployer } from "../../types/ethers-contracts/Permissionl
 import { PoolRegistry } from "../../types/ethers-contracts/PoolRegistry"
 import RETROACTIVE_VESTING_CONTRACT_ABI from "../constants/abis/retroactiveVesting.json"
 import { RetroactiveVesting } from "../../types/ethers-contracts/RetroactiveVesting"
-import SDL_TOKEN_ABI from "../constants/abis/sdl.json"
 import SUSHI_POOL_ABI from "../constants/abis/sushiPool.json"
 import SYNTHETIX_EXCHANGE_RATE_CONTRACT_ABI from "../constants/abis/synthetixExchangeRate.json"
 import SYNTHETIX_NETWORK_TOKEN_CONTRACT_ABI from "../constants/abis/synthetixNetworkToken.json"
@@ -62,6 +61,7 @@ import { SwapFlashLoanNoWithdrawFee } from "../../types/ethers-contracts/SwapFla
 import { SwapGuarded } from "../../types/ethers-contracts/SwapGuarded"
 import { SynthetixExchangeRate } from "../../types/ethers-contracts/SynthetixExchangeRate"
 import { SynthetixNetworkToken } from "../../types/ethers-contracts/SynthetixNetworkToken"
+import TUR_TOKEN_ABI from "../constants/abis/tur.json"
 import VOTING_ESCROW_CONTRACT_ABI from "../constants/abis/votingEscrow.json"
 import { VotingEscrow } from "../../types/ethers-contracts/VotingEscrow"
 import { formatBytes32String } from "@ethersproject/strings"
@@ -348,8 +348,8 @@ export function useGaugeControllerContract(): GaugeController | null {
 
 export const useSdlContract = (): Sdl => {
   const { chainId } = useActiveWeb3React()
-  const contractAddress = chainId ? SDL_TOKEN_ADDRESSES[chainId] : undefined
-  return useContract(contractAddress, SDL_TOKEN_ABI) as Sdl
+  const contractAddress = chainId ? TUR_TOKEN_ADDRESSES[chainId] : undefined
+  return useContract(contractAddress, TUR_TOKEN_ABI) as Sdl
 }
 
 export const useVotingEscrowContract = (): VotingEscrow => {
