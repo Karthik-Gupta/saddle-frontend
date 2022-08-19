@@ -726,9 +726,14 @@ export const SDL_TOKEN_ADDRESSES = buildAddresses({
   [ChainId.FANTOM]: "",
 })
 
+export const TUR_TOKEN_ADDRESSES = buildAddresses({
+  [ChainId.PULSECHAIN_TESTNET]: "0x5B785391Fb04D394364C5230B15cf2026dA1B450",
+})
+
 export const VOTING_ESCROW_CONTRACT_ADDRESS = buildAddresses({
   [ChainId.HARDHAT]: "0x457cCf29090fe5A24c19c1bc95F492168C0EaFdb",
   [ChainId.MAINNET]: "0xD2751CdBED54B87777E805be36670D7aeAe73bb2",
+  [ChainId.PULSECHAIN_TESTNET]: "0x7110dE1A89F9171e249fB354E7a51e61C3aDcfa0",
 })
 
 export const FEE_DISTRIBUTOR_ADDRESSES = buildAddresses({
@@ -739,7 +744,9 @@ export const FEE_DISTRIBUTOR_ADDRESSES = buildAddresses({
 export const GAUGE_MINTER_ADDRESSES = buildAddresses({
   [ChainId.HARDHAT]: "0xB82008565FdC7e44609fA118A4a681E92581e680",
   [ChainId.MAINNET]: "0x358fE82370a1B9aDaE2E3ad69D6cF9e503c96018",
+  [ChainId.PULSECHAIN_TESTNET]: "0xF24ff8c3c31F223a37CC0617d0431A799c71307E",
 })
+
 export const SPA_TOKEN_ADDRESSES = buildAddresses({
   [ChainId.ARBITRUM]: "0x5575552988A3A80504bBaeB1311674fCFd40aD4B",
 })
@@ -747,11 +754,13 @@ export const SPA_TOKEN_ADDRESSES = buildAddresses({
 export const GAUGE_HELPER_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.HARDHAT]: "0x381445710b5e73d34aF196c53A3D5cDa58EDBf7A",
   [ChainId.MAINNET]: "0x8020E4134AD6a694AdbE9521a12C751e67CE9861",
+  [ChainId.PULSECHAIN_TESTNET]: "0xEaB40D6E8418128c93ACD226fD605FE06d6Ac61e",
 })
 
 export const GAUGE_CONTROLLER_ADDRESSES = buildAddresses({
   [ChainId.HARDHAT]: "0x5fc748f1FEb28d7b76fa1c6B07D8ba2d5535177c",
   [ChainId.MAINNET]: "0x99Cb6c36816dE2131eF2626bb5dEF7E5cc8b9B14",
+  [ChainId.PULSECHAIN_TESTNET]: "0x5bAd4887dd28e1FB975c7B20FE1DD4C55bdeE012",
 })
 
 // Pulsechain
@@ -935,6 +944,16 @@ export const SDL_TOKEN = new Token(
   "SDL",
   "saddle-finance", // Updated per CoinGecko
   "Saddle DAO",
+  false,
+  false,
+)
+
+export const TUR_TOKEN = new Token(
+  TUR_TOKEN_ADDRESSES,
+  18,
+  "TUR",
+  "turing", // Updated per CoinGecko
+  "Turing DAO",
   false,
   false,
 )
@@ -2503,9 +2522,9 @@ export const SYNTH_TRACKING_ID =
 // FLAGS
 export const IS_VIRTUAL_SWAP_ACTIVE = true
 export const IS_L2_SUPPORTED = true
-export const IS_SDL_LIVE = false
-export const IS_VESDL_LIVE = false
-export const IS_POOL_REGISTRY_MIGRATION_LIVE = false
+export const IS_SDL_LIVE = true
+export const IS_VESDL_LIVE = true
+export const IS_POOL_REGISTRY_MIGRATION_LIVE = true
 // FLAGS END
 
 // Regex for readable decimal number
