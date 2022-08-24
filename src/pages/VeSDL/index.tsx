@@ -91,7 +91,9 @@ export default function VeSDL(): JSX.Element {
   const [openCalculator, setOpenCalculator] = useState<boolean>(false)
   const { t, i18n } = useTranslation()
   const isValidNetwork =
-    chainId === ChainId.MAINNET || chainId === ChainId.HARDHAT
+    chainId === ChainId.MAINNET ||
+    chainId === ChainId.HARDHAT ||
+    chainId === ChainId.PULSECHAIN_TESTNET
 
   const fetchData = useCallback(async () => {
     if (account && sdlContract && votingEscrowContract) {
