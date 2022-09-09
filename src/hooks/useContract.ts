@@ -8,10 +8,10 @@ import {
   MASTER_REGISTRY_CONTRACT_ADDRESSES,
   MINICHEF_CONTRACT_ADDRESSES,
   RETROACTIVE_VESTING_CONTRACT_ADDRESSES,
-  SDL_WETH_SUSHI_LP_CONTRACT_ADDRESSES,
   SYNTHETIX_CONTRACT_ADDRESSES,
   SYNTHETIX_EXCHANGE_RATES_CONTRACT_ADDRESSES,
   TUR_TOKEN_ADDRESSES,
+  TUR_WPLS_PULSEX_LP_CONTRACT_ADDRESSES,
   Token,
   VOTING_ESCROW_CONTRACT_ADDRESS,
 } from "../constants"
@@ -380,7 +380,7 @@ export const useGaugeMinterContract = (): Minter | null => {
 export const useSdlWethSushiPairContract = (): SushiPool | null => {
   const { chainId } = useActiveWeb3React()
   const contractAddress = chainId
-    ? SDL_WETH_SUSHI_LP_CONTRACT_ADDRESSES[chainId]
+    ? TUR_WPLS_PULSEX_LP_CONTRACT_ADDRESSES[chainId]
     : undefined
   return useContract(contractAddress, SUSHI_POOL_ABI, false) as SushiPool
 }

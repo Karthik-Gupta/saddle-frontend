@@ -94,7 +94,7 @@ function UserRewards({
 }) {
   if (!userGaugeRewards) return null
   const { claimableExternalRewards, claimableSDL } = userGaugeRewards
-  const rewardItems: [string, BigNumber][] = [["SDL", claimableSDL]]
+  const rewardItems: [string, BigNumber][] = [["TUR", claimableSDL]]
   claimableExternalRewards.forEach((reward) => {
     rewardItems.push([reward.token.symbol, reward.amount])
   })

@@ -30,7 +30,9 @@ export default function LockedInfo(): JSX.Element {
     async function fetchSDLInfo() {
       if (
         !library ||
-        (chainId !== ChainId.MAINNET && chainId !== ChainId.HARDHAT) ||
+        (chainId !== ChainId.MAINNET &&
+          chainId !== ChainId.HARDHAT &&
+          chainId !== ChainId.PULSECHAIN_TESTNET) ||
         !account ||
         !sdlContract ||
         !votingEscrowContract

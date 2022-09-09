@@ -67,10 +67,10 @@ FarmOverviewProps): JSX.Element | null {
       <Grid item container xs={7} lg={3.5} flexDirection="column" gap={1}>
         <Typography variant="h2">{farmName}</Typography>
         <TokenGroup>
-          {farmName === "SDL/WETH SLP" ? (
+          {farmName === "TUR/WPLS PLP" ? (
             <>
-              <TokenIcon symbol="SDL" alt="sdl" />
-              <TokenIcon symbol="WETH" alt="weth" />
+              <TokenIcon symbol="TUR" alt="tur" />
+              <TokenIcon symbol="WPLS" alt="wpls" />
             </>
           ) : (
             poolTokens?.map((tokenAddress) => {

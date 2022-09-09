@@ -11,7 +11,7 @@ import { getPriceDataForPool } from "../utils"
 import { parseUnits } from "@ethersproject/units"
 import { useSelector } from "react-redux"
 
-const sushiGaugeName = "SLP-gauge"
+const sushiGaugeName = "PLP-gauge"
 
 export default function useGaugeTVL(): (gaugeAddress?: string) => BigNumber {
   const { gauges } = useContext(GaugeContext)

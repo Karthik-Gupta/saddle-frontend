@@ -1,7 +1,7 @@
 import {
   ChainId,
   PoolTypes,
-  SDL_WETH_SUSHI_LP_CONTRACT_ADDRESSES,
+  TUR_WPLS_PULSEX_LP_CONTRACT_ADDRESSES,
   VOTING_ESCROW_CONTRACT_ADDRESS,
 } from "../constants"
 import {
@@ -85,10 +85,10 @@ export default function TokensProvider({
           })
         })
       }
-      if (SDL_WETH_SUSHI_LP_CONTRACT_ADDRESSES[chainId] && gaugesAreActive) {
-        // add sushi token
+      if (TUR_WPLS_PULSEX_LP_CONTRACT_ADDRESSES[chainId] && gaugesAreActive) {
+        // add pulsex token
         targetTokenAddresses.add(
-          SDL_WETH_SUSHI_LP_CONTRACT_ADDRESSES[chainId].toLowerCase(),
+          TUR_WPLS_PULSEX_LP_CONTRACT_ADDRESSES[chainId].toLowerCase(),
         )
       }
       if (VOTING_ESCROW_CONTRACT_ADDRESS[chainId] && gaugesAreActive) {
