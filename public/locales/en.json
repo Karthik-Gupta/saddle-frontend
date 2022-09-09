@@ -339,5 +339,5 @@
   "wrongNetworkContent": "Oops, looks like you're trying to use Turing while your wallet is connected to an unsupported network.\n\nPlease switch to Ethereum mainnet or another supported network.",
   "yes": "Yes",
   "yourRecentTransactions": "Your recent transactions will be here.",
-  "yourSdlFee": "Claimable SDL/WETH LP"
+  "yourSdlFee": "Claimable TUR/WPLS LP"
 }
