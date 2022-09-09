@@ -1,5 +1,5 @@
+import { BasicPool, BasicPoolsContext } from "../providers/BasicPoolsProvider"
 import {
-  Alert,
   Box,
   Button,
   Divider,
@@ -9,7 +9,6 @@ import {
   ListItem,
   Typography,
 } from "@mui/material"
-import { BasicPool, BasicPoolsContext } from "../providers/BasicPoolsProvider"
 import { ChainId, TUR_TOKEN } from "../constants"
 import { GaugeReward, areGaugesActive } from "../utils/gauges"
 import React, {
@@ -170,9 +169,6 @@ export default function TokenClaimDialog({
           <img src={logo} width={138} height={138} />
         </Box>
       </Box>
-      <Alert color="info" severity="warning" sx={{ m: 4 }}>
-        {t("migrationGaugeWarningMsg")}
-      </Alert>
       <Box
         display="flex"
         alignItems="center"
