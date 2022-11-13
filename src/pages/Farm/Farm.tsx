@@ -51,7 +51,7 @@ export default function Farm(): JSX.Element {
       } = gauge
       const farmName =
         gaugeName === sushiGaugeName
-          ? "TUR/WPLS PLP"
+          ? "PSC/WPLS PLP"
           : poolName || gaugeName || ""
       const gaugeAddress = address
       const aprs = gaugeAprs?.[gaugeAddress]
@@ -109,7 +109,7 @@ export default function Farm(): JSX.Element {
     )
     const userDailyRate = userTotalRate.mul(BN_DAY_IN_SECONDS)
     if (IS_DEVELOPMENT && userDailyRate.gt(Zero)) {
-      console.log("user TUR earned per day", formatUnits(userDailyRate, 18))
+      console.log("user PSC earned per day", formatUnits(userDailyRate, 18))
     }
   }, [farmData])
 

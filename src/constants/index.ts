@@ -959,7 +959,7 @@ export const TUR_TOKEN = new Token(
   18,
   "TUR",
   "turing", // Updated per CoinGecko
-  "Turing DAO",
+  "Pascal DAO",
   false,
   false,
 )
@@ -1360,7 +1360,7 @@ export const USD_SWAP_TOKEN = new Token(
   18,
   "turingUSD",
   "turingusd",
-  "Turing DAI/USDC/USDT",
+  "Pascal DAI/USDC/USDT",
   false,
   true,
 )
@@ -1370,7 +1370,7 @@ export const FOUR_POOL_SWAP_TOKEN = new Token(
   18,
   "turingD4",
   "turingd4",
-  "Turing alUSD/FEI/FRAX/MIM",
+  "Pascal alUSD/FEI/FRAX/MIM",
   false,
   true,
 )
@@ -1380,7 +1380,7 @@ export const WRS_BTC_SWAP_TOKEN = new Token(
   18,
   "turingWRenSBTC",
   "turingwrensbtc",
-  "Turing WBTC/renBTC/sBTC",
+  "Pascal WBTC/renBTC/sBTC",
   false,
   true,
 )
@@ -1390,7 +1390,7 @@ export const ST_ETH_SWAP_TOKEN = new Token(
   18,
   "turingSTETH",
   "turingsteth",
-  "Turing WETH/stETH",
+  "Pascal WETH/stETH",
   false,
   true,
 )
@@ -1400,7 +1400,7 @@ export const R_ETH_SWAP_TOKEN = new Token(
   18,
   "turingRETH",
   "turingreth",
-  "Turing WETH/rETH",
+  "Pascal WETH/rETH",
   false,
   true,
 )
@@ -1410,7 +1410,7 @@ export const AL_ETH_SWAP_TOKEN = new Token(
   18,
   "turingalETH",
   "turingaleth",
-  "Turing WETH/alETH/sETH",
+  "Pascal WETH/alETH/sETH",
   false,
   true,
 )
@@ -1420,7 +1420,7 @@ export const EUR_SWAP_TOKEN = new Token(
   18,
   "turingEUR",
   "turingeur",
-  "Turing EURS/sEUR/EUROC",
+  "Pascal EURS/sEUR/EUROC",
   false,
   true,
 )
@@ -1430,7 +1430,7 @@ export const FRAX_META_SWAP_TOKEN = new Token(
   18,
   "turingFrax-USD",
   "turingfrax-usd",
-  "Turing FRAX/turingUSD",
+  "Pascal FRAX/turingUSD",
   false,
   true,
 )
@@ -1440,7 +1440,7 @@ export const MIM_META_SWAP_TOKEN = new Token(
   18,
   "turingMIM-USD",
   "turingmim-usd",
-  "Turing MIM/turingUSD",
+  "Pascal MIM/turingUSD",
   false,
   true,
 )
@@ -1450,7 +1450,7 @@ export const S_USD_META_SWAP_TOKEN = new Token(
   18,
   "turingSUSD-USD",
   "turingsusd-usd",
-  "Turing SUSD/turingUSD",
+  "Pascal SUSD/turingUSD",
   false,
   true,
 )
@@ -1460,7 +1460,7 @@ export const FEI_META_SWAP_TOKEN = new Token(
   18,
   "turingFEI-USD",
   "turingfei-usd",
-  "Turing FEI/turingUSD",
+  "Pascal FEI/turingUSD",
   false,
   true,
 )
@@ -1470,7 +1470,7 @@ export const AL_USD_META_SWAP_TOKEN = new Token(
   18,
   "turingALUSD-USD",
   "turingalusd-usd",
-  "Turing ALUSD/turingUSD",
+  "Pascal ALUSD/turingUSD",
   false,
   true,
 )
@@ -1480,7 +1480,7 @@ export const TUSD_META_SWAP_TOKEN = new Token(
   18,
   "turingTUSD-USD",
   "turingtusd-usd",
-  "Turing TUSD/turingUSD",
+  "Pascal TUSD/turingUSD",
   false,
   true,
 )
@@ -1490,7 +1490,7 @@ export const USDL_META_SWAP_TOKEN = new Token(
   18,
   "turingUSDL-USD",
   "turingusdl-usd",
-  "Turing USDL/turingUSD",
+  "Pascal USDL/turingUSD",
   false,
   true,
 )
@@ -1500,7 +1500,7 @@ export const BUSD_META_SWAP_TOKEN = new Token(
   18,
   "turingBUSD-USD",
   "turingbusd-usd",
-  "Turing BUSD/turingUSD",
+  "Pascal BUSD/turingUSD",
   false,
   true,
 )
@@ -1510,7 +1510,7 @@ export const T_BTC_META_SWAP_TOKEN = new Token(
   18,
   "turingTBTC-BTC",
   "turingtbtc-btc",
-  "Turing TBTC/turingBTC",
+  "Pascal TBTC/turingBTC",
   false,
   true,
 )

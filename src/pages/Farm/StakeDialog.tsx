@@ -168,7 +168,7 @@ export default function StakeDialog({
             {farmName}
           </Typography>
           <Typography>
-            Stake your LP token and collect TUR incentives.
+            Stake your LP token and collect PSC incentives.
           </Typography>
           <Stack
             direction="row"

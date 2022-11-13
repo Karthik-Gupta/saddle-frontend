@@ -347,7 +347,7 @@ export default function VeSDL(): JSX.Element {
               token={{
                 decimals: 18,
                 symbol: "TUR",
-                name: "TUR",
+                name: "PSC",
                 priceUSD: 0,
               }}
               disabled={

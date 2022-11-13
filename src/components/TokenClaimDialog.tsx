@@ -215,9 +215,9 @@ export default function TokenClaimDialog({
           {!isClaimableNetwork && (
             <Typography style={{ whiteSpace: "pre-line" }}>
               <Trans i18nKey="disableRewardContent">
-                TUR is currently only deployed on Pulsechain Testnet and is not
+                PSC is currently only deployed on Pulsechain Testnet and is not
                 yet claimable on this chain. We display the amount that will be
-                claimable once TUR is available on this network. See
+                claimable once PSC is available on this network. See
                 <Link
                   href="https://docs.saddle.finance/saddle-faq#why-cant-i-claim-my-sdl-on-arbitrum"
                   color="secondary"
@@ -265,7 +265,7 @@ export default function TokenClaimDialog({
                       <ClaimListItem
                         title={gauge?.gaugeName}
                         items={[
-                          ["TUR", userClaimableSdl ?? Zero],
+                          ["PSC", userClaimableSdl ?? Zero],
                           ...userClaimableOtherRewards,
                         ]}
                         claimCallback={() => void claimGaugeReward(gauge)}
@@ -308,7 +308,7 @@ export default function TokenClaimDialog({
 
         <Typography my={3}>
           <Trans i18nKey="saddleTokenInfo" t={t}>
-            TUR token is launched by Turing Finance. Read more about token
+            PSC token is launched by Pascal Finance. Read more about token
             distribution{" "}
             <Link
               href="https://blog.saddle.finance/introducing-sdl"

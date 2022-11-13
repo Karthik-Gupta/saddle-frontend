@@ -176,7 +176,7 @@ export default function PoolOverview({
                   rel="noreferrer"
                   sx={{ textDecoration: "underline" }}
                 >
-                  TUR/24h
+                  PSC/24h
                 </Link>
               </Typography>
               <img src={logo} width="24px" />

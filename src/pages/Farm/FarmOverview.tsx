@@ -67,7 +67,7 @@ FarmOverviewProps): JSX.Element | null {
       <Grid item container xs={7} lg={3.5} flexDirection="column" gap={1}>
         <Typography variant="h2">{farmName}</Typography>
         <TokenGroup>
-          {farmName === "TUR/WPLS PLP" ? (
+          {farmName === "PSC/WPLS PLP" ? (
             <>
               <TokenIcon symbol="TUR" alt="tur" />
               <TokenIcon symbol="WPLS" alt="wpls" />
