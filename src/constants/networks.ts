@@ -125,6 +125,17 @@ export const SUPPORTED_NETWORKS: SupportedNetworks = {
     rpcUrls: ["https://evm.kava.io"],
     blockExplorerUrls: ["https://explorer.kava.io"],
   },
+  [ChainId.PULSECHAIN_TESTNET]: {
+    chainId: hexlify(941),
+    chainName: "PulseChain Testnet",
+    nativeCurrency: {
+      name: "PulseChain",
+      symbol: "TPLS",
+      decimals: 18,
+    },
+    rpcUrls: ["https://rpc.v2b.testnet.pulsechain.com"],
+    blockExplorerUrls: ["https://scan.v2b.testnet.pulsechain.com"],
+  },
 }
 
 export const DEV_SUPPORTED_NETWORKS: SupportedNetworks = {
@@ -150,16 +161,5 @@ export const DEV_SUPPORTED_NETWORKS: SupportedNetworks = {
     },
     rpcUrls: ["https://evm.testnet.kava.io"],
     blockExplorerUrls: ["https://explorer.evm-alpha.kava.io"],
-  },
-  [ChainId.PULSECHAIN_TESTNET]: {
-    chainId: hexlify(941),
-    chainName: "PulseChain Testnet",
-    nativeCurrency: {
-      name: "PulseChain",
-      symbol: "TPLS",
-      decimals: 18,
-    },
-    rpcUrls: ["https://rpc.v2b.testnet.pulsechain.com"],
-    blockExplorerUrls: ["https://scan.v2b.testnet.pulsechain.com"],
   },
 }
