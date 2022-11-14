@@ -29,7 +29,7 @@ import { useActiveWeb3React } from "../hooks"
 import { useSelector } from "react-redux"
 import { useTranslation } from "react-i18next"
 
-type ActiveTabType = "" | "pools" | "risk" | "vesdl" | "farm"
+type ActiveTabType = "" | "pools" | "risk" | "vepsc" | "farm"
 
 const NavMenu = styled(NavLink)<NavLinkProps & { selected: boolean }>(
   ({ theme, selected }) => {
@@ -199,7 +199,7 @@ function MenuList() {
       )}
 
       {gaugesAreActive && (
-        <NavMenu to="/vesdl" selected={activeTab === "vesdl"}>
+        <NavMenu to="/vepsc" selected={activeTab === "vepsc"}>
           {t("veSdl")}
         </NavMenu>
       )}

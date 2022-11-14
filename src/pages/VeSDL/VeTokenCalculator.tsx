@@ -174,7 +174,7 @@ export default function VeTokenCalculator({
           <Divider />
           <Typography variant="subtitle1">{t("myBoostCalculator")}</Typography>
           <TextField
-            label="My veSDL Amount"
+            label="My vePSC Amount"
             value={userVeSDLInputAmount}
             onChange={(e) =>
               isNumberOrEmpty(e.target.value) &&

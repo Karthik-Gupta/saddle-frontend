@@ -149,7 +149,7 @@ export default function App(): ReactElement {
                                     />
                                     <Route
                                       exact
-                                      path="/vesdl"
+                                      path="/vepsc"
                                       component={VeSDL}
                                     />
                                     <Route
