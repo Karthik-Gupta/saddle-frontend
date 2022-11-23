@@ -55,9 +55,9 @@ const Withdraw = lazy(() => import("./Withdraw"))
 
 const AppContainer = styled("div")(({ theme }) => {
   const darkBackground =
-    "linear-gradient(180deg, #000000, #070713 10%, #121334 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%), radial-gradient(50% 395.51% at 50% 4.9%, #121334 0%, #000000 100%)"
+    "linear-gradient(55deg, rgb(8, 8, 15) 0%, rgb(23, 40, 46) 65%, rgb(18, 36, 53) 100%)"
   const lightBackground =
-    "linear-gradient(180deg, #FFFFFF, #FAF3CE 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%), radial-gradient(87.11% 100% at 50% 0%, #FFFFFF 0%, #FDF8DD 100%)"
+    "linear-gradient(55deg, rgb(255,255,255) 0%, rgb(250,243,206) 69%, rgb(253,248,221) 100%)"
   return {
     backgroundImage:
       theme.palette.mode === "light" ? lightBackground : darkBackground,

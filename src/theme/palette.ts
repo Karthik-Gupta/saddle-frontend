@@ -77,11 +77,11 @@ const lightPalette: PaletteOptions | undefined = {
     },
   },
   info: {
-    main: "#4B11F2",
+    main: "#1E3A69",
     states: {
-      outlinedRestingBorder: "#4B11F2",
-      outlinedHoverBackground: "#C9B8FB",
-      containedHoverBackground: "#2F099F",
+      outlinedRestingBorder: "#1E3A69",
+      outlinedHoverBackground: "#3177EE",
+      containedHoverBackground: "#18315D",
     },
     alert: {
       background: "#C9B8FB",
@@ -106,7 +106,7 @@ const lightPalette: PaletteOptions | undefined = {
     },
   },
   error: {
-    main: "#FB5A5A",
+    main: "#971414",
     dark: "#68282F",
     light: "#FDA49A",
     alert: {
@@ -114,9 +114,9 @@ const lightPalette: PaletteOptions | undefined = {
     },
   },
   warning: {
-    main: "#FAEA5D",
-    dark: "#817F48",
-    light: "#FFEA91",
+    main: "#971414",
+    dark: "#F7D7D7",
+    light: "#E16E6E",
     alert: {
       content: "#000000",
       background: "#FFF3C8",
@@ -158,31 +158,31 @@ const darkPalette: PaletteOptions | undefined = {
     },
   },
   mute: {
-    main: "#311188",
-    light: "#4B11F2",
-    dark: "#200B5B",
+    main: "#1E3A69",
+    light: "#0B1928",
+    dark: "#163B78",
     states: {
-      containedHoverBackground: "#4B11F2",
+      containedHoverBackground: "#1E3A69",
     },
   },
   info: {
-    main: "#4B11F2",
-    dark: "#2F099F",
-    light: "#9B91FF",
+    main: "#1E3A69",
+    dark: "#0B1928",
+    light: "#163B78",
     states: {
-      outlinedRestingBorder: "#4B11F2",
-      outlinedHoverBackground: "#270782",
-      containedHoverBackground: "#C9B8FB",
+      outlinedRestingBorder: "#1E3A69",
+      outlinedHoverBackground: "#112740",
+      containedHoverBackground: "#1C3F79",
     },
   },
 
   action: {
-    hover: "#311188",
-    active: "#4B11F2",
+    hover: "#163B78",
+    active: "#1E3A69",
     disabled: "#A7A7A7",
     disabledBackground: "#404040",
     hoverOpacity: 0.5,
-    selected: "#4B11F2",
+    selected: "#1E3A69",
   },
   success: {
     main: "#06D7D7",
@@ -193,7 +193,7 @@ const darkPalette: PaletteOptions | undefined = {
     },
   },
   error: {
-    main: "#FB5A5A",
+    main: "#971414",
     dark: "#68282F",
     light: "#FDA49A",
     alert: {
@@ -201,9 +201,9 @@ const darkPalette: PaletteOptions | undefined = {
     },
   },
   warning: {
-    main: "#FAEA5D",
-    dark: "#817F48",
-    light: "#FFEA91",
+    main: "#971414",
+    dark: "#F7D7D7",
+    light: "#E16E6E",
     alert: {
       content: "#000000",
       background: "#FFF3C8",
@@ -214,12 +214,12 @@ const darkPalette: PaletteOptions | undefined = {
     disabled: "#7D7D7D",
   },
   background: {
-    default: "#222461",
-    paper: "#121334",
+    default: "#0B0E14",
+    paper: "#0B1928",
   },
-  divider: "#311188",
+  divider: "#1E2932",
   other: {
-    divider: "#311188",
+    divider: "#1E2932",
     border: "#7D7D7D",
   },
   grey: GREY_TONES,

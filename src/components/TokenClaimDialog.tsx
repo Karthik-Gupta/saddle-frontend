@@ -146,8 +146,8 @@ export default function TokenClaimDialog({
         sx={{
           backgroundImage: (theme) =>
             theme.palette.mode === "dark"
-              ? "linear-gradient(180deg, #000 0%, rgba(7,7,19,1) 25%, #341291 50%,rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%), radial-gradient(circle, rgba(18,19,52,1) 0%, #000 100%)"
-              : `linear-gradient(180deg, #FFF 25%, #FAF3CE 50%,#FFF 50%, #FFF 100%)`,
+              ? "linear-gradient(90deg, rgba(1,21,42,1) 0%, rgba(110,138,187,1) 42%, rgba(0,222,255,1) 100%)"
+              : `linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(250,243,206,1) 42%, rgba(255,255,255,1) 100%)`,
         }}
       >
         <Box
@@ -162,8 +162,8 @@ export default function TokenClaimDialog({
           sx={{
             backgroundImage: (theme) =>
               theme.palette.mode === "dark"
-                ? "linear-gradient(0deg, #000 0%, #341291 100%)"
-                : "linear-gradient(180deg, #FFF 0%, #FBF4CF 100%)",
+                ? "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(23,33,43,1) 100%)"
+                : "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(251,244,207,1) 100%)",
           }}
         >
           <img src={logo} width={138} height={138} />
