@@ -15,6 +15,47 @@ import tallyIcon from "../assets/icons/tally.svg"
 import unstoppableDomainsLogo from "../assets/icons/unstoppableDomainsLogo.png"
 import walletconnectIcon from "../assets/icons/walletconnect.svg"
 
+export const NetworkContextName = "NETWORK"
+export const BTC_POOL_NAME = "BTC"
+export const BTC_POOL_V2_NAME = "BTC V2"
+export const EVMOS_BTC_POOL_NAME = "Evmos BTC"
+export const STABLECOIN_POOL_NAME = "USD"
+export const STABLECOIN_POOL_V2_NAME = "USDv2"
+export const VETH2_POOL_NAME = "vETH2"
+export const ALETH_POOL_NAME = "alETH"
+export const D4_POOL_NAME = "D4"
+export const SUSD_METAPOOL_NAME = "sUSD Meta"
+export const SUSD_METAPOOL_V2_NAME = "sUSD Meta V2"
+export const TBTC_METAPOOL_NAME = "tBTC Meta"
+export const TBTC_METAPOOL_V2_NAME = "tBTC Meta V2"
+export const WCUSD_METAPOOL_NAME = "wCUSD Meta"
+export const WCUSD_METAPOOL_V2_NAME = "wCUSD Meta V2"
+export const ARB_USD_POOL_NAME = "arbUSD"
+export const USDS_ARB_USD_METAPOOL_NAME = "usds-arbUSDV2 Meta"
+export const OPT_USD_POOL_NAME = "optUSD"
+export const FRAX_OPT_USD_METAPOOL_NAME = "frax-optUSD"
+export const FRAX_ARB_USD_POOL_V2_NAME = "arbUSDV2"
+export const FTM_USD_POOL_NAME = "ftmUSD"
+export const EVMOS_TESTNET_POOL_NAME = "evmosTestnetUSD"
+export const EVMOS_POOL_NAME = "evmosUSD"
+export const KAVA_TESTNET_USD_POOL_NAME = "kavaTestnetUSD"
+export const KAVA_USD_POOL_NAME = "Saddle3Pool"
+export const TBTC_EVMOS_BTC_METAPOOL_NAME = "tbtc-evmosBTC Meta"
+export const EVMOS_4_POOL_NAME = "Evmos 4Pool"
+export const EVMOS_FRAX_3_POOL_NAME = "Evmos Frax 3Pool"
+export const FRAX_3_POOL_NAME = "Frax 3Pool"
+export const TBTC_METAPOOL_V2_BTCV2_V3_NAME = "tBTCv2-BTCv2_v3"
+export const WCUSD_METAPOOL_V2_USDV2_V3_NAME = "wcUSD-USDv2_v3"
+export const SUSD_METAPOOL_V2_USDV2_V3_NAME = "sUSD-USDv2_v3"
+export const FRAX_USDC_POOL_NAME = "FRAX-USDC-BP"
+export const FRAX_USDT_METAPOOL_NAME = "FRAXBP-USDT"
+export const FRAX_SUSD_METAPOOL_NAME = "FRAXBP-SUSD"
+export const FRAX_ALUSD_METAPOOL_NAME = "FRAXBP-alUSD"
+export const ARB_FRAX_USDS_METAPOOL_NAME = "arbFRAXBP-SUSD"
+export const FTM_FRAX_USDT_METAPOOL_NAME = "ftmFRAXBP-USDT"
+export const FTM_FRAX_ALUSD_METAPOOL_NAME = "ftmFRAXBP-alUSD"
+export const FTM_FRAX_ALUSD_METAPOOL_DEPRECATED_NAME = "ftmFRAXBP-alUSD-old"
+export const USDC_USX_POOL_NAME = "USDC-USX"
 //Pulsechain base and meta pools
 export const USD_POOL_NAME = "pascalUSD"
 export const FOUR_POOL_NAME = "pascalD4"
@@ -33,15 +74,47 @@ export const USDL_META_POOL_NAME = "pascalUSDL-USD"
 export const TBTC_META_POOL_NAME = "pascalTBTC-BTC"
 export const BUSD_META_POOL_NAME = "pascalBUSD-USD"
 
-export const NetworkContextName = "NETWORK"
-export const BTC_POOL_NAME = "BTC"
-export const ALETH_POOL_NAME = "alETH"
-export const D4_POOL_NAME = "D4"
-export const VETH2_POOL_NAME = "vETH2"
-export const TBTC_METAPOOL_V2_NAME = "tBTC Meta V2"
-export const USDS_ARB_USD_METAPOOL_NAME = "usds-arbUSDV2 Meta"
-
 export type PoolName =
+  | typeof BTC_POOL_NAME
+  | typeof BTC_POOL_V2_NAME
+  | typeof STABLECOIN_POOL_NAME
+  | typeof STABLECOIN_POOL_V2_NAME
+  | typeof VETH2_POOL_NAME
+  | typeof ALETH_POOL_NAME
+  | typeof D4_POOL_NAME
+  | typeof SUSD_METAPOOL_NAME
+  | typeof SUSD_METAPOOL_V2_NAME
+  | typeof TBTC_METAPOOL_NAME
+  | typeof TBTC_METAPOOL_V2_NAME
+  | typeof WCUSD_METAPOOL_NAME
+  | typeof WCUSD_METAPOOL_V2_NAME
+  | typeof ARB_USD_POOL_NAME
+  | typeof OPT_USD_POOL_NAME
+  | typeof FRAX_OPT_USD_METAPOOL_NAME
+  | typeof FRAX_ARB_USD_POOL_V2_NAME
+  | typeof FTM_USD_POOL_NAME
+  | typeof USDS_ARB_USD_METAPOOL_NAME
+  | typeof EVMOS_TESTNET_POOL_NAME
+  | typeof EVMOS_POOL_NAME
+  | typeof KAVA_TESTNET_USD_POOL_NAME
+  | typeof KAVA_USD_POOL_NAME
+  | typeof TBTC_EVMOS_BTC_METAPOOL_NAME
+  | typeof EVMOS_BTC_POOL_NAME
+  | typeof EVMOS_4_POOL_NAME
+  | typeof EVMOS_FRAX_3_POOL_NAME
+  | typeof FRAX_3_POOL_NAME
+  | typeof TBTC_METAPOOL_V2_BTCV2_V3_NAME
+  | typeof WCUSD_METAPOOL_V2_USDV2_V3_NAME
+  | typeof SUSD_METAPOOL_V2_USDV2_V3_NAME
+  | typeof FRAX_USDC_POOL_NAME
+  | typeof FRAX_USDT_METAPOOL_NAME
+  | typeof FRAX_SUSD_METAPOOL_NAME
+  | typeof FRAX_ALUSD_METAPOOL_NAME
+  | typeof ARB_FRAX_USDS_METAPOOL_NAME
+  | typeof FTM_FRAX_USDT_METAPOOL_NAME
+  | typeof FTM_FRAX_ALUSD_METAPOOL_NAME
+  | typeof USDC_USX_POOL_NAME
+  | typeof FTM_FRAX_ALUSD_METAPOOL_DEPRECATED_NAME
   | typeof USD_POOL_NAME
   | typeof FOUR_POOL_NAME
   | typeof WRS_BTC_POOL_NAME
