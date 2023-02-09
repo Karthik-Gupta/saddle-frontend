@@ -69,7 +69,7 @@ FarmOverviewProps): JSX.Element | null {
         <TokenGroup>
           {farmName === "PSC/WPLS PLP" ? (
             <>
-              <TokenIcon symbol="TUR" alt="tur" />
+              <TokenIcon symbol="PSC" alt="psc" />
               <TokenIcon symbol="WPLS" alt="wpls" />
             </>
           ) : (

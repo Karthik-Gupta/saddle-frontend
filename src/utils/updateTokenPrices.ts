@@ -3,7 +3,7 @@ import {
   COINGECKO_PLATFORM_ID,
   SUPPORTED_NETWORKS,
 } from "../constants/networks"
-import { ChainId, PoolTypes, SDL_TOKEN, TOKENS_MAP } from "../constants"
+import { ChainId, PSC_TOKEN, PoolTypes, TOKENS_MAP } from "../constants"
 import { TokenPricesUSD, updateTokensPricesUSD } from "../state/application"
 
 import { AppDispatch } from "../state"
@@ -34,7 +34,7 @@ const otherTokens = {
   SGT: "sharedstake-governance-token",
   ALCX: "alchemix",
   T: "threshold-network-token",
-  [SDL_TOKEN.symbol]: SDL_TOKEN.geckoId,
+  [PSC_TOKEN.symbol]: PSC_TOKEN.geckoId,
 }
 
 export default function fetchTokenPricesUSD(

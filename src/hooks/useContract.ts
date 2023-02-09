@@ -7,11 +7,11 @@ import {
   GENERALIZED_SWAP_MIGRATOR_CONTRACT_ADDRESSES,
   MASTER_REGISTRY_CONTRACT_ADDRESSES,
   MINICHEF_CONTRACT_ADDRESSES,
+  PSC_TOKEN_ADDRESSES,
+  PSC_WPLS_PULSEX_LP_CONTRACT_ADDRESSES,
   RETROACTIVE_VESTING_CONTRACT_ADDRESSES,
   SYNTHETIX_CONTRACT_ADDRESSES,
   SYNTHETIX_EXCHANGE_RATES_CONTRACT_ADDRESSES,
-  TUR_TOKEN_ADDRESSES,
-  TUR_WPLS_PULSEX_LP_CONTRACT_ADDRESSES,
   Token,
   VOTING_ESCROW_CONTRACT_ADDRESS,
 } from "../constants"
@@ -47,6 +47,7 @@ import { Minter } from "../../types/ethers-contracts/Minter"
 import { MulticallContract } from "../types/ethcall"
 import PERMISSIONLESS_DEPLOYER_ABI from "../constants/abis/permissionlessDeployer.json"
 import POOL_REGISTRY_ABI from "../constants/abis/poolRegistry.json"
+import PSC_TOKEN_ABI from "../constants/abis/psc.json"
 import { PermissionlessDeployer } from "../../types/ethers-contracts/PermissionlessDeployer"
 import { PoolRegistry } from "../../types/ethers-contracts/PoolRegistry"
 import RETROACTIVE_VESTING_CONTRACT_ABI from "../constants/abis/retroactiveVesting.json"
@@ -61,7 +62,6 @@ import { SwapFlashLoanNoWithdrawFee } from "../../types/ethers-contracts/SwapFla
 import { SwapGuarded } from "../../types/ethers-contracts/SwapGuarded"
 import { SynthetixExchangeRate } from "../../types/ethers-contracts/SynthetixExchangeRate"
 import { SynthetixNetworkToken } from "../../types/ethers-contracts/SynthetixNetworkToken"
-import TUR_TOKEN_ABI from "../constants/abis/tur.json"
 import VOTING_ESCROW_CONTRACT_ABI from "../constants/abis/votingEscrow.json"
 import { VotingEscrow } from "../../types/ethers-contracts/VotingEscrow"
 import { formatBytes32String } from "@ethersproject/strings"
@@ -348,8 +348,8 @@ export function useGaugeControllerContract(): GaugeController | null {
 
 export const useSdlContract = (): Sdl => {
   const { chainId } = useActiveWeb3React()
-  const contractAddress = chainId ? TUR_TOKEN_ADDRESSES[chainId] : undefined
-  return useContract(contractAddress, TUR_TOKEN_ABI) as Sdl
+  const contractAddress = chainId ? PSC_TOKEN_ADDRESSES[chainId] : undefined
+  return useContract(contractAddress, PSC_TOKEN_ABI) as Sdl
 }
 
 export const useVotingEscrowContract = (): VotingEscrow => {
@@ -380,7 +380,7 @@ export const useGaugeMinterContract = (): Minter | null => {
 export const useSdlWethSushiPairContract = (): SushiPool | null => {
   const { chainId } = useActiveWeb3React()
   const contractAddress = chainId
-    ? TUR_WPLS_PULSEX_LP_CONTRACT_ADDRESSES[chainId]
+    ? PSC_WPLS_PULSEX_LP_CONTRACT_ADDRESSES[chainId]
     : undefined
   return useContract(contractAddress, SUSHI_POOL_ABI, false) as SushiPool
 }
