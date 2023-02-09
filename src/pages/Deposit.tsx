@@ -172,7 +172,7 @@ function Deposit(): ReactElement | null {
       if (poolData.totalLocked.gt(0) && tokenInputSum.gt(0)) {
         if (isLegacySwapABIPool(poolData.name)) {
           depositLPTokenAmount = await (
-            swapContract as SwapFlashLoan
+            swapContract as unknown as SwapFlashLoan
           ).calculateTokenAmount(
             account,
             poolBaseTokens.map(
@@ -192,7 +192,7 @@ function Deposit(): ReactElement | null {
             : Zero
         } else {
           depositLPTokenAmount = await (
-            swapContract as SwapFlashLoanNoWithdrawFee
+            swapContract as unknown as SwapFlashLoanNoWithdrawFee
           ).calculateTokenAmount(
             poolBaseTokens.map(
               (token) => tokenFormState[token?.symbol ?? ""]?.valueSafe ?? "0",

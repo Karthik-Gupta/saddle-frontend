@@ -112,7 +112,7 @@ export default function useWithdrawFormState(
           let inputCalculatedLPTokenAmount: BigNumber
           if (isLegacySwapABIPool(poolData.name)) {
             inputCalculatedLPTokenAmount = await (
-              swapContract as SwapFlashLoan
+              swapContract as unknown as SwapFlashLoan
             ).calculateTokenAmount(
               account,
               withdrawTokens.map(
@@ -122,7 +122,7 @@ export default function useWithdrawFormState(
             )
           } else {
             inputCalculatedLPTokenAmount = await (
-              swapContract as SwapFlashLoanNoWithdrawFee
+              swapContract as unknown as SwapFlashLoanNoWithdrawFee
             ).calculateTokenAmount(
               withdrawTokens.map(
                 ({ address }) => state.tokenInputs[address]?.valueSafe || Zero,
@@ -160,11 +160,11 @@ export default function useWithdrawFormState(
           let tokenAmounts: BigNumber[]
           if (isLegacySwapABIPool(poolName)) {
             tokenAmounts = await (
-              swapContract as SwapFlashLoan
+              swapContract as unknown as SwapFlashLoan
             ).calculateRemoveLiquidity(account, effectiveUserLPTokenBalance)
           } else {
             tokenAmounts = await (
-              swapContract as SwapFlashLoanNoWithdrawFee
+              swapContract as unknown as SwapFlashLoanNoWithdrawFee
             ).calculateRemoveLiquidity(effectiveUserLPTokenBalance)
           }
           nextState = {
@@ -195,7 +195,7 @@ export default function useWithdrawFormState(
             let tokenAmount: BigNumber
             if (isLegacySwapABIPool(poolName)) {
               tokenAmount = await (
-                swapContract as SwapFlashLoan
+                swapContract as unknown as SwapFlashLoan
               ).calculateRemoveLiquidityOneToken(
                 account,
                 effectiveUserLPTokenBalance, // lp token to be burnt
@@ -203,7 +203,7 @@ export default function useWithdrawFormState(
               ) // actual coin amount to be returned
             } else {
               tokenAmount = await (
-                swapContract as SwapFlashLoanNoWithdrawFee
+                swapContract as unknown as SwapFlashLoanNoWithdrawFee
               ).calculateRemoveLiquidityOneToken(
                 effectiveUserLPTokenBalance, // lp token to be burnt
                 tokenIndex,
@@ -227,7 +227,7 @@ export default function useWithdrawFormState(
             let inputCalculatedLPTokenAmount: BigNumber
             if (isLegacySwapABIPool(poolData.name)) {
               inputCalculatedLPTokenAmount = await (
-                swapContract as SwapFlashLoan
+                swapContract as unknown as SwapFlashLoan
               ).calculateTokenAmount(
                 account,
                 withdrawTokens.map(
@@ -238,7 +238,7 @@ export default function useWithdrawFormState(
               )
             } else {
               inputCalculatedLPTokenAmount = await (
-                swapContract as SwapFlashLoanNoWithdrawFee
+                swapContract as unknown as SwapFlashLoanNoWithdrawFee
               ).calculateTokenAmount(
                 withdrawTokens.map(
                   ({ address }) =>

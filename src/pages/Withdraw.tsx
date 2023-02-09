@@ -75,12 +75,12 @@ function Withdraw(): ReactElement {
         )
         if (isLegacySwapABIPool(poolData.name)) {
           const calculatedTokenAmount = await (
-            swapContract as SwapFlashLoan
+            swapContract as unknown as SwapFlashLoan
           ).calculateTokenAmount(account, withdrawTokenAmounts, false)
           setWithdrawLPTokenAmount(calculatedTokenAmount)
         } else {
           const calculatedTokenAmount = await (
-            swapContract as SwapFlashLoanNoWithdrawFee
+            swapContract as unknown as SwapFlashLoanNoWithdrawFee
           ).calculateTokenAmount(withdrawTokenAmounts, false)
           setWithdrawLPTokenAmount(calculatedTokenAmount)
         }
