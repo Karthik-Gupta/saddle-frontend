@@ -11,7 +11,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material"
-import { IS_SDL_LIVE, TUR_TOKEN } from "../constants"
+import { IS_SDL_LIVE, PSC_TOKEN } from "../constants"
 import { Menu as MenuIcon, MoreVert } from "@mui/icons-material"
 import { NavLink, NavLinkProps, useLocation } from "react-router-dom"
 import React, { ReactElement, useContext, useState } from "react"
@@ -51,7 +51,7 @@ function TopMenu(): ReactElement {
   const theme = useTheme()
   const isUnderLaptopSize = useMediaQuery(theme.breakpoints.down("lg"))
   const { tokenPricesUSD } = useSelector((state: AppState) => state.application)
-  const sdlPrice = tokenPricesUSD?.[TUR_TOKEN.symbol]
+  const sdlPrice = tokenPricesUSD?.[PSC_TOKEN.symbol]
   const handleSettingMenu = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {

@@ -9,7 +9,7 @@ import {
   ListItem,
   Typography,
 } from "@mui/material"
-import { ChainId, TUR_TOKEN } from "../constants"
+import { ChainId, PSC_TOKEN } from "../constants"
 import { GaugeReward, areGaugesActive } from "../utils/gauges"
 import React, {
   ReactElement,
@@ -88,8 +88,6 @@ export default function TokenClaimDialog({
     chainId === ChainId.MAINNET ||
     chainId === ChainId.ARBITRUM ||
     chainId === ChainId.HARDHAT ||
-    chainId === ChainId.ROPSTEN ||
-    chainId === ChainId.EVMOS ||
     chainId === ChainId.PULSECHAIN_TESTNET
 
   const rewardBalances = useContext(RewardsBalancesContext)
@@ -101,7 +99,7 @@ export default function TokenClaimDialog({
     claimRetroReward,
   } = useRewardClaims()
   const { addToken, canAdd } = useAddTokenToMetamask({
-    ...TUR_TOKEN,
+    ...PSC_TOKEN,
   })
 
   const gaugesAreActive = areGaugesActive(chainId)

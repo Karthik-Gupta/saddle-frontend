@@ -22,7 +22,7 @@ import { GaugeHelperContract } from "../../types/ethers-contracts/GaugeHelperCon
 import LIQUIDITY_GAUGE_V5_ABI from "../constants/abis/liquidityGaugeV5.json"
 import { LiquidityGaugeV5 } from "../../types/ethers-contracts/LiquidityGaugeV5"
 import { Minter } from "../../types/ethers-contracts/Minter"
-import { TUR_TOKEN_ADDRESSES } from "./../constants/index"
+import { PSC_TOKEN_ADDRESSES } from "./../constants/index"
 import { Web3Provider } from "@ethersproject/providers"
 import { Zero } from "@ethersproject/constants"
 import { isAddressZero } from "."
@@ -217,7 +217,7 @@ export async function getGaugeData(
         const sdlReward = {
           periodFinish: BN_MSIG_SDL_VEST_END_TIMESTAMP,
           rate: sdlRate,
-          tokenAddress: TUR_TOKEN_ADDRESSES[chainId].toLowerCase(),
+          tokenAddress: PSC_TOKEN_ADDRESSES[chainId].toLowerCase(),
           isMinter: true,
         }
         if (!lpTokenAddress) return previousGaugeData
