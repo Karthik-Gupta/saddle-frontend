@@ -33,6 +33,14 @@ export const USDL_META_POOL_NAME = "pascalUSDL-USD"
 export const TBTC_META_POOL_NAME = "pascalTBTC-BTC"
 export const BUSD_META_POOL_NAME = "pascalBUSD-USD"
 
+export const NetworkContextName = "NETWORK"
+export const BTC_POOL_NAME = "BTC"
+export const ALETH_POOL_NAME = "alETH"
+export const D4_POOL_NAME = "D4"
+export const VETH2_POOL_NAME = "vETH2"
+export const TBTC_METAPOOL_V2_NAME = "tBTC Meta V2"
+export const USDS_ARB_USD_METAPOOL_NAME = "usds-arbUSDV2 Meta"
+
 export type PoolName =
   | typeof USD_POOL_NAME
   | typeof FOUR_POOL_NAME
