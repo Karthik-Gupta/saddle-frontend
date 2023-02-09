@@ -50,12 +50,12 @@ import POOL_REGISTRY_ABI from "../constants/abis/poolRegistry.json"
 import PSC_TOKEN_ABI from "../constants/abis/psc.json"
 import { PermissionlessDeployer } from "../../types/ethers-contracts/PermissionlessDeployer"
 import { PoolRegistry } from "../../types/ethers-contracts/PoolRegistry"
+import { Psc } from "../../types/ethers-contracts/Psc"
 import RETROACTIVE_VESTING_CONTRACT_ABI from "../constants/abis/retroactiveVesting.json"
 import { RetroactiveVesting } from "../../types/ethers-contracts/RetroactiveVesting"
 import SUSHI_POOL_ABI from "../constants/abis/sushiPool.json"
 import SYNTHETIX_EXCHANGE_RATE_CONTRACT_ABI from "../constants/abis/synthetixExchangeRate.json"
 import SYNTHETIX_NETWORK_TOKEN_CONTRACT_ABI from "../constants/abis/synthetixNetworkToken.json"
-import { Sdl } from "../../types/ethers-contracts/Sdl"
 import { SushiPool } from "./../../types/ethers-contracts/SushiPool.d"
 import { SwapFlashLoan } from "../../types/ethers-contracts/SwapFlashLoan"
 import { SwapFlashLoanNoWithdrawFee } from "../../types/ethers-contracts/SwapFlashLoanNoWithdrawFee"
@@ -346,10 +346,10 @@ export function useGaugeControllerContract(): GaugeController | null {
   ) as GaugeController
 }
 
-export const useSdlContract = (): Sdl => {
+export const useSdlContract = (): Psc => {
   const { chainId } = useActiveWeb3React()
   const contractAddress = chainId ? PSC_TOKEN_ADDRESSES[chainId] : undefined
-  return useContract(contractAddress, PSC_TOKEN_ABI) as Sdl
+  return useContract(contractAddress, PSC_TOKEN_ABI) as Psc
 }
 
 export const useVotingEscrowContract = (): VotingEscrow => {
