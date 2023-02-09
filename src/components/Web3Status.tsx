@@ -6,7 +6,6 @@ import ConnectWallet from "./ConnectWallet"
 import Dialog from "./Dialog"
 import Identicon from "./Identicon"
 import { shortenAddress } from "../utils/shortenAddress"
-import { useENS } from "../hooks/useENS"
 import { useTranslation } from "react-i18next"
 import { useUDName } from "../hooks/useUDName"
 import { useWeb3React } from "@web3-react/core"
@@ -21,7 +20,7 @@ const Web3Status = (): ReactElement => {
   const [modalOpen, setModalOpen] = useState(false)
   const [walletView, setWalletView] = useState(WALLET_VIEWS.ACCOUNT)
   const { t } = useTranslation()
-  const { ensName } = useENS(account)
+  //const { ensName } = useENS(account)
   const udName = useUDName()
 
   // always reset to account view
@@ -41,9 +40,7 @@ const Web3Status = (): ReactElement => {
         endIcon={account && <Identicon />}
       >
         <Typography variant="body1" whiteSpace="nowrap">
-          {account
-            ? udName || ensName || shortenAddress(account)
-            : t("connectWallet")}
+          {account ? udName || shortenAddress(account) : t("connectWallet")}
         </Typography>
       </Button>
       <Dialog
