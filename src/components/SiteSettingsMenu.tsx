@@ -83,7 +83,7 @@ function AddTokenSection(): ReactElement | null {
 
   return canAdd ? (
     <MenuItem onClick={() => addToken()}>
-      <span>{t("addTUR")}</span> <SaddleLogo height={24} width={24} />
+      <span>{t("addPSC")}</span> <SaddleLogo height={24} width={24} />
     </MenuItem>
   ) : null
 }
