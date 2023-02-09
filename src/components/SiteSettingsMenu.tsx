@@ -9,7 +9,7 @@ import {
   MenuItem as MuiMenuItem,
   styled,
 } from "@mui/material"
-import { ChainId, IS_L2_SUPPORTED, IS_SDL_LIVE, TUR_TOKEN } from "../constants"
+import { ChainId, IS_L2_SUPPORTED, IS_SDL_LIVE, PSC_TOKEN } from "../constants"
 import {
   DEV_SUPPORTED_NETWORKS,
   SUPPORTED_NETWORKS,
@@ -77,7 +77,7 @@ export default function SiteSettingsMenu({
 
 function AddTokenSection(): ReactElement | null {
   const { addToken, canAdd } = useAddTokenToMetamask({
-    ...TUR_TOKEN,
+    ...PSC_TOKEN,
   })
   const { t } = useTranslation()
 
@@ -92,15 +92,7 @@ function NetworkSection(): ReactElement {
   const { t } = useTranslation()
   const { chainId: activeChainId, library, account } = useActiveWeb3React()
   const [isNetworkVisible, setIsNetworkVisible] = useState(false)
-  const networks = [
-    ChainId.MAINNET,
-    ChainId.FANTOM,
-    ChainId.EVMOS,
-    ChainId.KAVA,
-    ChainId.PULSECHAIN_TESTNET,
-    ...(IS_DEVELOPMENT ? [ChainId.EVMOS_TESTNET, ChainId.KAVA_TESTNET] : []),
-    ...(IS_L2_SUPPORTED ? [ChainId.ARBITRUM, ChainId.OPTIMISM] : []),
-  ]
+  const networks = [ChainId.PULSECHAIN_TESTNET]
 
   return (
     <div data-testid="networkMenuContainer">
