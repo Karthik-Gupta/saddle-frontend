@@ -13,7 +13,8 @@ const NetworkDisplay = React.forwardRef<HTMLButtonElement, NetworkDisplayProps>(
   function NetworkDisplay({ onClick }, ref) {
     const { active, chainId, error } = useWeb3React()
     const theme = useTheme()
-    const networkLabel: string = NETWORK_LABEL[chainId as ChainId] || "Ethereum"
+    const networkLabel: string =
+      NETWORK_LABEL[chainId as ChainId] || "PulseChain Testnet"
     const isUnsupportChainIdError = error instanceof UnsupportedChainIdError
 
     return (
