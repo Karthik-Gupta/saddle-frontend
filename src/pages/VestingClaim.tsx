@@ -7,7 +7,7 @@ import { enqueuePromiseToast, enqueueToast } from "../components/Toastify"
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline"
 import { BigNumber } from "@ethersproject/bignumber"
 import INVESTOR_EMPLOYEE_VESTING_CONTRACT_ABI from "../constants/abis/vesting.json"
-import { SDL_TOKEN } from "../constants"
+import { PSC_TOKEN } from "../constants"
 import { Vesting } from "../../types/ethers-contracts/Vesting"
 import { Zero } from "@ethersproject/constants"
 import logo from "../assets/icons/logo.svg"
@@ -19,7 +19,7 @@ function VestingClaim(): ReactElement {
   const { t } = useTranslation()
   const { account, chainId, library } = useActiveWeb3React()
   const { addToken, canAdd } = useAddTokenToMetamask({
-    ...SDL_TOKEN,
+    ...PSC_TOKEN,
   })
   const sdlContract = useSdlContract()
 

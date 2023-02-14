@@ -9,7 +9,7 @@ import {
   ListItem,
   Typography,
 } from "@mui/material"
-import { ChainId, TUR_TOKEN } from "../constants"
+import { ChainId, PSC_TOKEN } from "../constants"
 import { GaugeReward, areGaugesActive } from "../utils/gauges"
 import React, {
   ReactElement,
@@ -98,10 +98,10 @@ export default function TokenClaimDialog({
     claimPoolReward,
     claimAllPoolsRewards,
     claimGaugeReward,
-    claimRetroReward,
+    //    claimRetroReward,
   } = useRewardClaims()
   const { addToken, canAdd } = useAddTokenToMetamask({
-    ...TUR_TOKEN,
+    ...PSC_TOKEN,
   })
 
   const gaugesAreActive = areGaugesActive(chainId)
@@ -109,10 +109,10 @@ export default function TokenClaimDialog({
   const formattedUnclaimedTokenbalance = commify(
     formatBNToString(rewardBalances.total, 18, 0),
   )
-  const formattedTotalRetroDrop = commify(
+  /*   const formattedTotalRetroDrop = commify(
     formatBNToString(rewardBalances.retroactiveTotal, 18, 2),
   )
-
+ */
   const [allPoolsWithRewards, poolsWithUserRewards] = useMemo(() => {
     if (!basicPools) return [[], []]
     const allPoolsWithRewards = Object.values(basicPools)
@@ -195,7 +195,7 @@ export default function TokenClaimDialog({
         <List data-testid="claimsListContainer">
           {rewardBalances.retroactive && isClaimableNetwork && (
             <>
-              <ClaimListItem
+              {/*               <ClaimListItem
                 items={[
                   [t("retroactiveDrop"), rewardBalances.retroactive || Zero],
                 ]}
@@ -206,7 +206,7 @@ export default function TokenClaimDialog({
               <Typography sx={{ ml: 2 }}>
                 {t("totalRetroactiveDrop")} {formattedTotalRetroDrop}
               </Typography>
-
+ */}
               {Boolean(
                 gaugesAreActive ? gaugesWithName.length : allPoolsWithRewards,
               ) && <div style={{ height: "32px" }} />}

@@ -655,7 +655,7 @@
   {
     "stateMutability": "view",
     "type": "function",
-    "name": "sdl_token",
+    "name": "psc_token",
     "inputs": [],
     "outputs": [
       {
