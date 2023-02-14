@@ -1,7 +1,7 @@
 import {
   ChainId,
+  PSC_WPLS_PULSEX_LP_CONTRACT_ADDRESSES,
   PoolTypes,
-  TUR_WPLS_PULSEX_LP_CONTRACT_ADDRESSES,
   VOTING_ESCROW_CONTRACT_ADDRESS,
 } from "../constants"
 import {
@@ -81,10 +81,10 @@ export const useBasicTokens = (): UseQueryResult<BasicTokens> => {
         })
       })
     }
-    if (TUR_WPLS_PULSEX_LP_CONTRACT_ADDRESSES[chainId] && gaugesAreActive) {
+    if (PSC_WPLS_PULSEX_LP_CONTRACT_ADDRESSES[chainId] && gaugesAreActive) {
       // add pulsex token
       targetTokenAddresses.add(
-        TUR_WPLS_PULSEX_LP_CONTRACT_ADDRESSES[chainId].toLowerCase(),
+        PSC_WPLS_PULSEX_LP_CONTRACT_ADDRESSES[chainId].toLowerCase(),
       )
     }
     if (VOTING_ESCROW_CONTRACT_ADDRESS[chainId] && gaugesAreActive) {
