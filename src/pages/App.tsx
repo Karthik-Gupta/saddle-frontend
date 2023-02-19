@@ -17,6 +17,7 @@ import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns"
 import AprsProvider from "../providers/AprsProvider"
 import { BLOCK_TIME } from "../constants"
 import BasicPoolsProvider from "../providers/BasicPoolsProvider"
+import CautionMessage from "../components/CautionMessage"
 import CoinbasePayTest from "./CoinbasePayTest"
 import ExpandedPoolsProvider from "../providers/ExpandedPoolsProvider"
 import GaugeProvider from "../providers/GaugeProvider"
@@ -87,111 +88,103 @@ export default function App(): ReactElement {
   }, [boot])*/
 
   return (
-    <>
-      <div className="static-info">
-        Welcome to Pascal! This app is created to showcase the basic features of
-        the Pascal protocol, which will be launched on PulseChain Mainnet. You
-        can try it now with free coins on the Testnet. Keep in mind that this is
-        not the final product and it does not use real financial assets. Learn
-        more
-      </div>
-      <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen />
-        <Suspense fallback={null}>
-          <Web3ReactManager>
-            <BasicPoolsProvider>
-              <MinichefProvider>
-                <GaugeProvider>
-                  <TokensProvider>
-                    <ExpandedPoolsProvider>
-                      <UserStateProvider>
-                        <PricesAndVoteData>
-                          <PendingSwapsProvider>
-                            <AprsProvider>
-                              <RewardsBalancesProvider>
-                                <LocalizationProvider
-                                  dateAdapter={AdapterDateFns}
-                                >
-                                  <AppContainer>
-                                    <TopMenu />
-                                    <Switch>
-                                      <Route exact path="/" component={Swap} />
-                                      <Route
-                                        exact
-                                        path="/pools"
-                                        component={Pools}
-                                      />
-                                      <Route
-                                        exact
-                                        path={`/pools/:poolName/deposit`}
-                                        component={Deposit}
-                                      />
-                                      <Route
-                                        exact
-                                        path={`/pools/:poolName/withdraw`}
-                                        component={Withdraw}
-                                      />
-                                      <Redirect
-                                        from="/pools/:route/:action"
-                                        to="/pools"
-                                      />
-                                      <Route
-                                        exact
-                                        path="/pools/create"
-                                        component={CreatePool}
-                                      />
-                                      <Route
-                                        exact
-                                        path="/risk"
-                                        component={Risk}
-                                      />
-                                      <Route
-                                        exact
-                                        path="/vesting-claim"
-                                        component={VestingClaim}
-                                      />
-                                      <Route
-                                        exact
-                                        path="/farm"
-                                        component={Farm}
-                                      />
-                                      <Route
-                                        exact
-                                        path="/vepsc"
-                                        component={VeSDL}
-                                      />
-                                      <Route
-                                        exact
-                                        path="/coinbase-pay-test"
-                                        component={CoinbasePayTest}
-                                      />
-                                    </Switch>
-                                    <WrongNetworkModal />
-                                    <Version />
-                                    <ToastContainer
-                                      theme={
-                                        theme.palette.mode === "dark"
-                                          ? "dark"
-                                          : "light"
-                                      }
-                                      position="top-left"
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen />
+      <Suspense fallback={null}>
+        <Web3ReactManager>
+          <BasicPoolsProvider>
+            <MinichefProvider>
+              <GaugeProvider>
+                <TokensProvider>
+                  <ExpandedPoolsProvider>
+                    <UserStateProvider>
+                      <PricesAndVoteData>
+                        <PendingSwapsProvider>
+                          <AprsProvider>
+                            <RewardsBalancesProvider>
+                              <LocalizationProvider
+                                dateAdapter={AdapterDateFns}
+                              >
+                                <AppContainer>
+                                  <TopMenu />
+                                  <Switch>
+                                    <Route exact path="/" component={Swap} />
+                                    <Route
+                                      exact
+                                      path="/pools"
+                                      component={Pools}
                                     />
-                                  </AppContainer>
-                                </LocalizationProvider>
-                              </RewardsBalancesProvider>
-                            </AprsProvider>
-                          </PendingSwapsProvider>
-                        </PricesAndVoteData>
-                      </UserStateProvider>
-                    </ExpandedPoolsProvider>
-                  </TokensProvider>
-                </GaugeProvider>
-              </MinichefProvider>
-            </BasicPoolsProvider>
-          </Web3ReactManager>
-        </Suspense>
-      </QueryClientProvider>
-    </>
+                                    <Route
+                                      exact
+                                      path={`/pools/:poolName/deposit`}
+                                      component={Deposit}
+                                    />
+                                    <Route
+                                      exact
+                                      path={`/pools/:poolName/withdraw`}
+                                      component={Withdraw}
+                                    />
+                                    <Redirect
+                                      from="/pools/:route/:action"
+                                      to="/pools"
+                                    />
+                                    <Route
+                                      exact
+                                      path="/pools/create"
+                                      component={CreatePool}
+                                    />
+                                    <Route
+                                      exact
+                                      path="/risk"
+                                      component={Risk}
+                                    />
+                                    <Route
+                                      exact
+                                      path="/vesting-claim"
+                                      component={VestingClaim}
+                                    />
+                                    <Route
+                                      exact
+                                      path="/farm"
+                                      component={Farm}
+                                    />
+                                    <Route
+                                      exact
+                                      path="/vepsc"
+                                      component={VeSDL}
+                                    />
+                                    <Route
+                                      exact
+                                      path="/coinbase-pay-test"
+                                      component={CoinbasePayTest}
+                                    />
+                                  </Switch>
+                                  <WrongNetworkModal />
+                                  <Version />
+                                  <CautionMessage />
+                                  <ToastContainer
+                                    theme={
+                                      theme.palette.mode === "dark"
+                                        ? "dark"
+                                        : "light"
+                                    }
+                                    position="top-left"
+                                  />
+                                </AppContainer>
+                              </LocalizationProvider>
+                            </RewardsBalancesProvider>
+                          </AprsProvider>
+                        </PendingSwapsProvider>
+                      </PricesAndVoteData>
+                    </UserStateProvider>
+                  </ExpandedPoolsProvider>
+                </TokensProvider>
+              </GaugeProvider>
+            </MinichefProvider>
+          </BasicPoolsProvider>
+        </Web3ReactManager>
+      </Suspense>
+    </QueryClientProvider>
   )
 }
 
