@@ -17,6 +17,7 @@ import { NavLink, NavLinkProps, useLocation } from "react-router-dom"
 import React, { ReactElement, useContext, useState } from "react"
 
 import { AppState } from "../state"
+import { ReactComponent as HomeLogo } from "../assets/icons/homelogo.svg"
 import NetworkDisplay from "./NetworkDisplay"
 import { RewardsBalancesContext } from "../providers/RewardsBalancesProvider"
 import { ReactComponent as SaddleLogo } from "../assets/icons/logo.svg"
@@ -72,7 +73,7 @@ function TopMenu(): ReactElement {
         <Box display="flex" width="100%" alignItems="center">
           <Box flex={1}>
             <NavLink to="/">
-              <SaddleLogo height={isUnderLaptopSize ? "40px" : "100"} />
+              <HomeLogo height={isUnderLaptopSize ? "40px" : "100"} />
             </NavLink>
           </Box>
 

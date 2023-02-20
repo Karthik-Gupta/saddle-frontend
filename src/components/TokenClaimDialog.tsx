@@ -166,7 +166,7 @@ export default function TokenClaimDialog({
                 : "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(251,244,207,1) 100%)",
           }}
         >
-          <img src={logo} width={138} height={138} />
+          <img src={logo} width={120} height={120} />
         </Box>
       </Box>
       <Box
