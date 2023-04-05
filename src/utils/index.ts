@@ -385,15 +385,15 @@ export async function getMulticallProvider(
     }
   } else if (chainId === ChainId.PULSECHAIN_TESTNET) {
     ethcallProvider.multicall3 = {
-      address: "0xce92eee9fE50C35Da8B2c78E1b214C65ddcFD65a",
+      address: "0x484e3d15DC98EC831da93478bC5Fd13894E81b0E",
       block: 0,
     }
     ethcallProvider.multicall2 = {
-      address: "0xc9dCb90C88FDf33879ACECFA8734f8bCFeDe6F1A",
+      address: "0xDaB490834C40c80167600daea80e0a4F77eBDEf6",
       block: 0,
     }
     ethcallProvider.multicall = {
-      address: "0xd05890eeD22c8F74d6f25e7651531b42c2D2c245",
+      address: "0xEE440CEc7189d5835CA917427AC03A83Faf6f0cE",
       block: 0,
     }
   }
