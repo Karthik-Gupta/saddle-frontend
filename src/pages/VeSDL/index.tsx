@@ -438,9 +438,9 @@ export default function VeSDL(): JSX.Element {
                   </Box>
                 </Link>
               </Tooltip>
-              <Link onClick={() => setOpenCalculator(true)}>
+              {/* <Link onClick={() => setOpenCalculator(true)}>
                 <Typography>{t("veTokenCalculator")}</Typography>
-              </Link>
+              </Link> */}
             </Box>
             <Divider />
             <Typography variant="h2" textAlign="center" mb={2}>
