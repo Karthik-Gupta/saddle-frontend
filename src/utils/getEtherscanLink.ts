@@ -32,7 +32,7 @@ export function getMultichainScanLink(
       }
       break
     case ChainId.PULSECHAIN_TESTNET:
-      chainScanDomain = "scan.v2b.testnet.pulsechain.com"
+      chainScanDomain = "scan.v3.testnet.pulsechain.com"
       break
     default:
       chainScanDomain = "etherscan.io"
