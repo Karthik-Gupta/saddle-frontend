@@ -22,8 +22,8 @@ export default function CautionMessage(): ReactElement {
           onClose={() => handleClose(false)}
         >
           <DialogContent sx={{ whiteSpace: "pre-line" }}>
-            <Typography textAlign="center" mb={3} sx={{ fontSize: 48 }}>
-              &#129325;
+            <Typography textAlign="center" mb={3} sx={{ fontSize: 28 }}>
+              Welcome to Pascal!
             </Typography>
             <Typography>{t("cautionMessage")}</Typography>
           </DialogContent>
