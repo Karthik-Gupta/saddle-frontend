@@ -126,15 +126,15 @@ export const SUPPORTED_NETWORKS: SupportedNetworks = {
     blockExplorerUrls: ["https://explorer.kava.io"],
   },
   [ChainId.PULSECHAIN_TESTNET]: {
-    chainId: hexlify(941),
+    chainId: hexlify(942),
     chainName: "PulseChain Testnet",
     nativeCurrency: {
       name: "PulseChain",
       symbol: "TPLS",
       decimals: 18,
     },
-    rpcUrls: ["https://rpc.v2b.testnet.pulsechain.com"],
-    blockExplorerUrls: ["https://scan.v2b.testnet.pulsechain.com"],
+    rpcUrls: ["https://rpc.v3.testnet.pulsechain.com"],
+    blockExplorerUrls: ["https://scan.v3.testnet.pulsechain.com"],
   },
 }
 
