@@ -12,20 +12,14 @@ function Risk(): ReactElement {
         Risk
       </Typography>
       <Typography variant="body1" data-testid="risk-intro">
-        {t("riskIntro")}{" "}
-        <a href="https://github.com/saddle-finance/saddle-contract">
-          {t("riskIntro2")}
-        </a>{" "}
-        {t("riskIntro3")}
+        {t("riskIntro")}
       </Typography>
       <Typography variant="h3" mt={5} mb={2}>
         {t("audits")}
       </Typography>
       <Typography variant="body1" data-testid="risk-audits">
         {t("riskAudits")}{" "}
-        <a href="https://github.com/saddle-finance/saddle-audits">
-          {t("riskAudits2")}
-        </a>
+        <a href="https://docs.pascal.finance/vepsc">{t("riskAudits2")}</a>
         {"."}
         <br />
         <br />
@@ -46,16 +40,6 @@ function Risk(): ReactElement {
       <Typography variant="body1" data-testid="risk-lossofpeg">
         {t("riskLossOfPeg")}
       </Typography>
-      <Typography variant="h3" mt={5} mb={2}>
-        {t("unnecessaryApprovalAskQ")}
-      </Typography>
-      <p>
-        {t("unnecessaryApprovalAskA")} <br />
-        <br />
-        <a href="https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729">
-          ERC: Token standard · Issue #20 · ethereum/EIPs
-        </a>
-      </p>
     </Container>
   )
 }

@@ -422,7 +422,7 @@ export default function VeSDL(): JSX.Element {
             <Box display="flex" justifyContent="space-between">
               <Tooltip title={<>{t("lockingExplaination")}</>}>
                 <Link
-                  href="https://docs.saddle.finance/vesdl-vote-escrowed-sdl"
+                  href="https://docs.pascal.finance/vepsc"
                   target="_blank"
                   rel="noopener"
                 >

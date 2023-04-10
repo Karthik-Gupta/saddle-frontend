@@ -188,7 +188,7 @@ function VestingClaim(): ReactElement {
             PSC token is launched by Pascal Finance. Read more about token
             distribution{" "}
             <Link
-              href="https://blog.saddle.finance/introducing-sdl"
+              href="https://docs.pascal.finance/psc-token"
               target="_blank"
               rel="noreferrer"
               style={{ textDecoration: "underline" }}
