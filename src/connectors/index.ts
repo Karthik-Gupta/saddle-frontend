@@ -32,9 +32,7 @@ function createInjectedMetaMaskProvider() {
   return new InjectedConnector({
     // mainnet, ropsten, rinkeby, goerli, optimism, kovan, kava testnet, kava, evmos testnet, evmos, fantom, pulsechain testnet, local buidler
     // see: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md
-    supportedChainIds: [
-      1, 3, 4, 5, 10, 42, 250, 942, 2221, 2222, 9000, 9001, 42161, 31337,
-    ],
+    supportedChainIds: [943],
   })
 }
 
@@ -42,7 +40,7 @@ function createInjectedTallyProvider() {
   return new InjectedConnector({
     // currently tally supports only mainnet
     // see: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-155.md
-    supportedChainIds: [1],
+    supportedChainIds: [],
   })
 }
 
