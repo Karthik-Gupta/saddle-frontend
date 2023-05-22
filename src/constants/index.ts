@@ -1433,7 +1433,13 @@ const CST_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.PULSECHAIN_TESTNET]: "0x1B2f92EEa10B5abc8fD4E5eC7383F6E72eeC4476",
 })
 
-export const CST = new Token(CST_CONTRACT_ADDRESSES, 18, "CST", "cst", "CST")
+export const CST = new Token(
+  CST_CONTRACT_ADDRESSES,
+  18,
+  "CST",
+  "usd-coin",
+  "CST",
+)
 
 const DAI_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
@@ -1630,7 +1636,7 @@ export const USDL = new Token(
   USDL_CONTRACT_ADDRESSES,
   18,
   "USDL",
-  "usdl",
+  "usd-coin",
   "USDL",
 )
 
@@ -1704,7 +1710,7 @@ export const TBTC = new Token(
   TBTC_CONTRACT_ADDRESSES,
   18,
   "TBTC",
-  "tbtc",
+  "sbtc",
   "tBTC",
 )
 
@@ -1859,7 +1865,7 @@ export const FEI = new Token(
   FEI_CONTRACT_ADDRESSES,
   18,
   "FEI",
-  "fei",
+  "usd-coin",
   "Fei Protocol",
 )
 
@@ -1870,7 +1876,7 @@ export const PXDC = new Token(
   PXDC_CONTRACT_ADDRESSES,
   8,
   "PXDC",
-  "pxdc",
+  "usd-coin",
   "PXDC",
 )
 
