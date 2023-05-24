@@ -19,7 +19,7 @@ function Risk(): ReactElement {
       </Typography>
       <Typography variant="body1" data-testid="risk-audits">
         {t("riskAudits")}{" "}
-        <a href="https://docs.pascal.finance/vepsc">{t("riskAudits2")}</a>
+        <a href="https://docs.pascal.finance/security">{t("riskAudits2")}</a>
         {"."}
         <br />
         <br />
