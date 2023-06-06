@@ -258,6 +258,19 @@ export default function VeSDL(): JSX.Element {
 
   const unlock = async () => {
     if (votingEscrowContract && chainId) {
+      const txn = await votingEscrowContract.withdraw()
+      void enqueuePromiseToast(chainId, txn.wait(), "unlock")
+      dispatch(
+        updateLastTransactionTimes({
+          [TRANSACTION_TYPES.DEPOSIT]: Date.now(),
+        }),
+      )
+      void fetchData()
+    }
+  }
+
+  const forceUnlock = async () => {
+    if (votingEscrowContract && chainId) {
       const txn = await votingEscrowContract.force_withdraw()
       void enqueuePromiseToast(chainId, txn.wait(), "unlock")
       dispatch(
@@ -489,7 +502,7 @@ export default function VeSDL(): JSX.Element {
             <Button
               variant="contained"
               data-testid="unlockVeSdlBtn"
-              onClick={handleUnlock}
+              onClick={() => handleUnlock()}
               size="large"
               fullWidth
               disabled={lockedSDLVal.isZero() || !isValidNetwork}
@@ -546,7 +559,7 @@ export default function VeSDL(): JSX.Element {
         modalText={t("confirmUnlock", {
           penaltyPercent: formatBNToString(penaltyPercent, 18, 3),
         })}
-        onOK={() => void unlock()}
+        onOK={() => void forceUnlock()}
         onClose={() => setUnlockConfirmOpen(false)}
       />
     </Container>
