@@ -58,16 +58,6 @@ export const FTM_FRAX_ALUSD_METAPOOL_DEPRECATED_NAME = "ftmFRAXBP-alUSD-old"
 export const USDC_USX_POOL_NAME = "USDC-USX"
 //Pulsechain base and meta pools
 export const USD_POOL_NAME = "pascalUSD"
-export const PULSE_CHAIN_POOL_NAME = "pulseChainUSD"
-export const P_BTC_POOL_NAME = "pascalBTC"
-export const ETH_POOL_NAME = "pascalETH"
-export const FRAX_META_POOL_NAME = "pascalFrax-USD"
-export const FEI_META_POOL_NAME = "pascalFEI-USD"
-export const CST_META_POOL_NAME = "pascalCST-USD"
-export const PXDC_META_POOL_NAME = "pascalPXDC-USD"
-export const USDL_META_POOL_NAME = "pascalUSDL-USD"
-export const TBTC_META_POOL_NAME = "pascalTBTC-BTC"
-export const BUSD_META_POOL_NAME = "pascalBUSD-USD"
 
 export type PoolName =
   | typeof BTC_POOL_NAME
@@ -111,16 +101,6 @@ export type PoolName =
   | typeof USDC_USX_POOL_NAME
   | typeof FTM_FRAX_ALUSD_METAPOOL_DEPRECATED_NAME
   | typeof USD_POOL_NAME
-  | typeof PULSE_CHAIN_POOL_NAME
-  | typeof P_BTC_POOL_NAME
-  | typeof ETH_POOL_NAME
-  | typeof FRAX_META_POOL_NAME
-  | typeof FEI_META_POOL_NAME
-  | typeof CST_META_POOL_NAME
-  | typeof PXDC_META_POOL_NAME
-  | typeof USDL_META_POOL_NAME
-  | typeof TBTC_META_POOL_NAME
-  | typeof BUSD_META_POOL_NAME
 
 export enum ChainId {
   MAINNET = 1,
@@ -209,11 +189,11 @@ export const MASTER_REGISTRY_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.OPTIMISM]: "0x0E510c9b20a5D136E75f7FD2a5F344BD98f9d875",
   [ChainId.ARBITRUM]: "0xaB94A2c0D8F044AA439A5654f06b5797928396cF",
   [ChainId.KAVA]: "0x3A0c2A793a8DB779e0293699D0Ce77c77617FE0f",
-  [ChainId.PULSECHAIN_TESTNET]: "0xDebFF2631B4C87C72b314b01400420d3725481Ad",
+  [ChainId.PULSECHAIN_TESTNET]: "0xC92eBB2b86Cb494D6f7a921fc7730E8D8112B8B5",
 })
 
 export const PSC_WPLS_PULSEX_LP_CONTRACT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xB72Cfa111F92CD10D2A212963966AFb3F6c49970",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const SYNTHETIX_CONTRACT_ADDRESSES = buildAddresses({
@@ -713,29 +693,29 @@ export const SDL_TOKEN_ADDRESSES = buildAddresses({
   [ChainId.OPTIMISM]: "0xa29b548056c3fd0f68bad9d4829ec4e66f22f796",
   [ChainId.EVMOS]: "0x3344e55C6DDE2A01F4ED893f97bAC1f99EC24f8B",
   [ChainId.FANTOM]: "",
-  [ChainId.PULSECHAIN_TESTNET]: "0x50F771c990eBAC6fF20F8fb472600A7113321D7C",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const PSC_TOKEN_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x50F771c990eBAC6fF20F8fb472600A7113321D7C",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const VOTING_ESCROW_CONTRACT_ADDRESS = buildAddresses({
   [ChainId.HARDHAT]: "0x457cCf29090fe5A24c19c1bc95F492168C0EaFdb",
   [ChainId.MAINNET]: "0xD2751CdBED54B87777E805be36670D7aeAe73bb2",
-  [ChainId.PULSECHAIN_TESTNET]: "0x275ECf7a2DC6AEBAEf394F4C47eD431a5a850405",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const FEE_DISTRIBUTOR_ADDRESSES = buildAddresses({
   [ChainId.HARDHAT]: "0x8A93d247134d91e0de6f96547cB0204e5BE8e5D8",
   [ChainId.MAINNET]: "0xabd040A92d29CDC59837e79651BB2979EA66ce04",
-  [ChainId.PULSECHAIN_TESTNET]: "0xb558278d97E9D28A61E9048Bed1eFB103EaD4B1F",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const GAUGE_MINTER_ADDRESSES = buildAddresses({
   [ChainId.HARDHAT]: "0xB82008565FdC7e44609fA118A4a681E92581e680",
   [ChainId.MAINNET]: "0x358fE82370a1B9aDaE2E3ad69D6cF9e503c96018",
-  [ChainId.PULSECHAIN_TESTNET]: "0x4952E8278f1317F006dC350F8c1cD75341eeA958",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const SPA_TOKEN_ADDRESSES = buildAddresses({
@@ -745,38 +725,38 @@ export const SPA_TOKEN_ADDRESSES = buildAddresses({
 export const GAUGE_HELPER_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.HARDHAT]: "0x381445710b5e73d34aF196c53A3D5cDa58EDBf7A",
   [ChainId.MAINNET]: "0x8020E4134AD6a694AdbE9521a12C751e67CE9861",
-  [ChainId.PULSECHAIN_TESTNET]: "0x57958669DE53371dC90B15787CF3E44c9523E4eb",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const GAUGE_CONTROLLER_ADDRESSES = buildAddresses({
   [ChainId.HARDHAT]: "0x5fc748f1FEb28d7b76fa1c6B07D8ba2d5535177c",
   [ChainId.MAINNET]: "0x99Cb6c36816dE2131eF2626bb5dEF7E5cc8b9B14",
-  [ChainId.PULSECHAIN_TESTNET]: "0x9B3f05211c95018D299424A576d6c90f47Bc96b6",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 // Pulsechain
 export const USD_SWAP_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x0bEA00Cb5d14f5A808aEeE571C84b499A62E6930",
+  [ChainId.PULSECHAIN_TESTNET]: "0x2ecd74f51c98A41fB02e1E8cfb9A696a3af9edE8",
 })
 
 export const USD_SWAP_TOKEN_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xED2cC27B640096Ab71dBab3F1beEBb401Ca2Bce0",
+  [ChainId.PULSECHAIN_TESTNET]: "0x07643C89a02c78Da1b9419f6e8Dc60f3D60c906E",
 })
 
 export const PULSE_CHAIN_USD_SWAP_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x03845398bF5941b77d622Fb182fC3BCB9a3eC998",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const PULSE_CHAIN_USD_SWAP_TOKEN_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x7CcBFbE20B2a26a031431D91b4d32F84dCdA46bB",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const P_BTC_SWAP_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x5e00de85B9F32e5f3De1d4c586D8805aa6c9B2c1",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const P_BTC_SWAP_TOKEN_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x27Ce54d86729e48539aD62BF7984D77Fec3aA48A",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const ETH_SWAP_ADDRESSES = buildAddresses({
@@ -788,87 +768,87 @@ export const ETH_SWAP_TOKEN_ADDRESSES = buildAddresses({
 })
 
 export const FRAX_META_SWAP_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x680B39c57b342B22e31B4F234Daf614f03AB4D19",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const FRAX_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x5F7D09D393a6FeC07C7e1EFA054ef275E3F2161f",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const FRAX_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x10708914Cc8f8aAEb900aDa3c45A367c5147FB6f",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const FEI_META_SWAP_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x95Af0D2Fd56B4194cF0839b6C2858A54cd9A2E46",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const FEI_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xfC761ED6C738207fD1677853C78e84df2BAa0b93",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const FEI_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xf150f28193C093532454d527360bB7Ff6c89E359",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const CST_META_SWAP_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x344e3237b7880fC0aB8c701B2535396E5023709B",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const CST_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x59965cdA87246c4649632BB9E8CEf62e059Ba362",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const CST_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xF1f72a3d87F0b4F4fD3a55F7cA56178fc096297b",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const PXDC_META_SWAP_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xc1C34DFA50D458f7C415c411b6D33106C9B40E4b",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const PXDC_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xD3EB3a5a399439aD18d70c54A8772A731Fe91A99",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const PXDC_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xA2CFD2F48164b921666ACabAA80A983680ba5454",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const USDL_META_SWAP_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xf9309bEda593962cD37Aa278517F82D76a243573",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const USDL_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xb1DfB8Ef2cf4B8C48E4d6e7EdB388557564b89E9",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const USDL_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xB4B9f0c5a16d53AFfCA4CD4689736b07FC5fE5B9",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const BUSD_META_SWAP_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x29A4fE471d3F130F5b4d01b7F3aAbBbFD1c59565",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const BUSD_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xA0F6a0333e68Fa8207fb173d5EEeB352fD9A6Fb7",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const BUSD_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x3694b21A1Bc92E277317Cdf7aA6792610206dB31",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const T_BTC_META_SWAP_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x016819BFaD3703D9a5480FA716a6Fb8F395689A1",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const T_BTC_META_SWAP_DEPOSIT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xfB5fd9FcDd0611A9a39Fd640eced9eF62dbA312c",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const T_BTC_META_SWAP_TOKEN_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x2F9CEcf89102729C2f9225771487176249a58B8C",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const SPA = new Token(
@@ -1430,7 +1410,7 @@ export const SUSD = new Token(
 )
 
 const CST_CONTRACT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x1B2f92EEa10B5abc8fD4E5eC7383F6E72eeC4476",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 export const CST = new Token(
@@ -1568,7 +1548,7 @@ const FRAX_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.OPTIMISM]: "0x2E3D870790dC77A83DD1d18184Acc7439A53f475",
   [ChainId.FANTOM]: "0xdc301622e621166bd8e82f2ca0a26c13ad0be355",
   [ChainId.EVMOS]: "0xE03494D0033687543a80c9B1ca7D6237F2EA8BD8",
-  [ChainId.PULSECHAIN_TESTNET]: "0xbBf58CCd7Cf395A0471C7771f2e8bA6B50B74Db3",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 
 const USDS_CONTRACT_ADDRESSES = buildAddresses({
@@ -1630,7 +1610,7 @@ export const USX = new Token(
 
 // pulsechain
 const USDL_CONTRACT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x460BD2c8343fCb052f818006121951d4Dc256e01",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 export const USDL = new Token(
   USDL_CONTRACT_ADDRESSES,
@@ -1641,7 +1621,7 @@ export const USDL = new Token(
 )
 
 const BUSD_CONTRACT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0x57BE669645f5107e9f068E6EA7526626b12A572E",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 export const BUSD = new Token(
   BUSD_CONTRACT_ADDRESSES,
@@ -1704,7 +1684,7 @@ const TBTC_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x8daebade922df735c38c80c7ebd708af50815faa",
   [ChainId.ROPSTEN]: "0x9F6aA48f852Dd928F53A7dd3dcd2AC96a76c8727",
   [ChainId.HARDHAT]: "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
-  [ChainId.PULSECHAIN_TESTNET]: "0xF3d5E8394439ad94473f3008886126418a257819",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 export const TBTC = new Token(
   TBTC_CONTRACT_ADDRESSES,
@@ -1732,7 +1712,7 @@ const WBTC_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.ROPSTEN]: "0x7264594dFB80a150f80b2988862605dDfda53727",
   [ChainId.HARDHAT]: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
   [ChainId.EVMOS]: "0xF80699Dc594e00aE7bA200c7533a07C1604A106D",
-  [ChainId.PULSECHAIN_TESTNET]: "0xb00982846ED52D3e0109A907aeaAE7Be24F602DF",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 export const WBTC = new Token(
   WBTC_CONTRACT_ADDRESSES,
@@ -1760,7 +1740,7 @@ const SBTC_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0xfe18be6b3bd88a2d2a7f928d00292e7a9963cfc6",
   [ChainId.ROPSTEN]: "0xAc2931cFA6ff57Aaf64B43DFdc5190ca3c341640",
   [ChainId.HARDHAT]: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
-  [ChainId.PULSECHAIN_TESTNET]: "0x3d6597B4114568D7d8D696D7529667B468484B64",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 export const SBTC = new Token(
   SBTC_CONTRACT_ADDRESSES,
@@ -1859,7 +1839,7 @@ const FEI_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.MAINNET]: "0x956F47F50A910163D8BF957Cf5846D573E7f87CA",
   [ChainId.ROPSTEN]: "0x02020a3006587080a00d6675AFfACC99344521AC",
   [ChainId.HARDHAT]: "0xa82fF9aFd8f496c3d6ac40E2a0F282E47488CFc9",
-  [ChainId.PULSECHAIN_TESTNET]: "0x550Db2cDDB79236945a1c0A065D1bD4035bf45D0",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 export const FEI = new Token(
   FEI_CONTRACT_ADDRESSES,
@@ -1870,7 +1850,7 @@ export const FEI = new Token(
 )
 
 const PXDC_CONTRACT_ADDRESSES = buildAddresses({
-  [ChainId.PULSECHAIN_TESTNET]: "0xf5A2323144D8Dfe5380AFd7FC54F97728EEdf13F",
+  [ChainId.PULSECHAIN_TESTNET]: "",
 })
 export const PXDC = new Token(
   PXDC_CONTRACT_ADDRESSES,
@@ -1937,133 +1917,6 @@ export const POOLS_MAP: PoolsMap = {
     isOutdated: false,
     rewardPids: buildPids({}),
     isGuarded: false,
-  },
-  [PULSE_CHAIN_POOL_NAME]: {
-    name: PULSE_CHAIN_POOL_NAME,
-    addresses: PULSE_CHAIN_USD_SWAP_ADDRESSES,
-    lpToken: PULSE_CHAIN_SWAP_TOKEN,
-    poolTokens: PULSE_CHAIN_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    route: "pc-usd",
-    isOutdated: false,
-    rewardPids: buildPids({}),
-    isGuarded: false,
-  },
-  [P_BTC_POOL_NAME]: {
-    name: P_BTC_POOL_NAME,
-    addresses: P_BTC_SWAP_ADDRESSES,
-    lpToken: P_BTC_SWAP_TOKEN,
-    poolTokens: P_BTC_POOL_TOKENS,
-    isSynthetic: true,
-    type: PoolTypes.BTC,
-    route: "btc",
-    isOutdated: false,
-    rewardPids: buildPids({}),
-    isGuarded: false,
-  },
-  [ETH_POOL_NAME]: {
-    name: ETH_POOL_NAME,
-    addresses: ETH_SWAP_ADDRESSES,
-    lpToken: ETH_SWAP_TOKEN,
-    poolTokens: ETH_POOL_TOKENS,
-    isSynthetic: false,
-    type: PoolTypes.ETH,
-    route: "steth",
-    isOutdated: false,
-    rewardPids: buildPids({}),
-    isGuarded: false,
-  },
-  [FRAX_META_POOL_NAME]: {
-    name: FRAX_META_POOL_NAME,
-    metaSwapAddresses: FRAX_META_SWAP_ADDRESSES,
-    lpToken: FRAX_META_SWAP_TOKEN,
-    poolTokens: FRAX_USD_POOL_TOKENS,
-    addresses: FRAX_META_SWAP_DEPOSIT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    underlyingPoolTokens: FRAX_USD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: USD_POOL_NAME,
-    route: "frax-usd",
-    rewardPids: buildPids({}),
-  },
-  [FEI_META_POOL_NAME]: {
-    name: FEI_META_POOL_NAME,
-    metaSwapAddresses: FEI_META_SWAP_ADDRESSES,
-    lpToken: FEI_META_SWAP_TOKEN,
-    poolTokens: FEI_USD_POOL_TOKENS,
-    addresses: FEI_META_SWAP_DEPOSIT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    underlyingPoolTokens: FEI_USD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: USD_POOL_NAME,
-    route: "fei-usd",
-    rewardPids: buildPids({}),
-  },
-  [CST_META_POOL_NAME]: {
-    name: CST_META_POOL_NAME,
-    metaSwapAddresses: CST_META_SWAP_ADDRESSES,
-    lpToken: CST_META_SWAP_TOKEN,
-    poolTokens: CST_USD_POOL_TOKENS,
-    addresses: CST_META_SWAP_DEPOSIT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    underlyingPoolTokens: CST_USD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: USD_POOL_NAME,
-    route: "cst-usd",
-    rewardPids: buildPids({}),
-  },
-  [PXDC_META_POOL_NAME]: {
-    name: PXDC_META_POOL_NAME,
-    metaSwapAddresses: PXDC_META_SWAP_ADDRESSES,
-    lpToken: PXDC_META_SWAP_TOKEN,
-    poolTokens: PXDC_USD_POOL_TOKENS,
-    addresses: PXDC_META_SWAP_DEPOSIT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    underlyingPoolTokens: PXDC_USD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: USD_POOL_NAME,
-    route: "pxdc-usd",
-    rewardPids: buildPids({}),
-  },
-  [USDL_META_POOL_NAME]: {
-    name: USDL_META_POOL_NAME,
-    metaSwapAddresses: USDL_META_SWAP_ADDRESSES,
-    lpToken: USDL_META_SWAP_TOKEN,
-    poolTokens: USDL_USD_POOL_TOKENS,
-    addresses: USDL_META_SWAP_DEPOSIT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    underlyingPoolTokens: USDL_USD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: USD_POOL_NAME,
-    route: "usdl-usd",
-    rewardPids: buildPids({}),
-  },
-  [BUSD_META_POOL_NAME]: {
-    name: BUSD_META_POOL_NAME,
-    metaSwapAddresses: BUSD_META_SWAP_ADDRESSES,
-    lpToken: BUSD_META_SWAP_TOKEN,
-    poolTokens: BUSD_USD_POOL_TOKENS,
-    addresses: BUSD_META_SWAP_DEPOSIT_ADDRESSES,
-    isSynthetic: false,
-    type: PoolTypes.USD,
-    underlyingPoolTokens: BUSD_USD_UNDERLYING_POOL_TOKENS,
-    underlyingPool: USD_POOL_NAME,
-    route: "busd-usd",
-    rewardPids: buildPids({}),
-  },
-  [TBTC_META_POOL_NAME]: {
-    name: TBTC_META_POOL_NAME,
-    metaSwapAddresses: T_BTC_META_SWAP_ADDRESSES,
-    lpToken: T_BTC_META_SWAP_TOKEN,
-    poolTokens: TBTC_BTC_POOL_TOKENS,
-    addresses: T_BTC_META_SWAP_DEPOSIT_ADDRESSES,
-    isSynthetic: true,
-    type: PoolTypes.BTC,
-    underlyingPoolTokens: TBTC_BTC_UNDERLYING_POOL_TOKENS,
-    underlyingPool: P_BTC_POOL_NAME,
-    route: "tbtc",
-    rewardPids: buildPids({}),
   },
 }
 
@@ -2142,18 +1995,10 @@ export function getMinichefPid(
 }
 
 export function isLegacySwapABIPool(poolName: string): boolean {
-  return new Set([P_BTC_POOL_NAME, USD_POOL_NAME, ETH_POOL_NAME]).has(poolName)
+  return new Set([USD_POOL_NAME]).has(poolName)
 }
 export function isMetaPool(poolName = ""): boolean {
-  return new Set([
-    FRAX_META_POOL_NAME,
-    FEI_META_POOL_NAME,
-    CST_META_POOL_NAME,
-    PXDC_META_POOL_NAME,
-    USDL_META_POOL_NAME,
-    BUSD_META_POOL_NAME,
-    TBTC_META_POOL_NAME,
-  ]).has(poolName)
+  return new Set(["DUMMY"]).has(poolName)
 }
 
 // maps a symbol string to a token object
@@ -2301,8 +2146,8 @@ export const SYNTH_TRACKING_ID =
 // FLAGS
 export const IS_VIRTUAL_SWAP_ACTIVE = true
 export const IS_L2_SUPPORTED = true
-export const IS_SDL_LIVE = true
-export const IS_VESDL_LIVE = true
+export const IS_SDL_LIVE = false
+export const IS_VESDL_LIVE = false
 export const IS_POOL_REGISTRY_MIGRATION_LIVE = true
 // FLAGS END
 
