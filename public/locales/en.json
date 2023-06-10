@@ -23,7 +23,7 @@
   "aboutVirtualSwap": "About Virtual Swap",
   "account": "Account",
   "addLiquidity": "Add Liquidity",
-  "adminFee": "Admin fee",
+  "adminFee": "Treasury fee",
   "adminKeys": "Multi-sig control",
   "advancedOptions": "Advanced Options",
   "aParameter": "A parameter",
@@ -340,5 +340,7 @@
   "yes": "Yes",
   "yourRecentTransactions": "Your recent transactions will be here.",
   "yourSdlFee": "Claimable PSC/WPLS LP",
-  "cautionMessage": "This is a beta version of our StableSwap protocol, designed to showcase its basic features. Please note that this is a Testnet version and does not use real financial assets. The Pascal protocol will be launched on PulseChain Mainnet in the near future. To learn more about Pascal and its development progress, please visit our website."
+  "cautionMessage1": "You're currently exploring the v1 of our StableSwap protocol on the PulseChain Mainnet. This version is launched to allow you to experience our app's core features firsthand, enjoy cheaper stablecoin transactions, and earn higher yields on provided liquidity. If you're interested in trying out the full version of the app, v2 is available on the",
+  "cautionMessage2": "PulseChain Testnet",
+  "cautionMessage3": "Keep in mind that early v1 adopters may receive additional rewards once v2 goes live on Mainnet. Enjoy your journey with Pascal!"
 }

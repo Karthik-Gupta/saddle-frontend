@@ -25,7 +25,13 @@ export default function CautionMessage(): ReactElement {
             <Typography textAlign="center" mb={3} sx={{ fontSize: 28 }}>
               Welcome to Pascal!
             </Typography>
-            <Typography>{t("cautionMessage")}</Typography>
+            <Typography>
+              {t("cautionMessage1")}{" "}
+              <a href="https://www.testnet.pascal.finance/">
+                {t("cautionMessage2")}
+              </a>
+              {"."} {t("cautionMessage3")}
+            </Typography>
           </DialogContent>
         </Dialog>
       ) : null}
