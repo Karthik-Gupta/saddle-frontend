@@ -12,6 +12,7 @@ export const NETWORK_LABEL: Partial<Record<ChainId, string>> = {
   [ChainId.KAVA_TESTNET]: "Kava Testnet",
   [ChainId.KAVA]: "Kava",
   [ChainId.PULSECHAIN_TESTNET]: "PulseChain Testnet",
+  [ChainId.PULSECHAIN]: "PulseChain",
   [ChainId.HARDHAT]: "Hardhat 👷🏼‍♂️",
 }
 
@@ -27,6 +28,7 @@ export const NETWORK_NATIVE_TOKENS: Record<ChainId, string> = {
   [ChainId.KAVA_TESTNET]: "KAVA",
   [ChainId.KAVA]: "KAVA",
   [ChainId.PULSECHAIN_TESTNET]: "TPLS",
+  [ChainId.PULSECHAIN]: "PLS",
   [ChainId.HARDHAT]: "ETH",
 }
 export const COINGECKO_PLATFORM_ID: Record<ChainId, string | null> = {
@@ -40,6 +42,7 @@ export const COINGECKO_PLATFORM_ID: Record<ChainId, string | null> = {
   [ChainId.KAVA_TESTNET]: null,
   [ChainId.KAVA]: "kava",
   [ChainId.PULSECHAIN_TESTNET]: "pulsechain",
+  [ChainId.PULSECHAIN]: "pulsechain",
   [ChainId.HARDHAT]: null,
 }
 
@@ -125,16 +128,16 @@ export const SUPPORTED_NETWORKS: SupportedNetworks = {
     rpcUrls: ["https://evm.kava.io"],
     blockExplorerUrls: ["https://explorer.kava.io"],
   },
-  [ChainId.PULSECHAIN_TESTNET]: {
-    chainId: hexlify(943),
-    chainName: "PulseChain Testnet",
+  [ChainId.PULSECHAIN]: {
+    chainId: "0x171",
+    chainName: "PulseChain",
     nativeCurrency: {
       name: "PulseChain",
-      symbol: "TPLS",
+      symbol: "PLS",
       decimals: 18,
     },
-    rpcUrls: ["https://rpc.v4.testnet.pulsechain.com"],
-    blockExplorerUrls: ["https://scan.v4.testnet.pulsechain.com"],
+    rpcUrls: ["https://rpc.pulsechain.com"],
+    blockExplorerUrls: ["https://scan.pulsechain.com/"],
   },
 }
 
@@ -161,5 +164,16 @@ export const DEV_SUPPORTED_NETWORKS: SupportedNetworks = {
     },
     rpcUrls: ["https://evm.testnet.kava.io"],
     blockExplorerUrls: ["https://explorer.evm-alpha.kava.io"],
+  },
+  [ChainId.PULSECHAIN_TESTNET]: {
+    chainId: hexlify(943),
+    chainName: "PulseChain Testnet",
+    nativeCurrency: {
+      name: "PulseChain",
+      symbol: "TPLS",
+      decimals: 18,
+    },
+    rpcUrls: ["https://rpc.v4.testnet.pulsechain.com"],
+    blockExplorerUrls: ["https://scan.v4.testnet.pulsechain.com"],
   },
 }

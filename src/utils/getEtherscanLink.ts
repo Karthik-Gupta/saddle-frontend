@@ -34,6 +34,9 @@ export function getMultichainScanLink(
     case ChainId.PULSECHAIN_TESTNET:
       chainScanDomain = "scan.v4.testnet.pulsechain.com"
       break
+    case ChainId.PULSECHAIN:
+      chainScanDomain = "scan.pulsechain.com"
+      break
     default:
       chainScanDomain = "etherscan.io"
   }

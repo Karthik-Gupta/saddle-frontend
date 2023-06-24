@@ -1,18 +1,9 @@
-import {
-  injectedMetaMaskProvider,
-  injectedTallyProvider,
-  uauth,
-  walletconnect,
-  walletlink,
-} from "../connectors"
+import { injectedMetaMaskProvider, walletconnect } from "../connectors"
 
 import { AbstractConnector } from "@web3-react/abstract-connector"
 import { BasicToken } from "../providers/TokensProvider"
 import { BigNumber } from "@ethersproject/bignumber"
-import coinbasewalletIcon from "../assets/icons/coinbasewallet.svg"
 import metamaskIcon from "../assets/icons/metamask.svg"
-import tallyIcon from "../assets/icons/tally.svg"
-import unstoppableDomainsLogo from "../assets/icons/unstoppableDomainsLogo.png"
 import walletconnectIcon from "../assets/icons/walletconnect.svg"
 
 export const NetworkContextName = "NETWORK"
@@ -117,6 +108,7 @@ export enum ChainId {
   KAVA_TESTNET = 2221,
   KAVA = 2222,
   PULSECHAIN_TESTNET = 943,
+  PULSECHAIN = 369,
 }
 export enum PoolTypes {
   BTC,
@@ -190,6 +182,7 @@ export const MASTER_REGISTRY_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.ARBITRUM]: "0xaB94A2c0D8F044AA439A5654f06b5797928396cF",
   [ChainId.KAVA]: "0x3A0c2A793a8DB779e0293699D0Ce77c77617FE0f",
   [ChainId.PULSECHAIN_TESTNET]: "0xC92eBB2b86Cb494D6f7a921fc7730E8D8112B8B5",
+  [ChainId.PULSECHAIN]: "0x0336A39E68E2C46151adEd0E70d0CB85D1EA090b",
 })
 
 export const PSC_WPLS_PULSEX_LP_CONTRACT_ADDRESSES = buildAddresses({
@@ -737,10 +730,12 @@ export const GAUGE_CONTROLLER_ADDRESSES = buildAddresses({
 // Pulsechain
 export const USD_SWAP_ADDRESSES = buildAddresses({
   [ChainId.PULSECHAIN_TESTNET]: "0x2ecd74f51c98A41fB02e1E8cfb9A696a3af9edE8",
+  [ChainId.PULSECHAIN]: "0x63C0c411F591fB0F157E70c1129D632090E2F84e",
 })
 
 export const USD_SWAP_TOKEN_ADDRESSES = buildAddresses({
   [ChainId.PULSECHAIN_TESTNET]: "0x07643C89a02c78Da1b9419f6e8Dc60f3D60c906E",
+  [ChainId.PULSECHAIN]: "0x643cBbEfD3E6C8bFe19E0a58553aEeF5B60688e0",
 })
 
 export const PULSE_CHAIN_USD_SWAP_ADDRESSES = buildAddresses({
@@ -1431,6 +1426,7 @@ const DAI_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.EVMOS]: "0x63743ACF2c7cfee65A5E356A4C4A005b586fC7AA",
   [ChainId.KAVA]: "0x765277EebeCA2e31912C9946eAe1021199B39C61",
   [ChainId.PULSECHAIN_TESTNET]: "0x664FF1489C132439cD4E54853D0a20f2A4b34344",
+  [ChainId.PULSECHAIN]: "0xefD766cCb38EaF1dfd701853BFCe31359239F305",
 })
 
 const MAD_DAI_CONTRACT_ADDRESSES = buildAddresses({
@@ -1460,6 +1456,7 @@ const USDC_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.KAVA_TESTNET]: "0x6CE6BeeEDeFd2d83C1c6EC191ceBCE0317227852",
   [ChainId.KAVA]: "0xfA9343C3897324496A05fC75abeD6bAC29f8A40f",
   [ChainId.PULSECHAIN_TESTNET]: "0x5De40Acb65118A252b7bE7901aF74b6b32e5dE24",
+  [ChainId.PULSECHAIN]: "0x15D38573d2feeb82e7ad5187aB8c1D52810B1f07",
 })
 
 export const USDC = new Token(
@@ -1495,6 +1492,7 @@ const USDT_CONTRACT_ADDRESSES = buildAddresses({
   [ChainId.FANTOM]: "0x049d68029688eAbF473097a2fC38ef61633A3C7A",
   [ChainId.KAVA]: "0xB44a9B6905aF7c801311e8F4E76932ee959c663C",
   [ChainId.PULSECHAIN_TESTNET]: "0xB619362631433B5c10A10062Bc58A0Cb4e39a9CD",
+  [ChainId.PULSECHAIN]: "0x0Cb6F5a34ad42ec934882A05265A7d5F59b51A2f",
 })
 
 export const USDT = new Token(
@@ -2085,30 +2083,15 @@ export interface WalletInfo {
 }
 
 export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
-  TALLY: {
-    name: "Tally",
-    icon: tallyIcon,
-    connector: injectedTallyProvider,
-  },
   METAMASK: {
     name: "MetaMask",
     icon: metamaskIcon,
     connector: injectedMetaMaskProvider,
   },
-  UNSTOPPABLE_DOMAINS: {
-    name: "Unstoppable Domains",
-    icon: unstoppableDomainsLogo,
-    connector: uauth,
-  },
   WALLET_CONNECT: {
     name: "WalletConnect",
     icon: walletconnectIcon,
     connector: walletconnect,
-  },
-  WALLET_LINK: {
-    name: "Coinbase Wallet",
-    icon: coinbasewalletIcon,
-    connector: walletlink,
   },
 }
 

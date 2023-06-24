@@ -383,17 +383,17 @@ export async function getMulticallProvider(
       address: "0x149bBb210051851016F57a2824C0444f642833a6",
       block: 0,
     }
-  } else if (chainId === ChainId.PULSECHAIN_TESTNET) {
+  } else if (chainId === ChainId.PULSECHAIN) {
     ethcallProvider.multicall3 = {
-      address: "0xb6E98402cCb444360632375c04F0834df71b854A",
+      address: "0xD74518086Fc82e68dAF8A19c60e35Eb268FC971d",
       block: 0,
     }
     ethcallProvider.multicall2 = {
-      address: "0xF626ABe587aA08FAA16205189705E6AB04e9dd92",
+      address: "0x466BC30346172Ab1e6Cd5f5ac39368940cA799C1",
       block: 0,
     }
     ethcallProvider.multicall = {
-      address: "0xfbfb0Ef14fA959391E394E92b0e44f24a3575ef5",
+      address: "0xfb91c44C3EA35Fe6c22D68Bc4D61b45A474c83Ab",
       block: 0,
     }
   }

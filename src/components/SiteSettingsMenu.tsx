@@ -92,7 +92,7 @@ function NetworkSection(): ReactElement {
   const { t } = useTranslation()
   const { chainId: activeChainId, library, account } = useActiveWeb3React()
   const [isNetworkVisible, setIsNetworkVisible] = useState(false)
-  const networks = [ChainId.PULSECHAIN_TESTNET]
+  const networks = [ChainId.PULSECHAIN]
 
   return (
     <div data-testid="networkMenuContainer">
